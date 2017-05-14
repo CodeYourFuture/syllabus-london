@@ -542,10 +542,135 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="htmlcss-3">HTML/CSS 3</h1>
+<p>What we will learn today:</p>
 <ul>
-<li>Bootstrap 4 and HTML/CSS frameworks</li>
-<li>OOCSS, BEM and writing reusable components</li>
+<li><a href="#design-frameworks">Design frameworks</a></li>
+<li><a href="#naming-patterns">Naming patterns</a></li>
+<li><a href="#css-processors">CSS processors</a></li>
 </ul>
+<h2 id="design-frameworks">Design frameworks</h2>
+<p>A design framework is a collection of re-usable code snippets which you can use to build a website. It is sometimes called a &quot;design system&quot;, &quot;style guide&quot;, or &quot;pattern library&quot;, and will usually consist of three things:</p>
+<pre class="language-"><code>1. Brand guidelines define the appropriate typography, colors and logos to use.
+2. Components define re-usable code snippets for common requirements, like navigation menus.
+3. Helpers define additional code tools to construct the site, like layout grids.
+</code></pre><p>Having a design framework is essential when working in large projects, as it allows developers to share code, without having to write the same thing several times. It also allows the core design elements to be changed easily. For example, if all the buttons in your website use the same CSS class, you can change their appearance simply by editing one rule.</p>
+<h3 id="examples-of-css-frameworks">Examples of CSS frameworks</h3>
+<p>Larger companies use design styleguides as a daily tool, allowing them to deliver code faster and improve communication between designers and developers (which is not always easy!!).</p>
+<ul>
+<li><a href="http://ux.mailchimp.com/patterns" target="_blank">MailChimp &gt;</a></li>
+<li><a href="http://rizzo.lonelyplanet.com/styleguide" target="_blank">Loneny planet &gt;</a></li>
+<li><a href="http://codepen.io/guide/" target="_blank">CodePen &gt;</a></li>
+</ul>
+<h3 id="open-source-frameworks">Open source frameworks</h3>
+<p>When you need to create a website very quickly, in order to test a concept, for example, there are design systems that you can use. In addition to CSS classes, they also bring Javascript functionality that works out of the box (by applying CSS classes to your elements). Explore the documentation of the frameworks below.</p>
+<ul>
+<li><a href="http://getbootstrap.com/" target="_blank">Bootstrap &gt;</a></li>
+<li><a href="https://ebay.github.io/skin/" target="_blank">Skin &gt;</a></li>
+</ul>
+<blockquote>
+<p><strong>Exercise:</strong> Explore the examples of CSS frameworks above. What do they have in common? What are the basic elements that all of the have?</p>
+<p><strong>Exercise:</strong> Go back to <code>bikes-for-refugees</code> and open <code>index.html</code>. Use the web developer tools (&quot;Inspect Element&quot;) to see which CSS classes are applied to each button (<code>Donate now</code>, <code>Donate a bike today</code> and <code>Volunteer</code>). How does the <code>Volunteer</code> button differ from the other buttons?</p>
+<p>Still using the developer tools, change the height of the three buttons with one line of code. Do the same for font-sizes.</p>
+<p>Bikes-for-refugees already includes <code>Boostrap</code>. Check its <a href="http://getbootstrap.com/css/" target="_blank">documentation &gt;</a> and add some elements to your page that use boostrap. For example, a <a href="http://getbootstrap.com/css/#images" target="_blank">responsive image &gt;</a>.</p>
+</blockquote>
+<h2 id="naming-patterns">Naming patterns</h2>
+<p>We use naming patterns to organise our code so that it is easier for colleagues to work with our code -- and easier for us to work with our colleagues&apos; code. In a team of developers, you will need to understand, read and make use of a naming pattern.</p>
+<p>Bootstrap uses a naming pattern called <strong>Object-Oriented CSS</strong> (OOCSS). The goal is to define an <em>object</em>, which is another word for a <em>component</em>, and come up with a set of re-usable class names appropriate for that object.</p>
+<pre class="language-"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>alert alert-success<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    You have successfully completed your task.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>alert alert-danger<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    You did not complete your task.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+.alert {
+    padding: .75rem 1.25rem;
+    border-radius: 0.25em;
+}
+.alert-success {
+    background-color: green;
+}
+.alert-error {
+    background-color: red;
+}
+</code></pre><blockquote>
+<p><strong>Exercise:</strong> As a group, let&apos;s explore the naming patterns in Bootstrap&apos;s <a href="https://v4-alpha.getbootstrap.com/components/card/#example" target="_blank">Card component</a>. How is the object-oriented naming pattern used here?</p>
+</blockquote>
+<p>One of the goals in a naming pattern is to communicate purpose. Let&apos;s look at the following example of Bootstrap&apos;s Card component:</p>
+<pre class="language-"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>card card-inverted<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>card-block<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>card-title<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>card-text<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Some quick example text to build on the card title and make up the bulk of the card&apos;s content.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>We have three <em>types</em> of class names here:</p>
+<ul>
+<li><code>.card</code> is the <strong>object</strong>.</li>
+<li><code>.card-block</code>, <code>.card-title</code>, and <code>.card-text</code> are <strong>sub-objects</strong>.</li>
+<li><code>.card-inverted</code> is a <strong>modifier</strong>.</li>
+</ul>
+<p>With Bootstrap&apos;s naming pattern, we know an object is a single word class name like <code>.card</code>, <code>.btn</code> or <code>.alert</code>. But our other two <em>types</em> of class names share the same naming pattern: <code>.card-inverted</code> and <code>.card-block</code>.</p>
+<p>The <a href="">Block, Element, Modifier</a> (BEM) naming pattern is an attempt to overcome this. It introduces separate naming structures for all three <em>types</em> of class names.</p>
+<ul>
+<li>The <strong>object</strong> is called a &quot;Block&quot;: <code>.card</code>.</li>
+<li>The <strong>sub-objects</strong> are called &quot;Elements&quot; and are written with <strong>2 underscores</strong>: <code>.card__block</code>, <code>.card__title</code> and <code>.card__text</code>.</li>
+<li>The <strong>modifier</strong> is written with <strong>2 dashes</strong> as: <code>.card--inverted</code>.</li>
+</ul>
+<p>If we changed our Card example to use BEM syntax, it would look like this:</p>
+<pre class="language-"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>card card--inverted<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>card__block<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>card__title<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Card title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>card__text<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Some quick example text to build on the card title and make up the bulk of the card&apos;s content.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre><blockquote>
+<p>&quot;There are only two hard things in Computer Science: cache invalidation and naming things&quot; - Phil Karlton</p>
+</blockquote>
+<h2 id="css-processors">CSS processors</h2>
+<p>Two of the most important principles of web development are to <code>avoid repetition</code> and aim for <code>reusability</code>.</p>
+<h2 id="homework">Homework</h2>
+<ol>
+<li><p>If you haven&apos;t already, fork the <a href="https://github.com/Code-Your-Future/css-skin" target="_blank"><code>css-skin</code></a> repository. If you have already forked it, you can use your fork for this exercise.</p>
+<ul>
+<li>Open <code>index.html</code> and look at the images of how your buttons should look like, and then notice the unstyled buttons above.</li>
+<li>The unstyled buttons have classes. Use them to write your css in <code>style.css</code>, so the buttons receive a style. Go for maximum reusability. Try not to repeat code!</li>
+<li>Add more HTML examples, following the same naming pattern as the buttons - for example, a list (<code>ul</code>) with items (<code>li</code>). Add more than one sytle of element (for example a <code>ul</code> that displays the elements vertically and other that displays them horizontally).</li>
+<li>Write the CSS for those elements.</li>
+<li>As usual, make a pull request and send them to one of the mentors for review!</li>
+</ul>
+</li>
+<li><p>Read about <a href="http://clubmate.fi/for-while-and-each-loops-in-sass/" target="_blank">writing loops in SCSS &gt;</a> (Sass). Fork this CodePen into your account: <a href="https://codepen.io/claudiamm/pen/xdjadV" target="_blank">https://codepen.io/claudiamm/pen/xdjadV</a>. You have three paragraphs, each with a different <code>size</code> classes. Use a SASS <code>for</code> loop and nesting in order to create these sizes (tip: you can multiply! <code>font-size: $i * 10px;</code>). The final result should look like this:</p>
+<p> <img src="assets/loop-paragraph-example.jpg" alt=""></p>
+<p> Note: the aim of this exercise is to do a for loop - so please <strong>do NOT</strong> do something like below, as it will not bring you anything new:</p>
+<pre class="language-"><code> .paragraph-size-1 {...}
+ .paragraph-size-2 {...}
+ .paragraph-size-3 {...}
+</code></pre></li>
+</ol>
+<h3 id="optional-homework-but-youre-awesome-if-you-do-it">Optional homework, but you&apos;re awesome if you do it!</h3>
+<ol>
+<li><p>Use SASS in your <code>css-skin</code> project instead of normal CSS. Suggestion: alongside <code>style.css</code>, create a file called <code>style.scss</code>. You will use SASS to transform (compile) your SCSS file into a CSS file. <a href="https://www.youtube.com/watch?v=b0d--jixRwg" target="_blank">How to compile SASS &gt;</a></p>
+</li>
+<li><p>Make your <code>css-skin</code> project available under <code>yourname.github.io/css-skin</code>, as so you can access <code>style.css</code> via <code>yourname.github.io/css-skin/style.css</code>.</p>
+<ul>
+<li>Go back to a website that you have made for CodeYourFuture (either for homework or the one that you built when applying).</li>
+<li>Import your <code>style.css</code> file using <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://yourname.github.io/css-skin/style.css<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span></code>.</li>
+<li>You can use your buttons and lists in this website too. Give it a try by adding the following code to your page <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>btn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></code>.</li>
+<li>You&apos;ve got your own CSS framework now! Use it in your future projects for CodeYourFuture, and update at </li>
+</ul>
+</li>
+</ol>
+<h2 id="reading">Reading</h2>
+<ul>
+<li><a href="https://scotch.io/tutorials/getting-started-with-sass" target="_blank">Getting started with SASS &gt;</a></li>
+</ul>
+<h2 id="prepare-for-next-class">Prepare for next class</h2>
+<p>Next week, we will begin learning and programming JavaScript. To prepare for the next lesson:</p>
+<p>Watch these videos:</p>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=nItSSTwBvSU" target="_blank">&apos;What is JavaScript?&apos;</a></li>
+<li><a href="https://www.youtube.com/watch?v=EUAmiIsp2YU" target="_blank">&apos;Do You Know the History of JavaScript?&apos;</a></li>
+</ol>
 
                                 
                                 </section>
@@ -589,7 +714,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 3","level":"1.3.3","depth":2,"next":{"title":"Coding 101","level":"1.3.4","depth":2,"path":"html-css/coding-101.md","ref":"html-css/coding-101.md","articles":[]},"previous":{"title":"Week 2","level":"1.3.2","depth":2,"path":"html-css/lesson2.md","ref":"html-css/lesson2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"html-css/lesson3.md","mtime":"2017-05-07T14:51:17.778Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-07T14:52:21.491Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 3","level":"1.3.3","depth":2,"next":{"title":"Coding 101","level":"1.3.4","depth":2,"path":"html-css/coding-101.md","ref":"html-css/coding-101.md","articles":[]},"previous":{"title":"Week 2","level":"1.3.2","depth":2,"path":"html-css/lesson2.md","ref":"html-css/lesson2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"html-css/lesson3.md","mtime":"2017-05-14T00:07:08.711Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-14T00:08:10.799Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
