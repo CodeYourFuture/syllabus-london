@@ -587,7 +587,6 @@
 <span class="token keyword">var</span> moreCountries <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;Sudan&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Ethiopia&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;France&apos;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
 countries<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>moreCountries<span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>countries<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [&apos;Scotland&apos;, &apos;Germany&apos;, &apos;Syria&apos;, &apos;Sudan&apos;, &apos;Ethiopia&apos;, &apos;France&apos;]</span>
 </code></pre>
 <h4 id="appending-an-element">Appending an element</h4>
 <p>If you want to append an element to an array, you can just put it after the last existing element like so:</p>
@@ -600,13 +599,19 @@ console<span class="token punctuation">.</span><span class="token function">log<
 countries<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&apos;United States of America&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;France&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <blockquote>
-<p><strong>Exercise</strong>: Google <code>.slice</code>, <code>.splice</code> and <code>.pop</code>.</p>
+<p><strong>Exercise</strong>: Google <code>.slice</code>, <code>.splice</code>, <code>.push</code> and <code>.pop</code>.</p>
 <ol>
-<li>Use <code>push</code> to add another country to your country array.</li>
-<li>Use <code>pop</code> to remove the last two countries.</li>
-<li>Using <code>push</code>, add enough countries to your array so that <code>countries.length</code> is 10. Now use <code>slice</code> to return the first 3 countries from the array.</li>
-<li>Use <code>splice</code> to remove the two countries at index positions 5 and 6.</li>
-<li>Use <code>splice</code> to add a new country at index position 2.</li>
+<li>Use <code>.push</code> to add another country to your country array.</li>
+<li>Use <code>.pop</code> to remove the last two countries.</li>
+<li>Using <code>.push</code>, add enough countries to your array so that <code>countries.length</code> is 10. Now use <code>.slice</code> to return the first 3 countries from the array.</li>
+<li>Use <code>.splice</code> to remove the two countries at index positions 5 and 6.</li>
+<li>Use <code>.splice</code> to add a new country at index position 2.</li>
+</ol>
+<p><strong>Exercise (advanced)</strong></p>
+<ol>
+<li>Google the <code>.map</code> and <code>.filter</code> methods.</li>
+<li>Create an array of numbers. Use the <code>.map</code> method to triple every number in the array.</li>
+<li>Create an array of words. Use <code>.filter</code> to remove every word which is less than 4 letters long.</li>
 </ol>
 </blockquote>
 <h1 id="objects">Objects</h1>
@@ -765,7 +770,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 2","level":"1.4.2","depth":2,"next":{"title":"Week 3","level":"1.4.3","depth":2,"path":"js-core/lesson3.md","ref":"js-core/lesson3.md","articles":[]},"previous":{"title":"Week 1","level":"1.4.1","depth":2,"path":"js-core/lesson1.md","ref":"js-core/lesson1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/lesson2.md","mtime":"2017-06-04T09:42:05.790Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-04T09:43:10.947Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 2","level":"1.4.2","depth":2,"next":{"title":"Week 3","level":"1.4.3","depth":2,"path":"js-core/lesson3.md","ref":"js-core/lesson3.md","articles":[]},"previous":{"title":"Week 1","level":"1.4.1","depth":2,"path":"js-core/lesson1.md","ref":"js-core/lesson1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/lesson2.md","mtime":"2017-06-04T10:01:41.044Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-04T10:02:55.527Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
