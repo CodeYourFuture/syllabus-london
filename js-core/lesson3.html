@@ -663,66 +663,69 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>A function which does not belong to a method will have its context set to the global object, which is <code>window</code> in the browser and <code>global</code> in Node.</p>
 <p>That causes several issues.</p>
 <ol>
-<li><p>Inner functions cannot see the context of parent methods
-```js
-var library = {
-numberOfBooks: 0,
-addBooks: function(books){
- this.numberOfBooks += books;</p>
-<p> function double(){
-   this.numberOfBooks *= 2;
- }</p>
-<p> double();
-}
-}</p>
+<li><p>Inner functions cannot see the context of parent methods</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> library <span class="token operator">=</span> <span class="token punctuation">{</span>
+ numberOfBooks<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+ addBooks<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>books<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>numberOfBooks <span class="token operator">+</span><span class="token operator">=</span> books<span class="token punctuation">;</span>
+
+   <span class="token keyword">function</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token keyword">this</span><span class="token punctuation">.</span>numberOfBooks <span class="token operator">*</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token function">double</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+library<span class="token punctuation">.</span><span class="token function">addBooks</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">// 5</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>library<span class="token punctuation">.</span>numberOfBooks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 </li>
 </ol>
-<p>library.addBooks(5)// 5
-console.log(library.numberOfBooks);</p>
-<pre class="language-"><code>This is because `double` is a function and it get&apos;s passed the `global` object as the value of this
+<p>This is because <code>double</code> is a function and it gets passed the <code>global</code> object as the value of this</p>
+<ol>
+<li><p>When a method is called a function we lose our original scope because <code>this</code> becomes <code>window</code> rather than the parent object.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> library <span class="token operator">=</span> <span class="token punctuation">{</span>
+ numberOfBooks<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+ addBooks<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>books<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>numberOfBooks <span class="token operator">+</span><span class="token operator">=</span> books<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-2. When a method is called a function we lose our original scope because `this` becomes `window` rather than the parent object.
-```js
-var library = {
-  numberOfBooks: 0,
-  addBooks: function(books){
-    this.numberOfBooks += books;
-  }
-}
-
-var detached = library.addBooks;
-detached(7);
-console.log(library.numberOfBooks) // 0
-</code></pre><p>Also, your global object has now acquired a <code>numberOfBooks</code> property which is not ideal :(</p>
+<span class="token keyword">var</span> detached <span class="token operator">=</span> library<span class="token punctuation">.</span>addBooks<span class="token punctuation">;</span>
+<span class="token function">detached</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>library<span class="token punctuation">.</span>numberOfBooks<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 0</span>
+</code></pre>
+</li>
+</ol>
+<p>Also, your global object has now acquired a <code>numberOfBooks</code> property which is not ideal :(</p>
 <p>We can resolve this in two ways.</p>
 <ol>
-<li>Use a temporary variable to capture <code>this</code> which will remain visible to the inner function</li>
-</ol>
+<li><p>Use a temporary variable to capture <code>this</code> which will remain visible to the inner function</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> library <span class="token operator">=</span> <span class="token punctuation">{</span>
-  numberOfBooks<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-  addBooks<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>books<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">var</span> that <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>numberOfBooks <span class="token operator">+</span><span class="token operator">=</span> books<span class="token punctuation">;</span>
+ numberOfBooks<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+ addBooks<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>books<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">var</span> that <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>numberOfBooks <span class="token operator">+</span><span class="token operator">=</span> books<span class="token punctuation">;</span>
 
-    <span class="token keyword">function</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      that<span class="token punctuation">.</span>numberOfBooks <span class="token operator">+</span><span class="token operator">=</span> books<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+   <span class="token keyword">function</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     that<span class="token punctuation">.</span>numberOfBooks <span class="token operator">+</span><span class="token operator">=</span> books<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
 
-    <span class="token function">double</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+   <span class="token function">double</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
 library<span class="token punctuation">.</span><span class="token function">addBooks</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 10</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>library<span class="token punctuation">.</span>numberOfBooks<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<ol>
-<li><code>bind</code> the value of <code>this</code> so it is retained. <code>bind</code> is a method of <code>function</code> which returns a function that has <code>this</code> set to the value passed in as a param.</li>
-</ol>
+</li>
+<li><p><code>bind</code> the value of <code>this</code> so it is retained. <code>bind</code> is a method of <code>function</code> which returns a function that has <code>this</code> set to the value passed in as a param.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> library <span class="token operator">=</span> <span class="token punctuation">{</span>
-  numberOfBooks<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-  addBooks<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>books<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>numberOfBooks <span class="token operator">+</span><span class="token operator">=</span> books<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+ numberOfBooks<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+ addBooks<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>books<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>numberOfBooks <span class="token operator">+</span><span class="token operator">=</span> books<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
 <span class="token keyword">var</span> detached <span class="token operator">=</span> library<span class="token punctuation">.</span>addBooks<span class="token punctuation">;</span>
@@ -730,18 +733,20 @@ detached <span class="token operator">=</span> detached<span class="token punctu
 <span class="token function">detached</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>library<span class="token punctuation">.</span>numberOfBooks<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 7</span>
 </code></pre>
+</li>
+</ol>
 <h2 id="apply--call">apply / call</h2>
 <p>Another way to invoke functions is using <code>apply</code> or <code>call</code> methods. They both accept the context, the value that will become this as their first param. The difference is that <code>apply</code> takes the params that will be passed into the method as an <code>array</code>, whereas <code>call</code> takes them as individual params.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> book <span class="token operator">=</span> <span class="token punctuation">{</span>
-  author<span class="token punctuation">:</span> <span class="token string">&apos;JK Rowling&apos;</span>
-<span class="token punctuation">}</span>
+<pre class="language-"><code class="lang-js">  <span class="token keyword">var</span> book <span class="token operator">=</span> <span class="token punctuation">{</span>
+    author<span class="token punctuation">:</span> <span class="token string">&apos;JK Rowling&apos;</span>
+  <span class="token punctuation">}</span>
 
-<span class="token keyword">function</span> <span class="token function">addTitle</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>title <span class="token operator">=</span> title<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+  <span class="token keyword">function</span> <span class="token function">addTitle</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>title <span class="token operator">=</span> title<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-addTitle<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>book<span class="token punctuation">,</span> <span class="token string">&apos;Harry Potter&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>book<span class="token punctuation">.</span>title<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Harry Potter</span>
+  addTitle<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>book<span class="token punctuation">,</span> <span class="token string">&apos;Harry Potter&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>book<span class="token punctuation">.</span>title<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Harry Potter</span>
 </code></pre>
 <blockquote>
 <p><strong>Exercise</strong></p>
@@ -805,7 +810,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 3","level":"1.4.3","depth":2,"next":{"title":"JavaScript Core II","level":"1.5","depth":1,"ref":"","articles":[{"title":"Week 1","level":"1.5.1","depth":2,"path":"js-core-2/lesson1.md","ref":"js-core-2/lesson1.md","articles":[]},{"title":"Week 2","level":"1.5.2","depth":2,"path":"js-core-2/lesson2.md","ref":"js-core-2/lesson2.md","articles":[]},{"title":"Week 3","level":"1.5.3","depth":2,"path":"js-core-2/lesson3.md","ref":"js-core-2/lesson3.md","articles":[]}]},"previous":{"title":"Week 2","level":"1.4.2","depth":2,"path":"js-core/lesson2.md","ref":"js-core/lesson2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/lesson3.md","mtime":"2017-06-10T20:49:48.526Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-10T20:51:44.873Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 3","level":"1.4.3","depth":2,"next":{"title":"JavaScript Core II","level":"1.5","depth":1,"ref":"","articles":[{"title":"Week 1","level":"1.5.1","depth":2,"path":"js-core-2/lesson1.md","ref":"js-core-2/lesson1.md","articles":[]},{"title":"Week 2","level":"1.5.2","depth":2,"path":"js-core-2/lesson2.md","ref":"js-core-2/lesson2.md","articles":[]},{"title":"Week 3","level":"1.5.3","depth":2,"path":"js-core-2/lesson3.md","ref":"js-core-2/lesson3.md","articles":[]}]},"previous":{"title":"Week 2","level":"1.4.2","depth":2,"path":"js-core/lesson2.md","ref":"js-core/lesson2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/lesson3.md","mtime":"2017-06-10T21:17:37.109Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-10T21:19:34.275Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
