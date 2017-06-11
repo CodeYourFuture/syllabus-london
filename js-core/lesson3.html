@@ -542,47 +542,14 @@
                                 <h1 id="javascript-core-2">JavaScript Core 2</h1>
 <p><strong> What will we learn today?</strong></p>
 <ul>
-<li>Taking functions further</li>
-<li>What is <code>this</code>?</li>
 <li>Scope</li>
 <li>Closures</li>
+<li>ES6 functions</li>
+<li>What is <code>this</code>?</li>
 </ul>
 <hr>
 <h1 id="taking-functions-further">Taking functions further</h1>
 <p>You&apos;ve been working with functions for a few weeks now. Today we&apos;re going to dive deeper into working with functions, and cover some more advanced concepts.</p>
-<h2 id="fat-arrow-functions">&apos;Fat arrow&apos; functions</h2>
-<p>ES6 introduced a new way of structuring functions; the arrow function. Let&apos;s compare it against the ES5 syntax:</p>
-<pre class="language-"><code class="lang-js">
-  <span class="token comment" spellcheck="true">// ES5</span>
-  <span class="token keyword">var</span> multiply <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> x <span class="token operator">*</span> y<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-  <span class="token comment" spellcheck="true">// ES6</span>
-  multiply <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> x <span class="token operator">*</span> y <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">multiply</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>Arrow functions are quicker to write because they don&apos;t require variable assignment. Also, if you&apos;re only passing one argument into the arrow function, you don&apos;t need to use brackets around the parameter:</p>
-<pre class="language-"><code class="lang-js">  multiplyByTen <span class="token operator">=</span> num <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token number">10</span> <span class="token operator">*</span> num <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">multiplyByTen</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>If you&apos;re only going to <code>return</code> a single line in an arrow function, you don&apos;t even need the curly brackets (or the <code>return</code> keyword):</p>
-<pre class="language-"><code class="lang-js">  greet <span class="token operator">=</span> name <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token template-string"><span class="token string">`Hello, I am </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!`</span></span><span class="token punctuation">;</span>
-
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">greet</span><span class="token punctuation">(</span><span class="token string">&apos;Ada Lovelace&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>However, there are some important differences between arrow functions and ES5 functions aside from syntax. Try the following exercise:</p>
-<blockquote>
-<p><strong>Exercise</strong>: </p>
-<p>Use <a href="https://jsbin.com/" target="_blank">JSBin</a> for today&apos;s exercises.</p>
-<ol>
-<li>Write an arrow function that returns the string, <code>Hello, I am ${name}, and I am ${age} years old.</code></li>
-<li>Write an arrow function that take an array of integers, and returns the sum of the elements in the array. Google and use the built-in <code>reduce</code> array method for this.</li>
-<li>Rewrite the following code to use arrow functions where it makes sense to use them</li>
-</ol>
-</blockquote>
 <h1 id="scope">Scope</h1>
 <p>Before we get into what scope is, let&apos;s try a little exercise.</p>
 <p>Open up jsbin and write the following:</p>
@@ -676,6 +643,85 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>Create an outer function that accepts one parameter <code>greeting</code> (such as &apos;Hello&apos;, &apos;Hi&apos; or anything else you like) 
 and returns a closure which accepts one parameter <code>name</code> and retuns the greeting including name. So final output of 
 the closure should be something like &apos;Hello, German&apos;.</p>
+</blockquote>
+<h1 id="es6---fat-arrow-functions">ES6 - &apos;Fat arrow&apos; functions</h1>
+<p>ES6 introduced a new way of structuring functions; the arrow function. Let&apos;s compare it against the ES5 syntax:</p>
+<pre class="language-"><code class="lang-js">
+  <span class="token comment" spellcheck="true">// ES5</span>
+  <span class="token keyword">var</span> multiply <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x <span class="token operator">*</span> y<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// ES6</span>
+  multiply <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> x <span class="token operator">*</span> y <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">multiply</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Arrow functions are quicker to write because they don&apos;t require variable assignment. Also, if you&apos;re only passing one argument into the arrow function, you don&apos;t need to use brackets around the parameter:</p>
+<pre class="language-"><code class="lang-js">  multiplyByTen <span class="token operator">=</span> num <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token number">10</span> <span class="token operator">*</span> num <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">multiplyByTen</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>If you&apos;re only going to <code>return</code> a single line in an arrow function, you don&apos;t even need the curly brackets (or the <code>return</code> keyword):</p>
+<pre class="language-"><code class="lang-js">  greet <span class="token operator">=</span> name <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token template-string"><span class="token string">`Hello, I am </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!`</span></span><span class="token punctuation">;</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">greet</span><span class="token punctuation">(</span><span class="token string">&apos;Ada Lovelace&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>However, there are some important differences between arrow functions and ES5 functions aside from syntax. Try the following exercise:</p>
+<pre class="language-"><code class="lang-js">  <span class="token keyword">const</span> ourClass <span class="token operator">=</span> <span class="token punctuation">{</span>
+    members<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Raymond&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Adis&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Flavia&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Nabil&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Kia&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    className<span class="token punctuation">:</span> <span class="token string">&apos;London Class 2&apos;</span><span class="token punctuation">,</span>
+    classSummary<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>members<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>member<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>member<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is in </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>className<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ourClass<span class="token punctuation">.</span><span class="token function">classSummary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The above code doesn&apos;t quite work. We&apos;ve got an object, the <code>ourClass</code> object, and within it, and array, a string and a method. But <code>this.className</code> is returning as <code>undefined</code> - the code isn&apos;t seeing what we&apos;re trying to point it to. </p>
+<p>Let&apos;s try with an arrow function:</p>
+<pre class="language-"><code class="lang-js">  <span class="token keyword">const</span> ourClass <span class="token operator">=</span> <span class="token punctuation">{</span>
+    members<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Raymond&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Adis&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Flavia&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Nabil&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Kia&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    className<span class="token punctuation">:</span> <span class="token string">&apos;London Class 2&apos;</span><span class="token punctuation">,</span>
+    classSummary<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>members<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>member<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>member<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is in </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>className<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ourClass<span class="token punctuation">.</span><span class="token function">classSummary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>With that one little change, the function is now working. Why? Well, arrow functions differ to ES5 functions in that they make use of something called &apos;lexical <code>this</code>&apos;. JavaScript is a &apos;lexical&apos; programming language; this means that how the code behaves depends on the order or placement of each piece of code. When we use an arrow function, the value of <code>this</code> is bound to the surrounding context. So unlike when we used the anonymous function in the ES5 version(<code>this.members.map(function(member) {</code>), the arrow function lets the JavaScript engine know where <code>this</code> is pointing to.</p>
+<p>If this is confusing, don&apos;t worry; we&apos;re going to move onto <code>this</code> in greater depth shortly. But first, let&apos;s do a few exercises with arrow functions.</p>
+<blockquote>
+<p><strong>Exercise</strong>: </p>
+<p>Use <a href="https://jsbin.com/" target="_blank">JSBin</a> for today&apos;s exercises.</p>
+<ol>
+<li>Write an arrow function that returns the string, <code>Hello, I am ${name}, and I am ${age} years old.</code></li>
+<li>Write an arrow function that takes an array of integers, and returns the sum of the elements in the array. Google and use the built-in <code>reduce</code> array method for this.</li>
+<li><p>The syntax of this function is wonky. Can you fix it to use the shortest arrow function possible?</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> eye <span class="token operator">=</span> <span class="token string">&quot;eye&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> fire <span class="token operator">=</span>
+<span class="token punctuation">(</span>
+
+<span class="token punctuation">)</span> <span class="token operator">=</span>
+<span class="token operator">&gt;</span>
+<span class="token punctuation">{</span>
+ <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`bulls-`</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>Refactor the following ES5 function to use an arrow function:<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> fibonacci <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ol>
 </blockquote>
 <h1 id="context">Context</h1>
 <p>When a function is invoked, it receives the parameters that were passed in as well two other objects</p>
@@ -797,7 +843,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </code></pre>
 <blockquote>
 <p><strong>Exercise</strong></p>
-<p>Above we solved we solved the issue 1. with internal method <code>double</code> using tempory variable <code>that</code> and we solved issue 2. with detached context using <code>bind</code>. Please solve issue 1. using <code>bind</code> instead and issue 2. using temporary variable <code>that</code>.</p>
+<p>Above we solved the issue 1. with internal method <code>double</code> using tempory variable <code>that</code> and we solved issue 2. with detached context using <code>bind</code>. Please solve issue 1. using <code>bind</code> instead and issue 2. using temporary variable <code>that</code>.</p>
 <p>Below we turn the <code>log</code> method of <code>console</code> into a standalone function and remove the <code>log</code> method from <code>console</code>. However, we still have both <code>console</code> and <code>log</code>, they just separate entities now. Inside <code>fixMe</code> below use <code>apply</code> or <code>call</code> to invoke <code>log</code> using the context of <code>console</code> and write &apos;hello&apos;.</p>
 <pre class="language-"><code class="lang-js">  <span class="token keyword">function</span> <span class="token function">fixMe</span><span class="token punctuation">(</span>console<span class="token punctuation">,</span> log<span class="token punctuation">)</span><span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;hello&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Throws error</span>
@@ -811,8 +857,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </blockquote>
 <h1 id="resources">Resources</h1>
 <ol>
-<li><a href="https://google.com" target="_blank">Resource 1 to learn more about Topic 1</a></li>
-<li><a href="https://google.com" target="_blank">Resource 2 for Topic 2</a></li>
+<li><a href="https://codetower.github.io/es6-features/#Arrow Functions" target="_blank">ES6 - Arrow Functions</a></li>
+<li><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md" target="_blank">You Don&apos;t Know JavaScript - Scope &amp; Closures</a></li>
 <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Closures" target="_blank">MDN - Closures</a></li>
 <li><a href="http://ryanmorr.com/understanding-scope-and-context-in-javascript/" target="_blank">Understanding scope and context</a></li>
 <li>JavaScript: The Good Parts by Douglas Crockford, chapter 4 - Functions</li>
@@ -871,7 +917,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 3","level":"1.4.3","depth":2,"next":{"title":"JavaScript Core II","level":"1.5","depth":1,"ref":"","articles":[{"title":"Week 1","level":"1.5.1","depth":2,"path":"js-core-2/lesson1.md","ref":"js-core-2/lesson1.md","articles":[]},{"title":"Week 2","level":"1.5.2","depth":2,"path":"js-core-2/lesson2.md","ref":"js-core-2/lesson2.md","articles":[]},{"title":"Week 3","level":"1.5.3","depth":2,"path":"js-core-2/lesson3.md","ref":"js-core-2/lesson3.md","articles":[]}]},"previous":{"title":"Week 2","level":"1.4.2","depth":2,"path":"js-core/lesson2.md","ref":"js-core/lesson2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/lesson3.md","mtime":"2017-06-11T08:39:34.946Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-11T08:41:37.907Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 3","level":"1.4.3","depth":2,"next":{"title":"JavaScript Core II","level":"1.5","depth":1,"ref":"","articles":[{"title":"Week 1","level":"1.5.1","depth":2,"path":"js-core-2/lesson1.md","ref":"js-core-2/lesson1.md","articles":[]},{"title":"Week 2","level":"1.5.2","depth":2,"path":"js-core-2/lesson2.md","ref":"js-core-2/lesson2.md","articles":[]},{"title":"Week 3","level":"1.5.3","depth":2,"path":"js-core-2/lesson3.md","ref":"js-core-2/lesson3.md","articles":[]}]},"previous":{"title":"Week 2","level":"1.4.2","depth":2,"path":"js-core/lesson2.md","ref":"js-core/lesson2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/lesson3.md","mtime":"2017-06-11T10:00:26.212Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-11T10:01:31.765Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
