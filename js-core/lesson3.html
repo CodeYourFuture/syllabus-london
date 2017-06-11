@@ -596,8 +596,23 @@
 <p>What we&apos;re seeing here is the effect of <strong>scope</strong>. Take a look at the following diagram:</p>
 <p><img src="assets/scope_bubbles.png" alt="Scope"></p>
 <p>We can see from this picture that each function is like a &apos;bubble&apos;, and it has access to the variable assigned within it, and the variables assigned &apos;above&apos; it, in it&apos;s surrounding function. But note that the &apos;global&apos; scope doesn&apos;t have access to <code>var o</code>, and <code>function outer()</code> doesn&apos;t have access to <code>var i</code>. So each function can access the variables in its <strong>parent scope</strong>, and in it&apos;s <strong>own, immediate scope</strong>, but it cannot see the variables in its <strong>child scope</strong>.</p>
+<p>If a variable is declared outside of a function, in the &apos;window&apos;, it has <em>&apos;global&apos; scope</em>. The scope within a function is <em>&apos;local&apos; scope</em>:</p>
+<pre class="language-"><code class="lang-js">  <span class="token keyword">var</span> test <span class="token operator">=</span> <span class="token string">&quot;I&apos;m global&quot;</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">function</span> <span class="token function">testScope</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> test <span class="token operator">=</span> <span class="token string">&quot;I&apos;m local&quot;</span><span class="token punctuation">;</span>
+
+    console<span class="token punctuation">.</span>log <span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">;</span>     
+  <span class="token punctuation">}</span>
+
+  <span class="token function">testScope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">// output: I&apos;m local</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// output: I&apos;m global</span>
+</code></pre>
 <blockquote>
-<p><strong>Exercise</strong>: Always have exercises</p>
+<p><strong>Exercise</strong>:
+Work through this quiz: <a href="http://madebyknight.com/javascript-scope/" target="_blank">Scope quiz</a>
+Don&apos;t worry if you don&apos;t get them all right just yet! Take your time to read the explanations.</p>
 </blockquote>
 <h1 id="closure">Closure</h1>
 <p>A closure is an inner function that retains access to its parent function&apos;s scope.</p>
@@ -861,15 +876,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md" target="_blank">You Don&apos;t Know JavaScript - Scope &amp; Closures</a></li>
 <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Closures" target="_blank">MDN - Closures</a></li>
 <li><a href="http://ryanmorr.com/understanding-scope-and-context-in-javascript/" target="_blank">Understanding scope and context</a></li>
-<li>JavaScript: The Good Parts by Douglas Crockford, chapter 4 - Functions</li>
+<li><a href="http://bdcampbell.net/javascript/book/javascript_the_good_parts.pdf" target="_blank">JavaScript: The Good Parts by Douglas Crockford, chapter 4 - Functions</a></li>
 </ol>
 <h1 id="homework">Homework</h1>
 <ol>
-<li><p>First part of Homework - Easy</p>
+<li><p>Watch all of the videos in Wes Bos&apos;s ES6 course.</p>
 </li>
-<li><p>Second part of Homework - Intermediate/Hard</p>
-</li>
-<li><p><strong>[Bonus/Optional]</strong> Third part/optional - Hardest</p>
+<li><p>If you finish that you can move on to <a href="https://javascript30.com/" target="_blank">JavaScript30</a>, another course by WesBos. In this course you&apos;ll build something in JavaScript every day, which means lots of cool projects! </p>
 </li>
 <li><p><strong>Research:</strong></p>
 </li>
@@ -917,7 +930,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 3","level":"1.4.3","depth":2,"next":{"title":"JavaScript Core II","level":"1.5","depth":1,"ref":"","articles":[{"title":"Week 1","level":"1.5.1","depth":2,"path":"js-core-2/lesson1.md","ref":"js-core-2/lesson1.md","articles":[]},{"title":"Week 2","level":"1.5.2","depth":2,"path":"js-core-2/lesson2.md","ref":"js-core-2/lesson2.md","articles":[]},{"title":"Week 3","level":"1.5.3","depth":2,"path":"js-core-2/lesson3.md","ref":"js-core-2/lesson3.md","articles":[]}]},"previous":{"title":"Week 2","level":"1.4.2","depth":2,"path":"js-core/lesson2.md","ref":"js-core/lesson2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/lesson3.md","mtime":"2017-06-11T10:00:26.212Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-11T10:01:31.765Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 3","level":"1.4.3","depth":2,"next":{"title":"JavaScript Core II","level":"1.5","depth":1,"ref":"","articles":[{"title":"Week 1","level":"1.5.1","depth":2,"path":"js-core-2/lesson1.md","ref":"js-core-2/lesson1.md","articles":[]},{"title":"Week 2","level":"1.5.2","depth":2,"path":"js-core-2/lesson2.md","ref":"js-core-2/lesson2.md","articles":[]},{"title":"Week 3","level":"1.5.3","depth":2,"path":"js-core-2/lesson3.md","ref":"js-core-2/lesson3.md","articles":[]}]},"previous":{"title":"Week 2","level":"1.4.2","depth":2,"path":"js-core/lesson2.md","ref":"js-core/lesson2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/lesson3.md","mtime":"2017-06-11T10:28:23.348Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-11T10:30:21.237Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
