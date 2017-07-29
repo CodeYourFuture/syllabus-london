@@ -593,9 +593,20 @@
 <h1 id="what-is-a-server">What is a server?</h1>
 <p>Servers are computer programs that receive requests from other programs, the <em>clients</em> and send back a response e.g share data, information or hardware and software resources.</p>
 <h3 id="and-what-is-a-server-in-plain-english">...and what is a server in plain English?</h3>
-<p>A server is a computer program. Its job is to send and receive data.</p>
+<p>A server is a computer program. Its job is to send and receive data.
+<img src="images/server_simple.png" alt="simple server">
+We can use a server for some complex operations</p>
+<p><img src="images/server_simple_sum.png" alt="server with operation"></p>
+<p>Or have a polite server that replies with some text</p>
+<p><img src="images/server_simple_hello.png" alt="server returns text"></p>
 <p>Let&apos;s take a website for example.  A website is just a collection of HTML and CSS files, images, maybe some javascript files. When you type a website address in your browser&apos;s address bar, the browser (client) sends a <strong>request</strong> to the server that lives at that address. The browser asks the server to give it the files it needs to display the website properly.</p>
-<p><img src="https://files.gitter.im/heron2014/FiiK/server.png" alt="Server flow"></p>
+<p><img src="images/server_http.png" alt="Server flow"></p>
+<h1 id="what-is-http">What is HTTP?</h1>
+<blockquote>
+<p>It is a protocol that browser and the server uses to talk to each other  </p>
+</blockquote>
+<p><img src="images/http_diagram.png" alt="HTTP"></p>
+<p>Read more on Mozilla&apos;s <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" target="_blank">An overview of HTTP</a></p>
 <h1 id="what-is-nodejs">What is Node.js?</h1>
 <blockquote>
 <p><a href="https://nodejs.org/en/" target="_blank">Node.js&#xAE;</a> is a <strong>JavaScript runtime</strong> built on Chrome&apos;s <strong>V8 JavaScript engine</strong>. Node.js uses an <strong>event-driven</strong>, <strong>non-blocking</strong> I/O model that makes it lightweight and efficient.</p>
@@ -609,59 +620,22 @@
 <li>JavaScript everywhere (used to be PHP, Python, JavaScript, MySQL, Apache, now JavaScript full stack)</li>
 </ul>
 <h1 id="a-simple-nodejs-server">A simple Node.js server</h1>
+<p>Fork the repository <a href="https://github.com/CodeYourFuture/node-workshop" target="_blank">https://github.com/CodeYourFuture/node-workshop</a></p>
+<p><code>$ git clone https://github.com/YOUR-USERNAME/node-workshop</code></p>
 <p><strong>Simple server</strong></p>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;http&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     
-
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">&quot;Hello World!&quot;</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Node.js web server at port 5000 is running..&apos;</span><span class="token punctuation">)</span>
-</code></pre>
+<p>Take a look to the code and start the simple server</p>
+<p><code>$ node node-workshop/scripts/simple_server.js</code></p>
+<p>And open <a href="http://localhost:5000" target="_blank">http://localhost:5000</a></p>
 <p><strong>Server with two routes</strong>    </p>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;http&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     
-
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">&apos;/&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//check the URL of the current request</span>
-
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;New request to main page at &quot;</span> <span class="token operator">+</span> <span class="token function">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-        <span class="token comment" spellcheck="true">// set response header</span>
-        res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string">&apos;Content-Type&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;text/html&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-
-        <span class="token comment" spellcheck="true">// set response content    </span>
-        res<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&apos;&lt;html&gt;&lt;body&gt;&lt;h1&gt;This is home Page.&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        res<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&apos;&lt;h2&gt;The time is: &apos;</span> <span class="token operator">+</span> <span class="token function">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&apos;&lt;/h2&gt;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">&quot;/student&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;New request to Student page at &quot;</span> <span class="token operator">+</span> <span class="token function">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-        res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string">&apos;Content-Type&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;text/html&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        res<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&apos;&lt;html&gt;&lt;body&gt;&lt;h1&gt;This is student Page.&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">&apos;&lt;html&gt;&lt;body&gt;&lt;h2&gt;Invalid Request at &apos;</span> <span class="token operator">+</span> <span class="token function">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&apos;&lt;/h2&gt;&lt;/body&gt;&lt;/html&gt;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Node.js web server at port 5000 is running..&apos;</span><span class="token punctuation">)</span>
-</code></pre>
+<blockquote>
+<p>Stop the previous server if is still running with Ctrl + C in the terminal</p>
+</blockquote>
+<p>Take a look to the code and start the server with routes</p>
+<p><code>$ node node-workshop/scripts/server_with_routes.js</code></p>
+<p>Open <a href="http://localhost:5000" target="_blank">http://localhost:5000</a></p>
+<p>And <a href="http://localhost:5000/student" target="_blank">http://localhost:5000/student</a></p>
 <h3 id="exercise">Exercise</h3>
 <p>Can you add another route <code>/mentor</code>?  </p>
-<h1 id="what-is-http">What is HTTP?</h1>
-<blockquote>
-<p>It is a protocol that browser and the server uses to talk to each other  </p>
-</blockquote>
-<p><img src="https://github.com/Michael-Antczak/syllabus/blob/scotland/node-db/http_diagram.png" alt="HTTP">  </p>
-<p>Read more on Mozilla&apos;s <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" target="_blank">An overview of HTTP</a></p>
 <h1 id="nodejs-and-express">Node.js and Express</h1>
 <p><a href="http://expressjs.com/" target="_blank">Express</a> is one of the most widely-used frameworks for Node.js. It simplifies base features of Node.js, making it easier and faster to build your application&apos;s backend. Learning Express gives you a great foundation for becoming a Node.js developer.</p>
 <p>In the next steps, we will building a <strong>CMS (Content Management System)</strong> - a system to write, publish and save blog posts. Even though we could use core libraries like <code>http</code> to build this system, this becomes very complicated and non-maintainable very quickly. That is why we use frameworks like <code>Express</code>.</p>
@@ -819,7 +793,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 <h3 id="what-is-an-endpoint">What is an endpoint?</h3>
 <p>An endpoint is the part of the URL which comes after <code>/</code>. For example: <code>/chocolate</code> is the &quot;chocolate&quot; endpoint. It&apos;s the URL to which you send a request.</p>
 <h3 id="what-is-url">What is URL?</h3>
-<p><img src="https://github.com/Michael-Antczak/syllabus/blob/scotland/node-db/http1-url-structure.png" alt="alt text" title="URL"> </p>
+<p><img src="images/http1-url-structure.png" alt="alt text" title="URL"> </p>
 <h2 id="1-create-your-own-endpoints-and-send-different-responses">1. Create your own endpoints and send different responses</h2>
 <p>We&apos;re going to try sending different responses at different endpoints. Remember the <code>app.get()</code> method? To set up routing in your server, we just need to repeat this method with different endpoints.</p>
 <p>For example:</p>
@@ -1104,7 +1078,7 @@ Deploying Node Apps - <a href="https://devcenter.heroku.com/articles/getting-sta
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 1","level":"1.6.1","depth":2,"next":{"title":"Week 2","level":"1.6.2","depth":2,"path":"node-db/lesson2.md","ref":"node-db/lesson2.md","articles":[]},"previous":{"title":"Node and DB","level":"1.6","depth":1,"ref":"","articles":[{"title":"Week 1","level":"1.6.1","depth":2,"path":"node-db/lesson1.md","ref":"node-db/lesson1.md","articles":[]},{"title":"Week 2","level":"1.6.2","depth":2,"path":"node-db/lesson2.md","ref":"node-db/lesson2.md","articles":[]},{"title":"Week 3","level":"1.6.3","depth":2,"path":"node-db/lesson3.md","ref":"node-db/lesson3.md","articles":[]},{"title":"Week 4","level":"1.6.4","depth":2,"path":"node-db/lesson4.md","ref":"node-db/lesson4.md","articles":[]},{"title":"Week 5","level":"1.6.5","depth":2,"path":"node-db/lesson5.md","ref":"node-db/lesson5.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node-db/lesson1.md","mtime":"2017-07-28T19:50:52.884Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-28T19:51:59.639Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 1","level":"1.6.1","depth":2,"next":{"title":"Week 2","level":"1.6.2","depth":2,"path":"node-db/lesson2.md","ref":"node-db/lesson2.md","articles":[]},"previous":{"title":"Node and DB","level":"1.6","depth":1,"ref":"","articles":[{"title":"Week 1","level":"1.6.1","depth":2,"path":"node-db/lesson1.md","ref":"node-db/lesson1.md","articles":[]},{"title":"Week 2","level":"1.6.2","depth":2,"path":"node-db/lesson2.md","ref":"node-db/lesson2.md","articles":[]},{"title":"Week 3","level":"1.6.3","depth":2,"path":"node-db/lesson3.md","ref":"node-db/lesson3.md","articles":[]},{"title":"Week 4","level":"1.6.4","depth":2,"path":"node-db/lesson4.md","ref":"node-db/lesson4.md","articles":[]},{"title":"Week 5","level":"1.6.5","depth":2,"path":"node-db/lesson5.md","ref":"node-db/lesson5.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node-db/lesson1.md","mtime":"2017-07-29T20:07:05.673Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-29T20:08:24.308Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
