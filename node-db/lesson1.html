@@ -607,9 +607,11 @@ We can use a server for some complex operations</p>
 </blockquote>
 <p><img src="images/http_diagram.png" alt="HTTP"></p>
 <p>Read more on Mozilla&apos;s <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" target="_blank">An overview of HTTP</a></p>
+<h1 id="what-is-url">What is URL?</h1>
+<p><img src="images/http1-url-structure.png" alt="alt text" title="URL"> </p>
 <h1 id="what-is-nodejs">What is Node.js?</h1>
 <blockquote>
-<p><a href="https://nodejs.org/en/" target="_blank">Node.js&#xAE;</a> is a <strong>JavaScript runtime</strong> built on Chrome&apos;s <strong>V8 JavaScript engine</strong>. Node.js uses an <strong>event-driven</strong>, <strong>non-blocking</strong> I/O model that makes it lightweight and efficient.</p>
+<p><a href="https://nodejs.org/en/" target="_blank">Node.js</a> is a <strong>JavaScript runtime</strong> built on Chrome&apos;s <strong>V8 JavaScript engine</strong>. Node.js uses an <strong>event-driven</strong>, <strong>non-blocking</strong> I/O model that makes it lightweight and efficient.</p>
 </blockquote>
 <h1 id="what-is-it-used-for">What is it used for?</h1>
 <ul>
@@ -628,7 +630,7 @@ We can use a server for some complex operations</p>
 <p>And open <a href="http://localhost:5000" target="_blank">http://localhost:5000</a></p>
 <p><strong>Server with two routes</strong>    </p>
 <blockquote>
-<p>Stop the previous server if is still running with Ctrl + C in the terminal</p>
+<p>Stop the previous server if is still running with <code>ctrl + c</code> in the terminal</p>
 </blockquote>
 <p>Take a look to the code and start the server with routes</p>
 <p><code>$ node node-workshop/scripts/server_with_routes.js</code></p>
@@ -792,8 +794,6 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 <p>However by making use of endpoints, we can make the server send different responses for different requests. This concept is called <strong>routing</strong>.</p>
 <h3 id="what-is-an-endpoint">What is an endpoint?</h3>
 <p>An endpoint is the part of the URL which comes after <code>/</code>. For example: <code>/chocolate</code> is the &quot;chocolate&quot; endpoint. It&apos;s the URL to which you send a request.</p>
-<h3 id="what-is-url">What is URL?</h3>
-<p><img src="images/http1-url-structure.png" alt="alt text" title="URL"> </p>
 <h2 id="1-create-your-own-endpoints-and-send-different-responses">1. Create your own endpoints and send different responses</h2>
 <p>We&apos;re going to try sending different responses at different endpoints. Remember the <code>app.get()</code> method? To set up routing in your server, we just need to repeat this method with different endpoints.</p>
 <p>For example:</p>
@@ -1078,7 +1078,7 @@ Deploying Node Apps - <a href="https://devcenter.heroku.com/articles/getting-sta
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 1","level":"1.6.1","depth":2,"next":{"title":"Week 2","level":"1.6.2","depth":2,"path":"node-db/lesson2.md","ref":"node-db/lesson2.md","articles":[]},"previous":{"title":"Node and DB","level":"1.6","depth":1,"ref":"","articles":[{"title":"Week 1","level":"1.6.1","depth":2,"path":"node-db/lesson1.md","ref":"node-db/lesson1.md","articles":[]},{"title":"Week 2","level":"1.6.2","depth":2,"path":"node-db/lesson2.md","ref":"node-db/lesson2.md","articles":[]},{"title":"Week 3","level":"1.6.3","depth":2,"path":"node-db/lesson3.md","ref":"node-db/lesson3.md","articles":[]},{"title":"Week 4","level":"1.6.4","depth":2,"path":"node-db/lesson4.md","ref":"node-db/lesson4.md","articles":[]},{"title":"Week 5","level":"1.6.5","depth":2,"path":"node-db/lesson5.md","ref":"node-db/lesson5.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node-db/lesson1.md","mtime":"2017-07-29T20:07:05.673Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-29T20:08:24.308Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 1","level":"1.6.1","depth":2,"next":{"title":"Week 2","level":"1.6.2","depth":2,"path":"node-db/lesson2.md","ref":"node-db/lesson2.md","articles":[]},"previous":{"title":"Node and DB","level":"1.6","depth":1,"ref":"","articles":[{"title":"Week 1","level":"1.6.1","depth":2,"path":"node-db/lesson1.md","ref":"node-db/lesson1.md","articles":[]},{"title":"Week 2","level":"1.6.2","depth":2,"path":"node-db/lesson2.md","ref":"node-db/lesson2.md","articles":[]},{"title":"Week 3","level":"1.6.3","depth":2,"path":"node-db/lesson3.md","ref":"node-db/lesson3.md","articles":[]},{"title":"Week 4","level":"1.6.4","depth":2,"path":"node-db/lesson4.md","ref":"node-db/lesson4.md","articles":[]},{"title":"Week 5","level":"1.6.5","depth":2,"path":"node-db/lesson5.md","ref":"node-db/lesson5.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node-db/lesson1.md","mtime":"2017-07-30T07:30:17.829Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-30T07:31:34.190Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
