@@ -1,0 +1,1283 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Week 16 - Basic SQL · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../week-17/lesson.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Course</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Before you start
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../others/lesson0.html">
+            
+                <a href="../../others/lesson0.html">
+            
+                    
+                    Week 0 - Introduction and basic setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../house-rules.html">
+            
+                <a href="../../house-rules.html">
+            
+                    
+                    House Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../html-css/">
+            
+                <a href="../../html-css/">
+            
+                    
+                    HTML/CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../html-css/week-01/lesson.html">
+            
+                <a href="../../html-css/week-01/lesson.html">
+            
+                    
+                    Week 1 - Semantic HTML and CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../html-css/week-02/lesson.html">
+            
+                <a href="../../html-css/week-02/lesson.html">
+            
+                    
+                    Week 2 - Responsive Web and layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../html-css/week-03/lesson.html">
+            
+                <a href="../../html-css/week-03/lesson.html">
+            
+                    
+                    Week 3 - Design frameworks, Naming patterns and Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../js-core/">
+            
+                <a href="../../js-core/">
+            
+                    
+                    JavaScript I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../js-core/week-04/lesson.html">
+            
+                <a href="../../js-core/week-04/lesson.html">
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../js-core/week-05/lesson.html">
+            
+                <a href="../../js-core/week-05/lesson.html">
+            
+                    
+                    Week 5 - Conditionals and Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../js-core/week-06/lesson.html">
+            
+                <a href="../../js-core/week-06/lesson.html">
+            
+                    
+                    Week 6 - More Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../js-core-2/">
+            
+                <a href="../../js-core-2/">
+            
+                    
+                    JavaScript II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../js-core-2/week-07/lesson.html">
+            
+                <a href="../../js-core-2/week-07/lesson.html">
+            
+                    
+                    Week 7 - Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../js-core-2/week-08/lesson.html">
+            
+                <a href="../../js-core-2/week-08/lesson.html">
+            
+                    
+                    Week 8 - JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../js-core-2/week-09/lesson.html">
+            
+                <a href="../../js-core-2/week-09/lesson.html">
+            
+                    
+                    Week 9 - More JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../js-core-3/">
+            
+                <a href="../../js-core-3/">
+            
+                    
+                    JavaScript III
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../js-core-3/week-10/lesson.html">
+            
+                <a href="../../js-core-3/week-10/lesson.html">
+            
+                    
+                    Week 10 - Unit Tests and TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../js-core-3/week-11/lesson.html">
+            
+                <a href="../../js-core-3/week-11/lesson.html">
+            
+                    
+                    Week 11 - More TDD, ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../js-core-3/week-12/lesson.html">
+            
+                <a href="../../js-core-3/week-12/lesson.html">
+            
+                    
+                    Week 12 - Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node/DB I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../week-13/lesson.html">
+            
+                <a href="../week-13/lesson.html">
+            
+                    
+                    Week 13 - Node and Express 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../week-14/lesson.html">
+            
+                <a href="../week-14/lesson.html">
+            
+                    
+                    Week 14 - Middleware, Templating and APIs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../week-15/lesson.html">
+            
+                <a href="../week-15/lesson.html">
+            
+                    
+                    Week 15 - Advanced Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node/DB II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.8.1" data-path="lesson.html">
+            
+                <a href="lesson.html">
+            
+                    
+                    Week 16 - Basic SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../week-17/lesson.html">
+            
+                <a href="../week-17/lesson.html">
+            
+                    
+                    Week 17 - SQL with Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../week-18/lesson.html">
+            
+                <a href="../week-18/lesson.html">
+            
+                    
+                    Week 18 - Data Integrity & Analytics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../react/">
+            
+                <a href="../../react/">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../react/week-19/lesson.html">
+            
+                <a href="../../react/week-19/lesson.html">
+            
+                    
+                    Week 19 - React 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../react/week-20/lesson.html">
+            
+                <a href="../../react/week-20/lesson.html">
+            
+                    
+                    Week 20 - Reacting to Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../react/week-21/lesson.html">
+            
+                <a href="../../react/week-21/lesson.html">
+            
+                    
+                    Week 21 - Fetching Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Useful information</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../useful-links.html">
+            
+                <a href="../../useful-links.html">
+            
+                    
+                    Useful links
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../PRACTICES.html">
+            
+                <a href="../../PRACTICES.html">
+            
+                    
+                    Coding Standards and Best Practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../others/making-a-pull-request.html">
+            
+                <a href="../../others/making-a-pull-request.html">
+            
+                    
+                    Making a Pull Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../others/cors.html">
+            
+                <a href="../../others/cors.html">
+            
+                    
+                    CORS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../others/useful-tools.html">
+            
+                <a href="../../others/useful-tools.html">
+            
+                    
+                    Useful Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Workshops and other resources</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../others/coding-101.html">
+            
+                <a href="../../others/coding-101.html">
+            
+                    
+                    Coding 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../html-css/compile-scss-instructions.html">
+            
+                <a href="../../html-css/compile-scss-instructions.html">
+            
+                    
+                    Compiling SCSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../week-13/workshop.html">
+            
+                <a href="../week-13/workshop.html">
+            
+                    
+                    Express Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../week-15/workshop.html">
+            
+                <a href="../week-15/workshop.html">
+            
+                    
+                    Hotel Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../others/mongodb-101.html">
+            
+                <a href="../../others/mongodb-101.html">
+            
+                    
+                    MongoDB 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../others/aws-workshop-2.html">
+            
+                <a href="../../others/aws-workshop-2.html">
+            
+                    
+                    AWS - DynamoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" >
+            
+                <a target="_blank" href="https://github.com/Thomas-Stewart/syllabus/tree/master/java">
+            
+                    
+                    Java module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">For Mentors</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../CONTRIBUTING.html">
+            
+                <a href="../../CONTRIBUTING.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../others/lesson-template.html">
+            
+                <a href="../../others/lesson-template.html">
+            
+                    
+                    Lesson Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../html-css/mentor-guide.html">
+            
+                <a href="../../html-css/mentor-guide.html">
+            
+                    
+                    HTML/CSS Mentors guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Week 16 - Basic SQL</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="week-16-lesson-1--basic-sql">WEEK 16 LESSON 1 : BASIC SQL</h1>
+<p><strong>What we will learn today?</strong></p>
+<ul>
+<li>Why we need databases</li>
+<li>Installing SQLite</li>
+<li>Creating a database with SQL and storing data in it.</li>
+<li>Inserting data into a database using SQL.</li>
+<li>Retrieving data from a database using SQL.</li>
+<li>Escaping</li>
+</ul>
+<h2 id="lesson-1a-why-we-need-databases">LESSON 1A: Why we need databases</h2>
+<p>So, in your previous lessons you have been taught how to store and retrieve data
+using files. This is fine and works well for some data - particularly simple data -
+but it can quickly cause issues when you have a <em>lot</em> of data and <em>complicated</em> data.</p>
+<p>TEACHER STORY:</p>
+<p>Back in 2013 I used to work for a company that ran hotel wifi for big hotel chain.
+We did at least 4 big brands that you&apos;ve probably heard of and a whole bunch of others.
+This company had been going for a long time and used to make $8 when, back in the dark ages, you paid $12 for a day of wifi.</p>
+<p>The code for this system had the notion of &quot;invoices&quot;, &quot;wifi enrollments&quot; and &quot;guests&quot; and
+stored data on each of them as well as the links between them. We would store data about
+these things and we would run reports on each and send them to the hotels who would use them to bill guests.</p>
+<p>All normal so far. Except we would sometimes send reports with invoices which didn&apos;t have enrollments, and enrollments which didn&apos;t have guests.</p>
+<p>Sometimes the amounts on those invoices would rack up to tens even hundreds of thousands of dollars of invoices <em>without</em> customers, and the hotel managers were rarely happy:</p>
+<!-- ![Hotel manager](grumpy-cat.jpg "Hotel manager's face") -->
+<p align="center">
+  <img src="grumpy-cat.jpg" display="block" width="75%">
+</p>
+
+<p>This was a very, very serious problem. We were &gt;.&lt; this close to losing a big hotel chain as a customer - and a large part of it was because of this.</p>
+<p>This was a problem because our system was buggy, so we had what are generally called &quot;data integrity&quot; issues. You&apos;ve encountered bugs before on this course - data integrity issues bugs too - bugs with your data.</p>
+<p>The difference between a bug in your code and a bug in your data, caused by a bug in your code, is that bugs in your code can always be fixed. Bugs in your data - sometimes they can never be fixed.</p>
+<p>These lessons are about using SQL and storing and retrieving data in your code in such a way that your data is kept clean.</p>
+<h2 id="lesson-1b--what-is-the-point-of-an-sql-database">LESSON 1B : What is the point of an SQL database?</h2>
+<p>We&apos;re going to teach you a new programming language. It&apos;s called SQL. Pronounced &quot;S - Q - L&quot; or sequel, either is fine.</p>
+<p>Databases are simply programs that take data and stuff it in files just like you were doing in the previous lesson.</p>
+<p>However, the way we use a database is different to the way we store things in files. In a file, you can put any random jumble of data in and get it out again. How you put it in and get it out is up to you. Your code needs to open the file, close the file, retrieve, store or modify and validate everything itself. Offloading some of that responsibility to another program means that your code can achieve all the same things but be simpler.</p>
+<p>You interact with almost all of them using the same programming language which is called &quot;SQL&quot;. It&apos;s been around for 31 years and is still completely dominant. Computing moves fast, but SQL doesn&apos;t change. This kind of lesson will probably still be taught in 50 years. Probably 4 out of 5 software jobs involve SQL In some way.</p>
+<p>SQL is a different, and usually simpler kind of programming language that you use <em>with</em> a database (sometimes called an RDBMS) to:</p>
+<ul>
+<li>Store data in a way such that its structure cannot be violated.</li>
+<li>Retrieve data (get me all the reservations under the name &quot;Trump&quot;) and answer questions about data (&quot;what was the sum total of all of the invoices in february?&quot;).</li>
+</ul>
+<p>An RDBMS (relational database management system) will do this by, for example:</p>
+<ul>
+<li>Data constraints (e.g. each reservation <em>must</em> have a customer)</li>
+<li>Data types (e.g. check in date <em>can only</em> be a date)</li>
+<li>Uniqueness of certain pieces of data (e.g. there is <em>only one</em> person with the driver&apos;s license ID 941413).</li>
+<li>Organizing how the data is retrieved and assembled (e.g. fetch me all reservations under customer &quot;Donald Trump&quot;).</li>
+<li>Executes on a different process/machine, meaning that the queries can be parallelized, and work can be offloaded from the main server.</li>
+</ul>
+<h3 id="should-i-use-sql-or-should-i-use-nosql">SHOULD I USE SQL OR SHOULD I USE NOSQL?</h3>
+<p>My short answer: if in doubt, I would just use SQL. Always.</p>
+<p>Long answer: There are two forms of NoSQL.</p>
+<p>1) Extremely high scale -- terabytes upon terabytes of data and tens of people working just on handling the database -- the canonical example is Cassandra --- constraints are not enforced <em>due to extremley high loads and high levels of data</em>. Some companies like Netflix, Google do this. 99% of tech companies do not.</p>
+<p>2) For beginner programmers - Mongo --- constraints (among other features) are not there <em>to simplify things for beginners</em>. This means it will be quicker to build your project but you face a higher risk of data integrity issues
+once you do and shifting from mongo to an SQL database once you&apos;re deep into a project is tricky.</p>
+<h4 id="exercise-1b-installing-sqlite-on-your-laptop-and-creating-your-first-database">EXERCISE 1B: INSTALLING SQLITE ON YOUR LAPTOP AND CREATING YOUR FIRST DATABASE</h4>
+<p>The RDBMS we are going to teach you first is called &quot;sqlite&quot;. It&apos;s pretty much the industry standard for creating small, self contained database that fits in one file or runs a small website (where small means under 100,000 hits per day). There is more <a href="https://www.sqlite.org/whentouse.html" target="_blank">here</a> on when it is and is not a good database to use.</p>
+<p>To set up, we do the following:</p>
+<ul>
+<li>Windows: <a href="https://sqlite.org/download.html#win32" target="_blank">https://sqlite.org/download.html#win32</a></li>
+<li>Ubuntu: <code>sudo apt-get install sqlite3</code></li>
+<li>Mac OS: <code>brew install sqlite3</code></li>
+</ul>
+<p>To run SQLite, open a command prompt and run &quot;sqlite mydatabase.sqlite&quot;.</p>
+<p>This should give you a prompt like this:</p>
+<pre class="language-"><code>sqlite3
+SQLite version 3.11.0 2016-02-15 17:29:24
+Enter &quot;.help&quot; for usage hints.
+sqlite&gt;
+</code></pre><p>This is a command prompt where you can run snippets of SQL and load files containing SQL.</p>
+<h2 id="lesson-1c-creating-a-table">LESSON 1C: CREATING A TABLE</h2>
+<p>The first thing we want to store is customers, since without customers, you don&apos;t have a hotel.</p>
+<p>First, open a file in any text editor and put the following in a file called &apos;hotel.sql&apos;:</p>
+<pre class="language-"><code class="lang-sql">PRAGMA foreign_keys <span class="token operator">=</span> <span class="token keyword">ON</span><span class="token punctuation">;</span>
+
+<span class="token keyword">create</span> <span class="token keyword">table</span> customers <span class="token punctuation">(</span>
+    title <span class="token keyword">varchar</span><span class="token punctuation">,</span>
+    firstname <span class="token keyword">varchar</span><span class="token punctuation">,</span>
+    surname <span class="token keyword">varchar</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> customers <span class="token punctuation">(</span>title<span class="token punctuation">,</span> firstname<span class="token punctuation">,</span> surname<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">&apos;Mr&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Donald&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Trump&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>What we have here:</p>
+<ul>
+<li>PRAGMA statement is to set up some relevant settings that we don&apos;t need to worry about just yet.</li>
+<li>Creating a table - this creates the <em>structure</em> which you can use to put data in. The items are <em>columns</em>.</li>
+<li>Insert into - puts data <em>into</em> that structure.</li>
+<li>&apos;title varchar&apos; - this means we&apos;re creating a column with the name &apos;title&apos; which holds a &apos;variable number of characters&apos;. This is pretty much the same thing as a string in javascript.</li>
+</ul>
+<p>Now, in the command prompt run the following:</p>
+<pre class="language-"><code>$ sqlite3 -init hotel.sql
+</code></pre><p>Now that the file has been loaded with one table containing one row of data, you can read it back
+out again like this:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> customers<span class="token punctuation">;</span>
+</code></pre>
+<p>This should display:</p>
+<pre class="language-"><code>sqlite&gt; select * from customers;
+Mr|Donald|Trump
+</code></pre><p><strong>Note</strong>: We are using a in memory database. This means that for each exercise we will be adding sql statements to our <code>hotel.sql</code> and then read this file into sqlite3 to create our database, because everytime we close <code>sqlite3</code> the database will be deleted and the data will be lost.</p>
+<h4 id="exercise-1c-create-tables-and-insert-data">EXERCISE 1C: Create tables and insert data</h4>
+<ol>
+<li><p>Amend hotel.sql create the database again and add yourselves as <em>second</em> customer using INSERT - so you&apos;re now staying in a hotel with Donald Trump. Run <code>select * from customers;</code> and ensure that you see yourself both as guests.</p>
+</li>
+<li><p>Change hotel.sql again to store email addresses from yourself and Donald (donald.trump@whitehouse.gov) and have them displayed on screen. Select everythin agian, and ensure you are both guests.</p>
+</li>
+<li><p>Change hotel.sql again. Add teacher - &quot;Colm OConner&quot; - as your third customer. My email address is &quot;colm.oconner.github@gmail.com&quot;.</p>
+</li>
+</ol>
+<h2 id="lesson-1d-data-types-and-directives">LESSON 1D: Data types and directives</h2>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> invoices <span class="token punctuation">(</span>
+    id                  <span class="token keyword">integer</span><span class="token punctuation">,</span>
+    total               number<span class="token punctuation">,</span>
+    invoice_date_time   <span class="token keyword">datetime</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    paid                <span class="token keyword">boolean</span> <span class="token keyword">default</span> <span class="token number">0</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">,</span> paid<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">,</span> <span class="token number">3444.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-01&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">124</span><span class="token punctuation">,</span> <span class="token number">3445.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>And in the command box:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> invoices<span class="token punctuation">;</span>
+</code></pre>
+<p>What we have here:</p>
+<ul>
+<li><p>An &apos;integer&apos;, a &apos;number&apos;, a &apos;datetime&apos; and a &apos;boolean&apos;. These are all analogous to data types which you have learned about in javascript.</p>
+</li>
+<li><p>For &quot;paid&quot; which is either yes (<code>1</code>) or no (<code>0</code>) - we have a default of no (<code>0</code>)- it&apos;s saying that if you insert data and don&apos;t specify &apos;paid&apos; as a column when you INSERT data, it will assume you meant &apos;no&apos;.</p>
+</li>
+<li><p>For &apos;invoice_date_time&apos; you must store the data in the form of a combination of date and time. It has a &apos;not null&apos; constraint which means that you <em>have</em> to give a datetime when you insert data, it will refuse to let you insert an invoice without specifying invoice_date_time and refuse to let you explicitly give your invoice_date_time as null.</p>
+</li>
+</ul>
+<p><strong>Note:</strong> For the sake of simplicity we will be using the <code>YYYY-MM-DD</code> date format.</p>
+<p>Further reading on sqlite3 types  <a href="https://www.sqlite.org/datatype3.html" target="_blank">here</a>.</p>
+<h4 id="exercise-1d--data-types-and-directives">EXERCISE 1D : Data types and directives</h4>
+<p>In your &quot;hotel.sql&quot; create a reservations table with columns for customer ID, room ID, check in date, check out date and price per night and insert a bunch of example data - maybe you and 10 friends or celebrities.</p>
+<p>The hotel manager has told you:</p>
+<ul>
+<li>Customers <em>do</em> have to give a check in date, but they don&apos;t have to give a check out date.</li>
+<li>Reservations need a customer ID and a room ID</li>
+<li>Reservations have a check in date, a check out date and a price per night.</li>
+</ul>
+<h2 id="lesson-1e--select">LESSON 1E : SELECT</h2>
+<p>Currently we&apos;ve just put data in to a table and gotten <em>all</em> of it out. What about if we only want <em>specific</em> data?</p>
+<p>For this we will introduce a SQL key word called &apos;WHERE&apos;.</p>
+<p>Lets go back to the invoices table and add a bunch of data.
+Replace the previous insert statements for invoices with the following ones:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">,</span> paid<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">,</span> <span class="token number">143.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-01&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">124</span><span class="token punctuation">,</span> <span class="token number">250.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">,</span> <span class="token number">431.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-03&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">,</span> paid<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">155</span><span class="token punctuation">,</span> <span class="token number">300.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-04&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">,</span> paid<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">156</span><span class="token punctuation">,</span> <span class="token number">284.35</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-04&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>So, if you do a regular query you just get all of the data:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> invoices<span class="token punctuation">;</span>
+</code></pre>
+<p>But you can filter the data through logical expressions like:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> invoices <span class="token keyword">where</span> id <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+</code></pre>
+<p>or:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> invoices <span class="token keyword">where</span> invoice_date_time <span class="token operator">&lt;</span> <span class="token string">&apos;2017-01-03&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="exercise-1f--select">EXERCISE 1F : SELECT</h4>
+<p>Write SQL for the following:</p>
+<ol>
+<li><p>Which invoices were paid?</p>
+</li>
+<li><p>Which invoices were for under 300 pounds?</p>
+</li>
+<li><p>Which invoices paid on 3rd January 2017 or after?</p>
+</li>
+</ol>
+<h2 id="lesson-1g--primary-keys">LESSON 1G : Primary Keys</h2>
+<p>Ok, now we&apos;re going to introduce a problem. Let&apos;s say a secretary types in a bunch of invoice IDs and values:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">,</span> paid<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">323</span><span class="token punctuation">,</span> <span class="token number">143.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-01&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">323</span><span class="token punctuation">,</span> <span class="token number">250.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>QUESTION FOR CLASS : What is the problem here? [ A business calls up and says they need to pay invoice 323 ]</p>
+<p>We solve this problem with something called a &quot;primary key&quot; - what this does is make it so the database will refuse to accept a value that is already in the database, it will not accept duplicates. We can define a primary key for the <code>id</code> adding <code>primary key</code> after the type for <code>id</code> as follows:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> invoices <span class="token punctuation">(</span>
+    id                  <span class="token keyword">integer</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">,</span>
+    total               number<span class="token punctuation">,</span>
+    invoice_date_time   <span class="token keyword">datetime</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    paid                <span class="token keyword">boolean</span> <span class="token keyword">default</span> <span class="token number">0</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">,</span> paid<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">323</span><span class="token punctuation">,</span> <span class="token number">143.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-01&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Update your hotel.sql file to have the invoices table defined as above.</p>
+<p>Try entering an invoice with ID 323 now, what do you get?</p>
+<pre class="language-"><code class="lang-sql">sqlite<span class="token operator">&gt;</span> <span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">323</span><span class="token punctuation">,</span> <span class="token number">250.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Error: <span class="token keyword">UNIQUE</span> <span class="token keyword">constraint</span> failed: invoices<span class="token punctuation">.</span>id
+</code></pre>
+<p>Now, picking primary keys is a tricky problem. You need to make sure that you pick some kind of identifier which you know will always be <em>unique</em>.</p>
+<p>QUESTIONS FOR CLASS:</p>
+<ul>
+<li>Is first name a good candidate for a primary key?</li>
+<li>Is first name and surname together a good candidate for a primary key?</li>
+<li>Is a driver&apos;s license ID a good candidate for a primary key? [ if and only if everybody is from the same country ]</li>
+<li>Is a passport ID a good candidate for a primary key? [ if and only if everybody is from europe ]</li>
+<li>Is just coming up with an arbitrary number that is unique a good candidate for a primary key?</li>
+</ul>
+<h2 id="lesson-1h-autoincrementing-primary-keys">LESSON 1H: AUTOINCREMENTING PRIMARY KEYS</h2>
+<p>We still have a problem here. Joe the office manager who is entering invoices doesn&apos;t really want to keep coming up with random numbers every time he enters an invoice. Why not just get the database to give us an ID?</p>
+<p>We can do that with a magic feature called autoincrementing numbers. You don&apos;t specify the ID and the database will just give your row a new ID. What ID will it give it? The ID of the last row plus one.</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> invoices <span class="token punctuation">(</span>
+    id                  <span class="token keyword">integer</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> autoincrement<span class="token punctuation">,</span>
+    total               number<span class="token punctuation">,</span>
+    invoice_date_time   <span class="token keyword">datetime</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    paid                <span class="token keyword">boolean</span> <span class="token keyword">default</span> <span class="token number">0</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">,</span> paid<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">143.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-01&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">250.50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="exercise-1h--primary-keys">EXERCISE 1H : PRIMARY KEYS</h4>
+<ol>
+<li><p>Update yout hotel.sql file to account for the auto increment ids on the <code>invoices</code> table. Meaning, remove the id from the insert, because they should be automatically added now.</p>
+</li>
+<li><p>Recreate customer table with a primary key. Bear in mind that you don&apos;t have a driver&apos;s license or passport ID. Update all the insert statements for <code>customers</code> to not specify the id.</p>
+</li>
+</ol>
+<h2 id="lesson-1i--foreign-keys">LESSON 1I : FOREIGN KEYS</h2>
+<p>Now, as we&apos;ve seen two tables that have an intrinsic relationship to one another. Every invoice has a reservation ID.</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> invoices <span class="token punctuation">(</span>
+    <span class="token punctuation">`</span>id<span class="token punctuation">`</span>                  <span class="token keyword">integer</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> autoincrement<span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>reservation_id<span class="token punctuation">`</span>      <span class="token keyword">integer</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>total<span class="token punctuation">`</span>               number<span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>invoice_date_time<span class="token punctuation">`</span>   <span class="token keyword">datetime</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>paid<span class="token punctuation">`</span>                <span class="token keyword">boolean</span> <span class="token keyword">default</span> <span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">create</span> <span class="token keyword">table</span> reservations <span class="token punctuation">(</span>
+    <span class="token punctuation">`</span>id<span class="token punctuation">`</span>                    <span class="token keyword">integer</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>customer_id<span class="token punctuation">`</span>           <span class="token keyword">integer</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>room_id<span class="token punctuation">`</span>               <span class="token keyword">integer</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>check_in_date<span class="token punctuation">`</span>         <span class="token keyword">datetime</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>check_out_date<span class="token punctuation">`</span><span class="token punctuation">,</span>       <span class="token keyword">datetime</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>room_price_per_night<span class="token punctuation">`</span>  <span class="token keyword">real</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> reservations <span class="token punctuation">(</span>customer_id<span class="token punctuation">,</span> room_id<span class="token punctuation">,</span> check_in_date<span class="token punctuation">,</span> check_out_date<span class="token punctuation">,</span> room_price_per_night<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-01&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-02&apos;</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> reservations <span class="token punctuation">(</span>customer_id<span class="token punctuation">,</span> room_id<span class="token punctuation">,</span> check_in_date<span class="token punctuation">,</span> check_out_date<span class="token punctuation">,</span> room_price_per_night<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">124</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-03&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-05&apos;</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>reservation_id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">,</span> paid<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-03&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>reservation_id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">,</span> paid<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">124</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-06&apos;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>reservation_id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">124</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-06&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Point out that the reservation ID corresponds with the ID on the reservations table.</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>reservation_id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">125</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-06&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>QUESTION FOR CLASS: What&apos;s the problem with the last statement?</p>
+<p>A: Invoice isn&apos;t going to get paid because we don&apos;t know who it&apos;s for.</p>
+<p>To fix this problem we place an additional restriction on the data</p>
+<ul>
+<li>you can only add IDs that <em>exist</em> to columns referencing other tables</li>
+<li>and you really need to specify the <code>reservation_id</code> when you are inserting on the invoices.</li>
+</ul>
+<pre class="language-"><code class="lang-sql">
+<span class="token keyword">create</span> <span class="token keyword">table</span> reservations <span class="token punctuation">(</span>
+    <span class="token punctuation">`</span>id<span class="token punctuation">`</span>                    <span class="token keyword">integer</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>customer_id<span class="token punctuation">`</span>           <span class="token keyword">integer</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>room_id<span class="token punctuation">`</span>               <span class="token keyword">integer</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>check_in_date<span class="token punctuation">`</span>         <span class="token keyword">datetime</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>check_out_date<span class="token punctuation">`</span><span class="token punctuation">,</span>       <span class="token keyword">datetime</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>room_price_per_night<span class="token punctuation">`</span>  <span class="token keyword">real</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">create</span> <span class="token keyword">table</span> invoices <span class="token punctuation">(</span>
+    <span class="token punctuation">`</span>id<span class="token punctuation">`</span>                            <span class="token keyword">integer</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> autoincrement<span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>reservation_id<span class="token punctuation">`</span>                <span class="token keyword">integer</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>total<span class="token punctuation">`</span>                         number<span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>invoice_date_time<span class="token punctuation">`</span>             <span class="token keyword">datetime</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>paid<span class="token punctuation">`</span>                          <span class="token keyword">boolean</span> <span class="token keyword">default</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token keyword">foreign</span> <span class="token keyword">key</span><span class="token punctuation">(</span>reservation_id<span class="token punctuation">)</span>     <span class="token keyword">references</span> reservations<span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Now, if you try to add invoices without a <code>reservation_id</code> that really references a reservation entry on the reservations table you&apos;ll get this:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>reservation_id<span class="token punctuation">,</span> total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">125</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-06&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Error: <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token keyword">constraint</span> failed
+</code></pre>
+<p>Or, if you try to add an invoice without specifying the <code>reservation_id</code> at all:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> invoices <span class="token punctuation">(</span>total<span class="token punctuation">,</span> invoice_date_time<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">&apos;2017-01-06&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Error: <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">constraint</span> failed:
+</code></pre>
+<p>Note that:</p>
+<ul>
+<li>&apos;foreign key(reservation_id)&apos; means that we&apos;re putting a foreign key relationship on the <em>reservation_id</em> column.</li>
+<li>&apos;references reservations(id)&apos; means that it&apos;s referring to the &apos;id&apos; column in the reservations table.</li>
+<li>reservation_id is a column on invoices. It is a number, like 3 - referring to the &apos;id&apos; of a row in reservations.</li>
+<li>reservation_id can <em>not</em> be null because it must <em>always</em> reference an existing row.</li>
+</ul>
+<p>Remember:</p>
+<ul>
+<li><p>If you removed &quot;foreign key(reservation_id) references reservations(id)&quot; it will let you insert invalid data without giving you an error - you won&apos;t be able to create an invoice with a reservation_id of 9435454 without a corresponding reservation with id 9435454 in the reservations table.</p>
+</li>
+<li><p>We WANT errors like this, which is why we put the foreign key there.</p>
+</li>
+</ul>
+<h4 id="exercise-1i--foreign-keys">EXERCISE 1I : Foreign keys</h4>
+<ol>
+<li><p>Change the <code>hotel.sql</code> file to respect the <code>foreign keys</code> and <code>not null</code> constraints on the invoice insert statements.</p>
+</li>
+<li><p>Change the file to add foreign key relationship for reservations table and customers table; update the insert statements accordingly; and add more data for those tables.</p>
+</li>
+</ol>
+<h2 id="lesson-1j--updating-data">LESSON 1J : Updating data</h2>
+<p>Let&apos;s say that we made a mistake with one of the invoices created above.</p>
+<p>First get the ID of an invoice entered earlier:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> invoices <span class="token keyword">where</span> invoice_date_time <span class="token operator">=</span> <span class="token string">&apos;2017-01-01&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>If you want to change this invoice to be &#xA3;300, you need to use &apos;UPDATE&apos;.</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">update</span> invoices <span class="token keyword">set</span> room_price_per_night <span class="token operator">=</span> <span class="token number">300.0</span> <span class="token keyword">where</span> id <span class="token operator">=</span> <span class="token operator">&lt;</span>I<span class="token operator">-</span><span class="token keyword">FROM</span><span class="token operator">-</span>ABOVE<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="exercise-1j--updating-data">EXERCISE 1J : Updating data</h4>
+<ol>
+<li>Run SQL from lesson 1C where my surname was entered as OConner. My name is actually O&apos;Connor. Fix it using &apos;UPDATE&apos;.</li>
+</ol>
+<h1 id="homework">HOMEWORK</h1>
+<h3 id="homework-part-1-setting-up-the-environment-for-next-class">Homework part 1: Setting up the environment for next class</h3>
+<p>You have already worked with back end servers using Express. This is just another yet another one that we will be connecting to a database.</p>
+<p>In order for us to interact with the server, we are going to use <a href="https://www.getpostman.com/" target="_blank">Postman</a>, which will accurately mimic API calls made from react. In the last three lessons you&apos;re going to make react do to this back end what postman is going to do today.</p>
+<p><strong>Task</strong> Fork and then clone the <a href="https://github.com/CodeYourFuture/cyf-hotel-db" target="_blank">repo</a>, and follow the instructions to set up and environment.</p>
+<p><strong>Task</strong> Install chrome extention for <a href="https://chrome.google.com/webstore/detail/tabbed-postman-rest-clien/coohjcphdfgbiolnekdpbcijmhambjff?hl=en-GB" target="_blank">Postman</a>.</p>
+<!-- ![postman-get-1](client-postman-server.jpg) -->
+<p align="center">
+  <img src="client-postman-server.jpg" display="block" width="60%">
+</p>
+
+
+
+<!-- ![postman-get-1](postman-get-1.png) -->
+<p align="center">
+  <img src="postman-get-1.png" display="block" width="85%">
+</p>
+
+<p>Run &quot;npm start&quot; and use postman to GET from <code>http://localhost:8080/api/customers</code> and email a screenshot
+to ams.pedro@gmail.com and crdoconnor@gmail.com.</p>
+<p>If you have any issues (and you might), please contact one of us or the mentors for help.</p>
+<h3 id="homework-part-2-add-tables-and-data-to-the-hotel-database">Homework part 2: Add tables and data to the hotel database</h3>
+<p>Using what you have learned in today&apos;s lesson, extend database/schema.sql in the cyf-hotel-db repo you
+just set up.</p>
+<p>It currently contains a customers table with one customer in it:</p>
+<pre class="language-"><code>CREATE TABLE IF NOT EXISTS customers (
+  ID INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT(16),
+  first_name TEXT(64) NOT NULL,
+  surname TEXT (64) NOT NULL,
+  email TEXT (64)
+);
+
+
+INSERT INTO customers (
+  title, first_name, surname, email
+) VALUES (
+  &apos;Mr&apos;,
+  &apos;John&apos;,
+  &apos;Dove&apos;,
+  &apos;john.doe@domain.com&apos;
+);
+</code></pre><p>Extend it so that it has a structure like so (each line is a foreign key):</p>
+<!-- ![postman-get-1](postman-get-1.png) -->
+<p align="center">
+  <img src="hotel-er-diagram.png" display="block" width="85%">
+</p>
+
+<p>As well as creating the database tables that create that structure, add insert statements for
+5-10 rows of example data for each table as well.</p>
+<p>Email your amended schema.sql to to ams.pedro@gmail.com and crdoconnor@gmail.com.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Node/DB II">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../week-17/lesson.html" class="navigation navigation-next " aria-label="Next page: Week 17 - SQL with Node">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Week 16 - Basic SQL","level":"1.8.1","depth":2,"next":{"title":"Week 17 - SQL with Node","level":"1.8.2","depth":2,"path":"node-db/week-17/lesson.md","ref":"node-db/week-17/lesson.md","articles":[]},"previous":{"title":"Node/DB II","level":"1.8","depth":1,"path":"node-db/index.md","ref":"node-db/index.md","articles":[{"title":"Week 16 - Basic SQL","level":"1.8.1","depth":2,"path":"node-db/week-16/lesson.md","ref":"node-db/week-16/lesson.md","articles":[]},{"title":"Week 17 - SQL with Node","level":"1.8.2","depth":2,"path":"node-db/week-17/lesson.md","ref":"node-db/week-17/lesson.md","articles":[]},{"title":"Week 18 - Data Integrity & Analytics","level":"1.8.3","depth":2,"path":"node-db/week-18/lesson.md","ref":"node-db/week-18/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node-db/week-16/lesson.md","mtime":"2018-12-09T12:00:56.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-09T12:02:04.708Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-scripts/c7a8b0876428f8ec3c1b5735174e535d-checkboxRemember.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
