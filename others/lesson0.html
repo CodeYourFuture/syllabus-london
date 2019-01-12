@@ -874,6 +874,7 @@
 <li><a href="#terminal-basics">Terminal</a></li>
 <li><a href="#git">Git</a></li>
 <li><a href="#ide">IDEs</a></li>
+<li><a href="#airtame">Airtame</a></li>
 <li><a href="#homework">Homework</a></li>
 </ul>
 <hr>
@@ -1126,6 +1127,41 @@ to check out their websites and see the differences between them and VS Code.</p
 <li><a href="https://atom.io/" target="_blank">Atom</a></li>
 <li><a href="https://www.jetbrains.com/webstorm/" target="_blank">Webstorm</a></li>
 </ul>
+<h2 id="airtame">Airtame</h2>
+<p>During our classes, Students and Mentors will share their code with the rest of the class using a tool
+called <a href="https://airtame.com/" target="_blank">Airtame</a> to present their laptop screen wirelessly to the projector.
+The instructions below were tested on Ubuntu only. Installation will differ on Mac OSX.</p>
+<p>To install Airtame:</p>
+<ul>
+<li>Download the Airtame version for Ubuntu <a href="https://airtame.com/download/" target="_blank">here</a>.</li>
+<li><p>In the Terminal, navigate to the directory you downloaded the file. For example,
+if you downloaded Airtame to your <code>Downloads</code> directory:</p>
+<p>  <code>$ cd ~/Downloads</code></p>
+<p>The downloaded file should have <code>.tar.gz</code> extension. You can see the full name with:</p>
+<p>  <code>$ ls airtame*</code></p>
+</li>
+<li><p>Extract the file using:</p>
+<p>  <code>$ tar -xzf <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filename</span><span class="token punctuation">&gt;</span></span></code> replacing <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filename</span><span class="token punctuation">&gt;</span></span></code> with the name of the downloaded file.</p>
+<p>The command above will extract the contents of the downloaded file into a directory of the same name.</p>
+</li>
+<li><p>Launch Airtame with the following command:</p>
+<p>  <code>$ ./<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>airtame-dir</span><span class="token punctuation">&gt;</span></span>/launch-airtame.sh</code> replacing <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>airtame-dir</span><span class="token punctuation">&gt;</span></span></code> with the directory created in the previous step.</p>
+</li>
+<li><p>Install Airtame with the following command:</p>
+<p>  <code>$ ./<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>airtame-dir</span><span class="token punctuation">&gt;</span></span>/install.sh</code></p>
+<p>This will create a shortcut (icon) so you can launch Airtame from your Applications</p>
+</li>
+</ul>
+<h3 id="common-issues">Common Issues</h3>
+<p>If you have errors returned when executing <code>launch-airtame.sh</code> or <code>install.sh</code> you may need to install
+one or more missing libraries in your System. Check the error message and:</p>
+<ul>
+<li>If it contains <code>libgtk-x11</code> as part of the message, then execute the following command:
+<code>$ sudo apt-get install libgtk2.0</code></li>
+<li>If it contains <code>libgconf</code> as part of the message, then execute the following comand:
+<code>$ sudo apt-get install libgconf2.0</code></li>
+</ul>
+<p>For any other errors, contact the Mentors on Slack, including the error message from the Terminal.</p>
 <h2 id="homework">Homework</h2>
 <ul>
 <li>If you have not yet moved your website from CodePen to Github, do it now.
@@ -1179,7 +1215,7 @@ it happens, please ask your mentors or classmates for help in Slack.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"next":{"title":"House Rules","level":"1.2.2","depth":2,"path":"house-rules.md","ref":"house-rules.md","articles":[]},"previous":{"title":"Before you start","level":"1.2","depth":1,"ref":"","articles":[{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"path":"others/lesson0.md","ref":"others/lesson0.md","articles":[]},{"title":"House Rules","level":"1.2.2","depth":2,"path":"house-rules.md","ref":"house-rules.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/lesson0.md","mtime":"2019-01-11T22:43:12.796Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-11T22:44:18.692Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"next":{"title":"House Rules","level":"1.2.2","depth":2,"path":"house-rules.md","ref":"house-rules.md","articles":[]},"previous":{"title":"Before you start","level":"1.2","depth":1,"ref":"","articles":[{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"path":"others/lesson0.md","ref":"others/lesson0.md","articles":[]},{"title":"House Rules","level":"1.2.2","depth":2,"path":"house-rules.md","ref":"house-rules.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/lesson0.md","mtime":"2019-01-12T17:28:01.175Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-12T17:29:09.609Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
