@@ -562,7 +562,20 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="../../useful-links.html">
+        <li class="chapter " data-level="2.1" data-path="../../conduct.html">
+            
+                <a href="../../conduct.html">
+            
+                    
+                    Code of Conduct
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../useful-links.html">
             
                 <a href="../../useful-links.html">
             
@@ -575,7 +588,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="../../PRACTICES.html">
+        <li class="chapter " data-level="2.3" data-path="../../PRACTICES.html">
             
                 <a href="../../PRACTICES.html">
             
@@ -588,7 +601,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="../../others/making-a-pull-request.html">
+        <li class="chapter " data-level="2.4" data-path="../../others/making-a-pull-request.html">
             
                 <a href="../../others/making-a-pull-request.html">
             
@@ -601,7 +614,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="../../others/cors.html">
+        <li class="chapter " data-level="2.5" data-path="../../others/cors.html">
             
                 <a href="../../others/cors.html">
             
@@ -614,7 +627,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="../../others/useful-tools.html">
+        <li class="chapter " data-level="2.6" data-path="../../others/useful-tools.html">
             
                 <a href="../../others/useful-tools.html">
             
@@ -875,11 +888,10 @@
 <li><a href="#unmounting">Unmounting</a></li>
 <li><a href="#the-circle-of-life">The Circle of Life</a></li>
 <li><a href="#fetching-data-in-react">Fetching Data in React</a></li>
-<li><a href="#default-props">Default Props</a></li>
 <li><a href="#refs">Refs</a></li>
 </ul>
 <h2 id="recap">Recap</h2>
-<p>Last week we looked at using props and state to create React components that change with user input (<a href="https://stackblitz.com/edit/react-pezgpe" target="_blank">interactive example</a>):</p>
+<p>Last week we looked at using props and state to create React components that change with user input (<a href="https://codesandbox.io/s/7j21mrq08x" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Counter</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
@@ -887,7 +899,11 @@
   <span class="token punctuation">}</span>
 
   <span class="token function-variable function">increment</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> count<span class="token punctuation">:</span> <span class="token operator">++</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>count <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span>previousState<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        count<span class="token punctuation">:</span> previousState<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
 
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -901,7 +917,7 @@
 <span class="token punctuation">}</span>
 </code></pre>
 <h2 id="unmounting">Unmounting</h2>
-<p>So far we&apos;ve looked at components that are always rendered in the browser. However (and this is often the case in large applications), we might want to control whether components are shown or not. Let&apos;s look at a Toggle component (<a href="https://stackblitz.com/edit/react-ldakkv" target="_blank">interactive example</a>):</p>
+<p>So far we&apos;ve looked at components that are always rendered in the browser. However (and this is often the case in large applications), we might want to control whether components are shown or not. Let&apos;s look at a Toggle component (<a href="https://codesandbox.io/s/xmo8oo514" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">IsShown</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
   <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token constant">I</span>&apos;m shown when <span class="token boolean">true</span> &#x2705;<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
 <span class="token punctuation">)</span>
@@ -934,8 +950,8 @@
 <p>When a component is within the DOM, we call it <em>mounted</em>. When a component is removed from the DOM, we call it <em>unmounted</em>. When we change state like in the unmounting example above, we can switch between these statuses. This gives us a clue that components go through a <em>lifecycle</em> of different statuses. We have seen 2 of the statuses: mounting and unmounting, there is also a third called <em>updating</em>.</p>
 <p>We can hook into this lifecycle through special component methods that are added by React&apos;s <code>Component</code> class. They are run at different points of the lifecycle, often before and after they change to a different status. The method names are contain <code>will</code> or <code>did</code> based on whether they run before or after a status change.</p>
 <p>This diagram shows the React component lifecycle:</p>
-<p><img src="../assets/lifecycle.jpg" alt="React component lifecycle"></p>
-<p>Let&apos;s look at how we can use one of the lifecycle methods (<a href="https://stackblitz.com/edit/react-sf6spn" target="_blank">interactive example</a>):</p>
+<p><img src="../assets/lifecycle.png" alt="React component lifecycle"></p>
+<p>Let&apos;s look at how we can use one of the lifecycle methods (<a href="https://codesandbox.io/s/m5z2v36x1y" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Lifecycle</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;componentDidMount&apos;</span><span class="token punctuation">)</span>
@@ -948,33 +964,40 @@
 </code></pre>
 <blockquote>
 <p><strong>Exercise:</strong>
-Open the <code>my-hotel</code> application from the last 2 weeks</p>
+Open the <code>pokedex</code> application that we have been working on for the last 2 weeks and open the <code>CaughtPokemon.js</code> file</p>
 <ol>
-<li>Add <code>constructor</code>, <code>shouldComponentUpdate</code>, <code>componentDidMount</code>, <code>componentDidUpdate</code> and <code>componentWillUnmount</code> methods in the <code>BookingsMessage</code> component and add a <code>console.log</code> that logs out the name of the method (e.g. <code>console.log(&apos;componentDidMount&apos;)</code>. Also add <code>console.log(&apos;render&apos;)</code> in the <code>render</code> method.</li>
-<li>Try interacting with the component and see what order the logs appear</li>
+<li>Add a <code>constructor</code> method to the <code>CaughtPokemon</code> component. Within this method add a <code>console.log(&apos;constructor&apos;)</code></li>
+<li>Add a <code>componentDidMount</code> method to the <code>CaughtPokemon</code> component. Within this method add a <code>console.log(&apos;componentDidMount&apos;)</code>. You don&apos;t need to return anything from this method</li>
+<li>Repeat the same step above with the <code>componentDidUpdate</code> and <code>componentWillUnmount</code> methods</li>
+<li>Try interacting with the <code>CaughtPokemon</code> component in your web browser (clicking the button) while looking at the JavaScript console. What order do the logs appear?</li>
 <li>The <code>componentWillUnmount</code> method will never be called. Can you explain why?</li>
-<li>Return <code>false</code> from <code>shouldComponentUpdate</code> in <code>BookingsMessage</code>. Try incrementing the number of bookings and explain what happens (change it back to return <code>true</code> after you are done!)</li>
 </ol>
 </blockquote>
 <p>We&apos;ll now focus on a few of the lifecycle hooks and see how they are used.</p>
-<h3 id="shouldcomponentupdate"><code>shouldComponentUpdate</code></h3>
-<p>This method runs when a component&apos;s props have changed, which would normally trigger a re-render. I say normally because this lifecycle hook lets us control whether the component should update (or re-render). If you want the component to render, then the method should return <code>true</code>. If not, then it should return <code>false</code>.</p>
-<p>Why would we want to prevent a component from re-rendering? In some circumstances, it can be used to improve performance. If you have a component that is re-rendering <em>a lot</em> and it doesn&apos;t really need to, then returning false from <code>shouldComponentUpdate</code> is a good way to improve performance.</p>
 <h3 id="componentdidmount-and-componentwillunmount"><code>componentDidMount</code> and <code>componentWillUnmount</code></h3>
 <p>The <code>componentDidMount</code> method runs after a component has finished rendering to the DOM. The component is now waiting for a props change or input from the user. It is called only once. We use this lifecycle hook to make changes outside of the component (sometimes these are called <em>side effects</em>).</p>
 <p>The <code>componentWillUnmount</code> method runs when a component has been unmounted from the DOM. It is used to &quot;clean up&quot; the component as it is no longer being shown. Often we need to close down or cancel the changes we made in <code>componentDidMount</code>.</p>
 <p>To look at these in more detail, we&apos;ll create a Clock component in an exercise.</p>
 <blockquote>
 <p><strong>Exercise:</strong>
-Open the <code>my-hotel</code> React application from last week</p>
+Open the <code>pokedex</code> React application again</p>
 <ol>
-<li>Create a new <code>Clock</code> component and copy/paste in the code below (<a href="https://stackblitz.com/edit/react-7zvt98" target="_blank">interactive version</a>):</li>
+<li>Create a new file called <code>Clock.js</code> in the <code>src</code> directory</li>
+<li>Copy and paste in the code below (<a href="https://codesandbox.io/s/p9q2wq069j" target="_blank">interactive version</a>):</li>
 </ol>
 </blockquote>
-<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Time</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Time</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> date<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function-variable function">tick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;tick&apos;</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      date<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
@@ -997,79 +1020,86 @@ Open the <code>my-hotel</code> React application from last week</p>
     <span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Clock
 </code></pre>
 <blockquote>
 <ol>
-<li>Render the <code>Clock</code> component in the <code>App</code> component</li>
-<li>Add a <code>componentDidMount</code> method to the <code>Time</code> component and use <code>setInterval</code> to call <code>this.tick</code> every second (1000 milliseconds)</li>
-<li>Implement the <code>tick</code> method, and use <code>this.setState</code> to set the <code>date</code> to the current date (hint: <code>new Date()</code>). Your clock should now start working</li>
-<li>Add <code>console.log(&apos;tick&apos;)</code> to the <code>tick</code> method. Try clicking the &quot;Toggle time&quot; button and look at what happens in the console. What do you think the problem is here? How can we fix it?</li>
-<li>Assign the return value of <code>setInterval</code> to <code>this.timer</code> (<strong>not</strong> <code>this.state.timer</code>)</li>
-<li>In <code>componentWillUnmount</code>, remove the timer by calling <code>clearInterval(this.timer)</code></li>
-<li>Try playing around with the toggle, like in step 6. How have we solved the problem?</li>
+<li>In <code>App.js</code> import the <code>Clock</code> component with <code>import Clock from &apos;./Clock&apos;</code></li>
+<li>Then render the <code>Clock</code> component in the <code>App</code> component (hint: <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Clock</span> <span class="token punctuation">/&gt;</span></span></code>)</li>
+<li>Switch back to <code>Clock.js</code> and change the <code>Time</code> component (notice that there are 2 components defined in this file) to add a <code>tick</code> method</li>
+<li>Now add a <code>componentDidMount</code> method to the <code>Time</code> component</li>
+<li>Within the <code>componentDidMount</code> method use <code>setInterval</code> to call <code>this.tick</code> every 1000 milliseconds (hint: <code>setInterval(this.tick, 1000)</code>)</li>
+<li>Now open the JavaScript console your web browser. What is happening? Can you explain why?</li>
+<li>Keep looking at the JavaScript console and try clicking the &quot;Toggle time&quot; button. What do you think the problem is here? How can we fix it?</li>
+<li>Change the <code>componentDidMount</code> method to assign <code>this.timer</code> to the output of <code>setInterval</code> (hint: <code>this.timer = setInterval(this.tick, 1000)</code>)</li>
+<li>Add a <code>componentWillUnmount</code> method to the <code>Time</code> component</li>
+<li>In the <code>componentWillUnmount</code> method, remove the timer by calling <code>clearInterval(this.timer)</code></li>
+<li>Try clicking the &quot;Toggle time&quot; button again, like in step 9. How have we solved the problem?</li>
 </ol>
 </blockquote>
 <h2 id="fetching-data-in-react">Fetching Data in React</h2>
 <p>Most web applications will load data from the server. How do we do this in React? The component lifecycle is very important - we don&apos;t want to be calling our API at the wrong time, or multiple times with the same data!</p>
-<p>If we tried to fetch data in our <code>render</code> method, it would make a request every time props or state changed. This would create lots of unnecessary requests. As we saw above, <code>componentDidMount</code> is called only once when the component is first rendered and so it is an ideal place for making requests. Let&apos;s look at an example (<a href="https://stackblitz.com/edit/react-dyupps?file=index.js" target="_blank">interactive example</a>):</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">PokemonFetcher</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+<p>If we tried to fetch data in our <code>render</code> method, it would make a request every time props or state changed. This would create lots of unnecessary requests. As we saw above, <code>componentDidMount</code> is called only once when the component is first rendered and so it is an ideal place for making requests. Let&apos;s look at an example (<a href="https://codesandbox.io/s/4rkovwq0kw" target="_blank">interactive example</a>):</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">MartianPhotoFetcher</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://pokeapi.co/api/v2/pokemon/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
+    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>date<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
+
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// const name = ???</span>
-    <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>Pokemon name<span class="token punctuation">:</span> <span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token comment">// We don&apos;t don&apos;t what the img src is when we render :(</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token punctuation">{</span>src<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>This example isn&apos;t very useful! We can&apos;t use the data returned from the server in <code>render</code> because the request is asynchronous :( We need React to re-render once the request is resolved - a perfect use for state! Let&apos;s look at an example (<a href="https://stackblitz.com/edit/react-e6rvtz" target="_blank">interactive example</a>)</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">PokemonFetcher</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+<p>This example isn&apos;t very useful! We can&apos;t use the data returned from the server in <code>render</code> because the request is asynchronous :( We need React to re-render once the request is resolved - a perfect use for state! Let&apos;s look at an example (<a href="https://codesandbox.io/s/5kk53yx6ll" target="_blank">interactive example</a>)</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">MartianPhotoFetcher</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token keyword">null</span> <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      imgSrc<span class="token punctuation">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
-
   <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://pokeapi.co/api/v2/pokemon/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> data<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>date<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          imgSrc<span class="token punctuation">:</span> data<span class="token punctuation">.</span>photos<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>img_src
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
       <span class="token punctuation">}</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
-
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>Pokemon name<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>imgSrc<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Now we can see the name of the Pokemon that we fetched from the server!</p>
-<p>However we have a bit of a problem - when we first render the component, we don&apos;t have the Pokemon&apos;s name yet. We first have to initialise it to <code>null</code> in the constructor. This shows us that we&apos;re missing something from our UI - a <em>loading status</em>.</p>
-<p>Let&apos;s look at showing a different UI when the request is loading (<a href="https://stackblitz.com/edit/react-j86faz" target="_blank">interactive example</a>):</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">PokemonFetcher</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+<p>Now we can see the Martian photo that we fetched from the server!</p>
+<p>However we have a bit of a problem - when we first render the component, we don&apos;t have the photo <code>src</code> yet. We first have to initialise it to <code>null</code> in the constructor. This shows us that we&apos;re missing something from our UI - a <em>loading status</em>.</p>
+<p>Let&apos;s look at showing a different UI when the request is loading (<a href="https://codesandbox.io/s/93zr0xz32r" target="_blank">interactive example</a>):</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">MartianPhotoFetcher</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
       isLoading<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-      name<span class="token punctuation">:</span> <span class="token keyword">null</span>
+      imgSrc<span class="token punctuation">:</span> <span class="token keyword">null</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
-
   <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://pokeapi.co/api/v2/pokemon/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>date<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&amp;api_key=gnesiqnKCJMm8UTYZYi86ZA5RAnrO4TAR9gDstVb`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
           isLoading<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-          name<span class="token punctuation">:</span> data<span class="token punctuation">.</span>name
+          imgSrc<span class="token punctuation">:</span> data<span class="token punctuation">.</span>photos<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>img_src
         <span class="token punctuation">}</span><span class="token punctuation">)</span>
       <span class="token punctuation">}</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
-
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>isLoading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>Loading<span class="token operator">...</span> &#x1F914;<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token keyword">return</span> <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>Loading<span class="token operator">...</span> &#x1F47D;<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
     <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>Pokemon name<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token keyword">return</span> <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>imgSrc<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -1080,9 +1110,9 @@ Open the <code>my-hotel</code> React application from last week</p>
 <li>In <code>render</code>, show a loading message because <code>isLoading</code> is true</li>
 <li>Once rendered, <code>componentDidMount</code> will trigger the API request</li>
 <li>When the request resolves, we set the <code>isLoading</code> state to false and set the data that we want</li>
-<li>Changing state triggers a re-render, and because <code>isLoading</code> is false we render out the Pokemon&apos;s name</li>
+<li>Changing state triggers a re-render, and because <code>isLoading</code> is false we render the Martian photo</li>
 </ul>
-<p>We can still improve our component! What happens if we make a request that fails? Our request will error, but we won&apos;t show the error in the browser. Let&apos;s see how we can fix it (<a href="https://stackblitz.com/edit/react-cukrzr" target="_blank">interactive example</a>).</p>
+<p>We can still improve our component! What happens if we make a request that fails? Our request will error, but we won&apos;t show the error in the browser. Let&apos;s see how we can fix it (<a href="https://codesandbox.io/s/6v9qo90r2r" target="_blank">interactive example</a>).</p>
 <p>First we have to deal with annoying quirk of <code>fetch</code> - it doesn&apos;t reject the promise on HTTP errors. We can fix this by adding another <code>.then</code> before we convert to JSON:</p>
 <pre class="language-"><code class="lang-js"><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>status <span class="token operator">&gt;=</span> <span class="token number">200</span> <span class="token operator">&amp;&amp;</span> res<span class="token punctuation">.</span>status <span class="token operator">&lt;</span> <span class="token number">300</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1103,23 +1133,38 @@ Open the <code>my-hotel</code> React application from last week</p>
 <p>Now we can check if there&apos;s an error in state and render out an error message:</p>
 <pre class="language-"><code class="lang-js"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>isLoading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>Loading<span class="token operator">...</span> &#x1F914;<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>Something went wrong &#x1F62D;<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>Loading<span class="token operator">...</span> &#x1F47D;<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>Something went wrong &#x1F62D;<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>Pokemon name<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>imgSrc<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
 <p><strong>Exercise:</strong>
-Open your <code>my-hotel</code> application again</p>
-<p>Convert the <code>SpecialDeals</code> component to fetch data from <a href="http://www.mocky.io/v2/5a9ad31d3400002c00a39a3c" target="_blank">http://www.mocky.io/v2/5a9ad31d3400002c00a39a3c</a>.
-Make sure that you include a loading state and error handling.</p>
+Open the <code>pokedex</code> React application again and open the <code>src/BestPokemon.js</code> file</p>
+<ol>
+<li>If you haven&apos;t already, convert the <code>BestPokemon</code> component to a class component</li>
+<li>Create a <code>constructor</code> method (hint: remember to call <code>super(props)</code>)</li>
+<li>Set the initial state to have a key named <code>pokemonNames</code> that is assigned to <code>null</code></li>
+<li>Add a <code>componentDidMount</code> method to the component</li>
+<li>Within the <code>componentDidMount</code> method call the <code>fetch()</code> function with this URL: <code>https://pokeapi.co/api/v2/pokedex/1/</code>. What will this do?</li>
+<li>Add a <code>.then()</code> handler into the <code>fetch</code> function (hint: remember this needs to come immediately after the <code>fetch()</code> call) which converts the response from JSON (hint: <code>.then(res =&gt; res.json())</code>)</li>
+<li>Add a second <code>.then()</code> handler after the one we just added, where the callback function will receive an argument called <code>data</code></li>
+<li>Within the second <code>.then()</code> callback function, log out the data that we just received (hint: <code>console.log(data.pokemon_entries[0].pokemon_species.name)</code>)</li>
+<li>Now change the <code>console.log()</code> to log out an array instead, with the first, fourth and seventh Pokemon (hint: <code>console.log([data.pokemon_entries[0].pokemon_species.name, data.pokemon_entries[3].pokemon_species.name, data.pokemon_entries[6].pokemon_species.name])</code>)</li>
+<li>Now again within the <code>.then()</code> callback function, call <code>this.setState()</code> to set the <code>pokemonNames</code> key and assign it to the array that we just logged out (you can copy/paste it)</li>
+<li>Inside the <code>render</code> method, remove the old <code>pokemonNames</code> variable and replace it with <code>this.state.pokemonNames</code>. What do you see in your web browser?</li>
+<li>Add an <code>isLoading</code> piece of state, which is initialised to <code>true</code></li>
+<li>When calling <code>this.setState()</code> inside the <code>.then()</code> handler, also set <code>isLoading</code> to <code>false</code></li>
+<li>In the <code>render</code> method check if <code>this.state.isLoading</code> is <code>true</code> and return a loading message (e.g. <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Loading...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span></code>). Otherwise if <code>this.state.isLoading</code> is <code>false</code> then render the loop as we did before</li>
+<li><strong>(STRETCH GOAL)</strong> Add some error handling which renders an error message</li>
+</ol>
 </blockquote>
 <h2 id="refs">Refs</h2>
 <p>As we have seen, React manages the DOM for us. That means we generally don&apos;t have to worry about keeping track of DOM nodes, or manipulating them directly. However sometimes you need to be able to access a DOM node that React is managing. Some common use cases are managing browser focus and integrating with third party libraries like a jQuery plugin.</p>
-<p>We can do this with a <em>ref</em>. Let&apos;s look at an example that will change browser focus to an input when a button is clicked (<a href="https://stackblitz.com/edit/react-nbezfm" target="_blank">interactive example</a>):</p>
+<p>We can do this with a <em>ref</em>. Let&apos;s look at an example that will change browser focus to an input when a button is clicked (<a href="https://codesandbox.io/s/yw510x1l81" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">InputFocuser</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function-variable function">setInputRef</span> <span class="token operator">=</span> <span class="token punctuation">(</span>input<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>input <span class="token operator">=</span> input
@@ -1186,7 +1231,7 @@ Try to complete the Stretch Goal exercises.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"next":{"title":"Node/DB I","level":"1.8","depth":1,"path":"node-db/index.md","ref":"node-db/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node-db/week-13/lesson.md","ref":"node-db/week-13/lesson.md","articles":[]},{"title":"Week 17 - Middleware, Templating and APIs","level":"1.8.2","depth":2,"path":"node-db/week-14/lesson.md","ref":"node-db/week-14/lesson.md","articles":[]},{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"path":"node-db/week-15/lesson.md","ref":"node-db/week-15/lesson.md","articles":[]}]},"previous":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-20/lesson.md","ref":"react/week-20/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-21/lesson.md","mtime":"2019-01-28T10:58:59.555Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-28T11:00:05.158Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"next":{"title":"Node/DB I","level":"1.8","depth":1,"path":"node-db/index.md","ref":"node-db/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node-db/week-13/lesson.md","ref":"node-db/week-13/lesson.md","articles":[]},{"title":"Week 17 - Middleware, Templating and APIs","level":"1.8.2","depth":2,"path":"node-db/week-14/lesson.md","ref":"node-db/week-14/lesson.md","articles":[]},{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"path":"node-db/week-15/lesson.md","ref":"node-db/week-15/lesson.md","articles":[]}]},"previous":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-20/lesson.md","ref":"react/week-20/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-21/lesson.md","mtime":"2019-03-16T12:37:27.299Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-16T12:38:34.730Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
