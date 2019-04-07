@@ -893,13 +893,13 @@
 <h2 id="recap">Recap</h2>
 <p>Last week we looked at using props and state to create React components that change with user input (<a href="https://codesandbox.io/s/7j21mrq08x" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Counter</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> count<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 
   <span class="token function-variable function">increment</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span>previousState<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">previousState</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
       <span class="token keyword">return</span> <span class="token punctuation">{</span>
         count<span class="token punctuation">:</span> previousState<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span>
       <span class="token punctuation">}</span>
@@ -926,7 +926,7 @@
 <span class="token punctuation">)</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Toggle</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> isShown<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
@@ -963,7 +963,7 @@
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><strong>Exercise:</strong>
+<p><strong>Exercise A</strong>
 Open the <code>pokedex</code> application that we have been working on for the last 2 weeks and open the <code>CaughtPokemon.js</code> file</p>
 <ol>
 <li>Add a <code>constructor</code> method to the <code>CaughtPokemon</code> component. Within this method add a <code>console.log(&apos;constructor&apos;)</code></li>
@@ -979,7 +979,7 @@ Open the <code>pokedex</code> application that we have been working on for the l
 <p>The <code>componentWillUnmount</code> method runs when a component has been unmounted from the DOM. It is used to &quot;clean up&quot; the component as it is no longer being shown. Often we need to close down or cancel the changes we made in <code>componentDidMount</code>.</p>
 <p>To look at these in more detail, we&apos;ll create a Clock component in an exercise.</p>
 <blockquote>
-<p><strong>Exercise:</strong>
+<p><strong>Exercise B</strong>
 Open the <code>pokedex</code> React application again</p>
 <ol>
 <li>Create a new file called <code>Clock.js</code> in the <code>src</code> directory</li>
@@ -989,7 +989,7 @@ Open the <code>pokedex</code> React application again</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Time</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> date<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
@@ -1006,7 +1006,7 @@ Open the <code>pokedex</code> React application again</p>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">class</span> <span class="token class-name">Clock</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> isShowingClock<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
@@ -1027,8 +1027,7 @@ Open the <code>pokedex</code> React application again</p>
 <ol>
 <li>In <code>App.js</code> import the <code>Clock</code> component with <code>import Clock from &apos;./Clock&apos;</code></li>
 <li>Then render the <code>Clock</code> component in the <code>App</code> component (hint: <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Clock</span> <span class="token punctuation">/&gt;</span></span></code>)</li>
-<li>Switch back to <code>Clock.js</code> and change the <code>Time</code> component (notice that there are 2 components defined in this file) to add a <code>tick</code> method</li>
-<li>Now add a <code>componentDidMount</code> method to the <code>Time</code> component</li>
+<li>Now change the <code>Time</code> component (notice that there are 2 components defined in this file) add a <code>componentDidMount</code> method</li>
 <li>Within the <code>componentDidMount</code> method use <code>setInterval</code> to call <code>this.tick</code> every 1000 milliseconds (hint: <code>setInterval(this.tick, 1000)</code>)</li>
 <li>Now open the JavaScript console your web browser. What is happening? Can you explain why?</li>
 <li>Keep looking at the JavaScript console and try clicking the &quot;Toggle time&quot; button. What do you think the problem is here? How can we fix it?</li>
@@ -1054,7 +1053,7 @@ Open the <code>pokedex</code> React application again</p>
 </code></pre>
 <p>This example isn&apos;t very useful! We can&apos;t use the data returned from the server in <code>render</code> because the request is asynchronous :( We need React to re-render once the request is resolved - a perfect use for state! Let&apos;s look at an example (<a href="https://codesandbox.io/s/5kk53yx6ll" target="_blank">interactive example</a>)</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">MartianPhotoFetcher</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
       imgSrc<span class="token punctuation">:</span> <span class="token keyword">null</span>
@@ -1062,8 +1061,8 @@ Open the <code>pokedex</code> React application again</p>
   <span class="token punctuation">}</span>
   <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>date<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
           imgSrc<span class="token punctuation">:</span> data<span class="token punctuation">.</span>photos<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>img_src
         <span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -1078,7 +1077,7 @@ Open the <code>pokedex</code> React application again</p>
 <p>However we have a bit of a problem - when we first render the component, we don&apos;t have the photo <code>src</code> yet. We first have to initialise it to <code>null</code> in the constructor. This shows us that we&apos;re missing something from our UI - a <em>loading status</em>.</p>
 <p>Let&apos;s look at showing a different UI when the request is loading (<a href="https://codesandbox.io/s/93zr0xz32r" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">MartianPhotoFetcher</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
       isLoading<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
@@ -1087,8 +1086,8 @@ Open the <code>pokedex</code> React application again</p>
   <span class="token punctuation">}</span>
   <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>date<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&amp;api_key=gnesiqnKCJMm8UTYZYi86ZA5RAnrO4TAR9gDstVb`</span></span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
           isLoading<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
           imgSrc<span class="token punctuation">:</span> data<span class="token punctuation">.</span>photos<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>img_src
@@ -1114,7 +1113,7 @@ Open the <code>pokedex</code> React application again</p>
 </ul>
 <p>We can still improve our component! What happens if we make a request that fails? Our request will error, but we won&apos;t show the error in the browser. Let&apos;s see how we can fix it (<a href="https://codesandbox.io/s/6v9qo90r2r" target="_blank">interactive example</a>).</p>
 <p>First we have to deal with annoying quirk of <code>fetch</code> - it doesn&apos;t reject the promise on HTTP errors. We can fix this by adding another <code>.then</code> before we convert to JSON:</p>
-<pre class="language-"><code class="lang-js"><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>status <span class="token operator">&gt;=</span> <span class="token number">200</span> <span class="token operator">&amp;&amp;</span> res<span class="token punctuation">.</span>status <span class="token operator">&lt;</span> <span class="token number">300</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> res
   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
@@ -1123,7 +1122,7 @@ Open the <code>pokedex</code> React application again</p>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <p>Now we can add our solution - a <code>.catch</code> on the <code>fetch</code> call. Here we reset the loading state and add the error to state.</p>
-<pre class="language-"><code class="lang-js"><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     isLoading<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
     err<span class="token punctuation">:</span> err
@@ -1142,7 +1141,7 @@ Open the <code>pokedex</code> React application again</p>
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><strong>Exercise:</strong>
+<p><strong>Exercise C</strong>
 Open the <code>pokedex</code> React application again and open the <code>src/BestPokemon.js</code> file</p>
 <ol>
 <li>If you haven&apos;t already, convert the <code>BestPokemon</code> component to a class component</li>
@@ -1160,13 +1159,14 @@ Open the <code>pokedex</code> React application again and open the <code>src/Bes
 <li>When calling <code>this.setState()</code> inside the <code>.then()</code> handler, also set <code>isLoading</code> to <code>false</code></li>
 <li>In the <code>render</code> method check if <code>this.state.isLoading</code> is <code>true</code> and return a loading message (e.g. <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Loading...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span></code>). Otherwise if <code>this.state.isLoading</code> is <code>false</code> then render the loop as we did before</li>
 <li><strong>(STRETCH GOAL)</strong> Add some error handling which renders an error message</li>
+<li><strong>(STRETCH GOAL)</strong> Explore the data returned from the API. See if you can show some more interesting Pokemon information in your app (hint: try <code>console.log</code>ging different data returned from the API)</li>
 </ol>
 </blockquote>
 <h2 id="refs">Refs</h2>
 <p>As we have seen, React manages the DOM for us. That means we generally don&apos;t have to worry about keeping track of DOM nodes, or manipulating them directly. However sometimes you need to be able to access a DOM node that React is managing. Some common use cases are managing browser focus and integrating with third party libraries like a jQuery plugin.</p>
 <p>We can do this with a <em>ref</em>. Let&apos;s look at an example that will change browser focus to an input when a button is clicked (<a href="https://codesandbox.io/s/yw510x1l81" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">InputFocuser</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
-  <span class="token function-variable function">setInputRef</span> <span class="token operator">=</span> <span class="token punctuation">(</span>input<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">setInputRef</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">input</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>input <span class="token operator">=</span> input
   <span class="token punctuation">}</span>
 
@@ -1185,6 +1185,60 @@ Open the <code>pokedex</code> React application again and open the <code>src/Bes
 <span class="token punctuation">}</span>
 </code></pre>
 <p>The key method here is <code>setInputRef</code>. It is called by React when rendering the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><span class="token punctuation">&gt;</span></span></code>, and passes a reference to the real DOM node as an argument. We remember the reference by assigning it to <code>this.input</code>. Then when the button is clicked we can call the <code>focus</code> method (a vanilla method, not part of React) on the input DOM node.</p>
+<h3 id="uncontrolled--controlled-components">Uncontrolled &amp; Controlled Components</h3>
+<p>Refs are also useful when building forms to collect user data. We can use them in a <em>pattern</em> called an <em>uncontrolled component</em>. A pattern is a repeated solution to a problem that is useful in multiple similar cases.</p>
+<p>Let&apos;s look an example of an uncontrolled component (<a href="https://codesandbox.io/s/04x2r6ko0p" target="_blank">interactive example</a>):</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">UncontrolledComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">inputRef</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">inputEl</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>inputRef <span class="token operator">=</span> inputEl
+  <span class="token punctuation">}</span>
+
+  <span class="token function-variable function">handleSubmit</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>inputRef<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+    event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// Prevents form submission</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>form onSubmit<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleSubmit<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;text&quot;</span> ref<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>inputRef<span class="token punctuation">}</span> placeholder<span class="token operator">=</span><span class="token string">&quot;Name&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">&quot;submit&quot;</span><span class="token operator">&gt;</span>Submit<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>By using a ref, we can gather all of the input data in the form at once and do something with it, for example send it in a POST request.</p>
+<p>In contrast, we can get more control over our input data by using the <em>controlled component</em> pattern. Let&apos;s look at an example (<a href="https://codesandbox.io/s/4jq1yqy8kx" target="_blank">interactive example</a>):</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">ControlledComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function-variable function">handleChange</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>input
+        type<span class="token operator">=</span><span class="token string">&quot;text&quot;</span>
+        placeholder<span class="token operator">=</span><span class="token string">&quot;Name&quot;</span>
+        value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>name<span class="token punctuation">}</span>
+        onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleChange<span class="token punctuation">}</span>
+      <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Now we&apos;re controlling the <code>value</code> of the input by using the value from state. This means that we can only change the value by updating state. If you didn&apos;t call <code>this.setState()</code> in the <code>handleChange</code> method, then the input&apos;s value would never change and it would appear as if you couldn&apos;t type in the input!</p>
+<p>This pattern is useful if you need to keep track of what the user is typing in the input. We could transform the string before we set it with <code>this.setState()</code>, for example by calling <code>toUpperCase()</code> on the string.</p>
+<p>Both of these patterns are useful when working with forms, but in general the uncontrolled component pattern is most common, unless you know that you need the controlled component pattern.</p>
 <h1 id="homework">Homework</h1>
 <p>Complete user stories 9, 10, 11 and 12 from <a href="https://github.com/CodeYourFuture/cyf-hotel-react" target="_blank">cyf-hotel-react</a> project.
 Try to complete the Stretch Goal exercises.</p>
@@ -1231,7 +1285,7 @@ Try to complete the Stretch Goal exercises.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"next":{"title":"Node/DB I","level":"1.8","depth":1,"path":"node-db/index.md","ref":"node-db/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node-db/week-13/lesson.md","ref":"node-db/week-13/lesson.md","articles":[]},{"title":"Week 17 - Middleware, Templating and APIs","level":"1.8.2","depth":2,"path":"node-db/week-14/lesson.md","ref":"node-db/week-14/lesson.md","articles":[]},{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"path":"node-db/week-15/lesson.md","ref":"node-db/week-15/lesson.md","articles":[]}]},"previous":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-20/lesson.md","ref":"react/week-20/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-21/lesson.md","mtime":"2019-03-16T12:37:27.299Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-16T12:38:34.730Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"next":{"title":"Node/DB I","level":"1.8","depth":1,"path":"node-db/index.md","ref":"node-db/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node-db/week-13/lesson.md","ref":"node-db/week-13/lesson.md","articles":[]},{"title":"Week 17 - Middleware, Templating and APIs","level":"1.8.2","depth":2,"path":"node-db/week-14/lesson.md","ref":"node-db/week-14/lesson.md","articles":[]},{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"path":"node-db/week-15/lesson.md","ref":"node-db/week-15/lesson.md","articles":[]}]},"previous":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-20/lesson.md","ref":"react/week-20/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-21/lesson.md","mtime":"2019-04-07T09:31:51.851Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T09:33:02.709Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

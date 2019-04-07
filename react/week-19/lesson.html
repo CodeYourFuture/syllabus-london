@@ -923,7 +923,7 @@
 </li>
 </ul>
 <blockquote>
-<p><strong>Exercise</strong>:
+<p><strong>Exercise A</strong>:
 Look at the example online shopping user interface in the <a href="https://reactjs.org/docs/thinking-in-react.html" target="_blank">Thinking in React article</a> (the image at the top). Draw boxes around the components and give them names. Compare with the example components shown in the second image.</p>
 </blockquote>
 <h2 id="rendering-with-react">Rendering with React</h2>
@@ -995,16 +995,16 @@ Look at the example online shopping user interface in the <a href="https://react
 </code></pre>
 <p>As you can see, this is much easier to read than both the straight <code>React.createElement</code> API and the vanilla JS API. Most people using React use JSX to write their components.</p>
 <blockquote>
-<p><strong>Exercises</strong></p>
+<p><strong>Exercise B</strong></p>
 <ol>
 <li>Change the <a href="http://jsbin.com/gekahexige/edit?html,output" target="_blank">JSX example from above</a> to instead render a <code>h1</code> with an id of <code>&quot;main-header&quot;</code> and the text &quot;Hello Ali&quot;</li>
-<li>Visit the <a href="https://babeljs.io/repl/#?babili=false&amp;browsers=&amp;build=&amp;builtIns=false&amp;code_lz=DwEwlgbgfAEgpgGwQewAQHVkCcEmAenGiA&amp;debug=false&amp;forceAllTransforms=false&amp;shippedProposals=false&amp;circleciRepo=&amp;evaluate=true&amp;fileSize=false&amp;lineWrap=false&amp;presets=es2015%2Creact%2Cstage-2&amp;prettier=false&amp;targets=&amp;version=6.26.0&amp;envVersion=" target="_blank">Babel REPL</a> and copy/paste the <code>h1</code> that you just created</li>
+<li>Visit the <a href="https://babeljs.io/repl/" target="_blank">Babel REPL</a> and copy/paste the <code>h1</code> that you just created</li>
 </ol>
 </blockquote>
 <h2 id="lets-create-a-react-app">Let&apos;s Create A React App</h2>
 <p>The Facebook team behind React have created a tool to help you create and set up React projects. It is called <a href="https://github.com/facebook/create-react-app" target="_blank">Create React App</a>. It sets up files like we saw in the previous example, so that you don&apos;t have to.</p>
 <blockquote>
-<p><strong>Exercise</strong>: Install &amp; set up a Create React App by following the steps below</p>
+<p><strong>Exercise C</strong>: Install &amp; set up a Create React App by following the steps below</p>
 </blockquote>
 <pre class="language-"><code>npm install -g create-react-app
 
@@ -1032,7 +1032,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <li>We <em>render</em> the <code>HelloWorld</code> component into a <code>div</code> with the id of <code>root</code></li>
 </ol>
 <blockquote>
-<p><strong>Exercise</strong>:
+<p><strong>Exercise D</strong>:
 Using the <code>pokedex</code> React app that you just created and open the <code>src/App.js</code> file</p>
 <ol>
 <li>Delete everything in the file except the line containing <code>export default App</code>. You should see an error in your terminal and in your web browser - don&apos;t panic! We&apos;re going to remake the <code>App</code> component ourselves</li>
@@ -1040,7 +1040,7 @@ Using the <code>pokedex</code> React app that you just created and open the <cod
 <li>Create a function named <code>App</code>, which will be our component</li>
 <li>Within the <code>App</code> function, return a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span></code> element with the text &quot;Welcome to the Pokedex&quot;. What do you see in your web browser?</li>
 <li>Create a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span></code> element that <em>wraps around</em> the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span></code> you just created</li>
-<li>Below the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span></code> element (but within the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span></code>), create an <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span><span class="token punctuation">&gt;</span></span></code> element. Then make it&apos;s <code>src</code> attribute equal to <code>https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png</code>. What do you expect to see in your web browser?</li>
+<li>Below the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span></code> element (but within the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span></code>), create an <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span><span class="token punctuation">&gt;</span></span></code> element. Then make its <code>src</code> attribute equal to <code>https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png</code>. What do you expect to see in your web browser?</li>
 <li>Now create a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span></code> element to wrap both the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span></code> element <strong>and</strong> the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span><span class="token punctuation">&gt;</span></span></code> element</li>
 </ol>
 </blockquote>
@@ -1071,12 +1071,12 @@ Using the <code>pokedex</code> React app that you just created and open the <cod
 <p>We are also using some shorter syntax within the <code>HelloWorld</code> component. <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Greeting</span> <span class="token punctuation">/&gt;</span></span></code> is just a shorter way of writing <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Greeting</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Greeting</span><span class="token punctuation">&gt;</span></span></code>, which is useful if we don&apos;t need to put anything inside the <code>Greeting</code> component.</p>
 <p>Notice how the components that we write (<code>HelloWorld</code>, <code>Greeting</code>, <code>Mentor</code>) are <code>CamelCased</code> and always start with an uppercase letter? And &quot;regular DOM&quot; components (<code>div</code>, <code>span</code>) are always lowercase? This the convention to let you know whether you are using a &quot;regular DOM component&quot; or something that you have written.</p>
 <blockquote>
-<p><strong>Exercise</strong>:
+<p><strong>Exercise E</strong>:
 Using the <code>pokedex</code> React app that you created earlier and open the <code>src/App.js</code> file</p>
 <ol>
 <li>Create a new function named <code>Logo</code></li>
-<li>Copy <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span></code> element and it&apos;s contents and paste into the <code>Logo</code> component</li>
-<li>Replace the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span></code> element in the <code>App</code> component with the new <code>Heading</code> component</li>
+<li>Copy <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span></code> element and its contents and paste into the <code>Logo</code> component</li>
+<li>Replace the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span></code> element in the <code>App</code> component with the new <code>Logo</code> component</li>
 <li>Create a new component function named <code>BestPokemon</code> and return a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span></code> element with some text saying which is your favourite Pokemon (e.g. &quot;My favourite Pokemon is Squirtle&quot;)</li>
 <li><em>Render</em> your new <code>BestPokemon</code> component below the <code>Logo</code> component within the <code>App</code> component</li>
 </ol>
@@ -1103,7 +1103,7 @@ Using the <code>pokedex</code> React app that you created earlier and open the <
 </code></pre>
 <p>If we want to do this, we can still use arrow functions but we can&apos;t use the implicit return.</p>
 <blockquote>
-<p><strong>Exercise</strong>:
+<p><strong>Exercise F</strong>:
 Using the <code>pokedex</code> React app that you created earlier and open the <code>src/App.js</code> file
 Convert the <code>Logo</code> and <code>BestPokemon</code> functions into an arrow functions</p>
 </blockquote>
@@ -1134,7 +1134,7 @@ Convert the <code>Logo</code> and <code>BestPokemon</code> functions into an arr
 <span class="token punctuation">}</span>
 <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>The temperature <span class="token keyword">in</span> <span class="token punctuation">{</span>weather<span class="token punctuation">.</span>location<span class="token punctuation">}</span> is <span class="token punctuation">{</span>weather<span class="token punctuation">.</span>temperature<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
 </code></pre>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">formatName</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">formatName</span><span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> user<span class="token punctuation">.</span>firstName <span class="token operator">+</span> <span class="token string">&apos; &apos;</span> <span class="token operator">+</span> user<span class="token punctuation">.</span>lastName
 <span class="token punctuation">}</span>
 <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token function">formatName</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
@@ -1144,7 +1144,7 @@ Convert the <code>Logo</code> and <code>BestPokemon</code> functions into an arr
 
 <span class="token keyword">const</span> <span class="token function-variable function">List</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
   <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
-    <span class="token punctuation">{</span>mentors<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">{</span>mentors<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
       <span class="token keyword">return</span> <span class="token punctuation">(</span>
         <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
       <span class="token punctuation">)</span>
@@ -1154,7 +1154,7 @@ Convert the <code>Logo</code> and <code>BestPokemon</code> functions into an arr
 </code></pre>
 <p>Here we are using <code>Array.map</code> to turn an array of strings into an array of components.</p>
 <blockquote>
-<p><strong>Exercise</strong>:
+<p><strong>Exercise G</strong>:
 Using the <code>pokedex</code> React app that you created earlier and open the <code>src/App.js</code> file</p>
 <ol>
 <li>Inside the <code>Logo</code> component create a new variable called <code>appName</code> and assign it to <code>&quot;Pokedex&quot;</code></li>
@@ -1164,9 +1164,24 @@ Using the <code>pokedex</code> React app that you created earlier and open the <
 <li>Render the <code>CaughtPokemon</code> component within the <code>App</code> component (below <code>BestPokemon</code>)</li>
 <li>Within the <code>BestPokemon</code> component, create a variable named <code>pokemonNames</code> and assign it to an array with some Pokemon names (e.g. <code>[&apos;Squirtle&apos;, &apos;Bulbasaur&apos;, &apos;Charmander&apos;]</code>)</li>
 <li>Change the <code>BestPokemon</code> component to return a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span></code> element instead of a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span></code> element</li>
-<li>Now use the <code>.map()</code> method on the <code>pokemonNames</code> variable to loop over each name can return a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span></code> element (hint: look at the mentors list example above)</li>
+<li>Now use the <code>.map()</code> method on the <code>pokemonNames</code> variable to loop over each name and return a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span></code> element for each (hint: look at the mentors list example above)</li>
 </ol>
 </blockquote>
+<h2 id="keys">Keys</h2>
+<p>You may have noticed that we are now seeing a red error message in the Dev Tools: <code>Warning: Each child in a list should have a unique &quot;key&quot; prop.</code>. This error happens when you use <code>Array.map</code> to return a list of elements (<a href="https://codesandbox.io/s/pwp8ox4kn0" target="_blank">interactive example</a>):</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> mentors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;Ali&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Kash&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Davide&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;German&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Gerald&apos;</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">List</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span>mentors<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>li key<span class="token operator">=</span><span class="token punctuation">{</span>index<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>Here we have added a <code>key</code> prop the to element. A documentation page explaining in more depth is in the further reading section but basically the <code>key</code> prop has a special meaning in React because it is used internally to keep track of which element in the list is which.</p>
 <h2 id="importingexporting-components">Importing/Exporting Components</h2>
 <p>To help organise your code, components can be imported and exported just like any other JavaScript code (<a href="https://codesandbox.io/s/1z6xozl81l" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> Greeting <span class="token keyword">from</span> <span class="token string">&apos;./Greeting&apos;</span>
@@ -1188,7 +1203,7 @@ Using the <code>pokedex</code> React app that you created earlier and open the <
 </code></pre>
 <p>The convention is to name component files the exactly same as the component (including the capital letter).</p>
 <blockquote>
-<p><strong>Exercise</strong>:
+<p><strong>Exercise H</strong>:
 Using the <code>pokedex</code> React app that you created earlier</p>
 <ol>
 <li>Create a new file within the <code>src</code> directory named <code>Logo.js</code></li>
@@ -1215,7 +1230,7 @@ Using the <code>pokedex</code> React app that you created earlier</p>
 </code></pre>
 <p>This is identical to the <a href="lesson.html#embedding-js-into-jsx">Embedding JS into JSX section</a> we looked at earlier.</p>
 <p>Now let&apos;s take a look at using props that we have passed to a component (<a href="https://codesandbox.io/s/vmjy0o91m7" target="_blank">interactive example</a>):</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Greeting</span> <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Greeting</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
     <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span>greeting<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
@@ -1230,7 +1245,7 @@ Using the <code>pokedex</code> React app that you created earlier</p>
 <pre class="language-"><code class="lang-js"><span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span>counter <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
 </code></pre>
 <blockquote>
-<p><strong>Exercise:</strong>
+<p><strong>Exercise I</strong>
 Using the <code>pokedex</code> React app that you created earlier</p>
 <ol>
 <li>Open the <code>App.js</code> file</li>
@@ -1299,7 +1314,7 @@ Using the <code>pokedex</code> React app that you created earlier</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"next":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-20/lesson.md","ref":"react/week-20/lesson.md","articles":[]},"previous":{"title":"React","level":"1.7","depth":1,"path":"react/index.md","ref":"react/index.md","articles":[{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-19/lesson.md","ref":"react/week-19/lesson.md","articles":[]},{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-20/lesson.md","ref":"react/week-20/lesson.md","articles":[]},{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-21/lesson.md","ref":"react/week-21/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-19/lesson.md","mtime":"2019-03-16T12:37:27.299Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-16T12:38:34.730Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"next":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-20/lesson.md","ref":"react/week-20/lesson.md","articles":[]},"previous":{"title":"React","level":"1.7","depth":1,"path":"react/index.md","ref":"react/index.md","articles":[{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-19/lesson.md","ref":"react/week-19/lesson.md","articles":[]},{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-20/lesson.md","ref":"react/week-20/lesson.md","articles":[]},{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-21/lesson.md","ref":"react/week-21/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-19/lesson.md","mtime":"2019-04-07T09:31:51.847Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T09:33:02.709Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

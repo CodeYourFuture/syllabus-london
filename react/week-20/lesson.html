@@ -898,7 +898,7 @@
 <span class="token punctuation">)</span>
 
 <span class="token comment">// Mentor.js</span>
-<span class="token keyword">const</span> <span class="token function-variable function">Mentor</span> <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+<span class="token keyword">const</span> <span class="token function-variable function">Mentor</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
   <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
 <span class="token punctuation">)</span>
 
@@ -953,7 +953,7 @@
 <li>Delete the old functional component</li>
 </ol>
 <blockquote>
-<p><strong>Exercise:</strong>
+<p><strong>Exercise A</strong>
 Open the <code>pokedex</code> React application that you created last week</p>
 <ol>
 <li>Convert the <code>Logo</code> component from a functional component into a class component</li>
@@ -984,7 +984,7 @@ Open the <code>pokedex</code> React application that you created last week</p>
 </code></pre>
 <p><strong>Except</strong> for the <code>render</code> method (and a handful of others which we&apos;ll talk about later).</p>
 <blockquote>
-<p><strong>Exercise:</strong>
+<p><strong>Exercise B</strong>
 Open the <code>pokedex</code> React application and open the <code>Logo.js</code> file</p>
 <ol>
 <li>Add a method named <code>logWhenClicked</code> to the <code>Logo</code> component (hint: remember to use the correct syntax)</li>
@@ -1020,7 +1020,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">const</span> <span class="token function-variable function">FancyButton</span> <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+<span class="token keyword">const</span> <span class="token function-variable function">FancyButton</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
   <span class="token operator">&lt;</span>button
     className<span class="token operator">=</span><span class="token string">&quot;my-fancy-classname&quot;</span>
     onClick<span class="token operator">=</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span>handleClick<span class="token punctuation">}</span>
@@ -1030,7 +1030,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">)</span>
 </code></pre>
 <blockquote>
-<p><strong>Exercise:</strong>
+<p><strong>Exercise C</strong>
 Open the <code>pokedex</code> React application</p>
 <ol>
 <li>Open the <code>Logo.js</code> component and copy the <code>logWhenClicked</code> method. Then delete it</li>
@@ -1045,7 +1045,7 @@ Open the <code>pokedex</code> React application</p>
 <p>A counter is a common React example, showing the number of times a button has been clicked. First lets render a button and a counter which set to 0 clicks (<a href="https://codesandbox.io/s/voqzrx5ny" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span>
 
-<span class="token keyword">const</span> <span class="token function-variable function">Counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+<span class="token keyword">const</span> <span class="token function-variable function">Counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
     Count<span class="token punctuation">:</span> <span class="token punctuation">{</span>props<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
     <span class="token operator">&lt;</span>button id<span class="token operator">=</span><span class="token string">&quot;click-me&quot;</span><span class="token operator">&gt;</span>Click me<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
@@ -1065,7 +1065,7 @@ Open the <code>pokedex</code> React application</p>
 <span class="token keyword">class</span> <span class="token class-name">Counter</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token comment">// ...</span>
 <span class="token punctuation">}</span>
-<span class="token keyword">function</span> <span class="token function">renderCounter</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">function</span> <span class="token function">renderCounter</span><span class="token punctuation">(</span><span class="token parameter">count</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// ...</span>
 <span class="token punctuation">}</span>
 
@@ -1093,7 +1093,7 @@ document<span class="token punctuation">.</span><span class="token function">get
 <p>What other approaches can we take?</p>
 <p>The solution that React provides for us is called <em>state</em>. It allows a component to &quot;remember&quot; some variables. Let&apos;s take a look at how we could rewrite the counter with React state.</p>
 <p>Let&apos;s start over and get rid of the global variables. <strong>Generally having global variables is a bad idea</strong>, since it is very easy to create a bug which affects the whole application.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
     <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
       Count<span class="token punctuation">:</span> <span class="token punctuation">{</span>props<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
@@ -1130,7 +1130,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 </code></pre>
 <p>This code has a bug! <code>this.state</code> is initialised as an empty object, and so <code>this.state.count</code> is undefined. We need to initialise it from props. We can do this in the class constructor (<a href="https://codesandbox.io/s/1oyxx4lzz7" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Counter</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
       count<span class="token punctuation">:</span> props<span class="token punctuation">.</span>count
     <span class="token punctuation">}</span>
@@ -1141,9 +1141,9 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Now the counter component is &quot;remembering&quot; that it&apos;s count, however it is stuck at 0. Next we&apos;ll look at how we change what the component is remembering (<a href="https://codesandbox.io/s/n714vmyk5l" target="_blank">interactive example</a>):</p>
+<p>Now the counter component is &quot;remembering&quot; its count, however it is stuck at 0. Next we&apos;ll look at how we change what the component is remembering (<a href="https://codesandbox.io/s/n714vmyk5l" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Counter</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// ...</span>
   <span class="token punctuation">}</span>
 
@@ -1178,12 +1178,12 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 </code></pre>
 <p>This still isn&apos;t a particular useful application, because we can only still only count to 1! We need to change our <code>Counter</code> component so that it reads the previous state, then adds 1 onto that. We can do this by passing a callback function to <code>this.setState</code> (<a href="https://codesandbox.io/s/qxz27q9y4" target="_blank">interactive example</a>):</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Counter</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// ...</span>
   <span class="token punctuation">}</span>
 
   <span class="token function-variable function">increment</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span>previousState <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token parameter">previousState</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
       <span class="token keyword">return</span> <span class="token punctuation">{</span>
         count<span class="token punctuation">:</span> previousState<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span>
       <span class="token punctuation">}</span>
@@ -1206,7 +1206,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <li>If we need to read the previous state to be able to calculate the new state, then we must use a callback function with <code>this.setState()</code> (e.g. <code>this.setState((previousState) =&gt; { return { something: previousState.something + 1 } })</code>)</li>
 </ul>
 <blockquote>
-<p><strong>Exercise:</strong>
+<p><strong>Exercise D</strong>
 Open the <code>pokedex</code> React application and open the <code>CaughtPokemon.js</code> file</p>
 <ol>
 <li>Add a <code>constructor</code> method to the <code>CaughtPokemon</code> component and remember to handle <code>props</code> correctly (hint: <code>super(props)</code>)</li>
@@ -1293,7 +1293,7 @@ Open the <code>pokedex</code> React application and open the <code>CaughtPokemon
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"next":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-21/lesson.md","ref":"react/week-21/lesson.md","articles":[]},"previous":{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-19/lesson.md","ref":"react/week-19/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-20/lesson.md","mtime":"2019-03-16T12:37:27.299Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-16T12:38:34.730Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"next":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-21/lesson.md","ref":"react/week-21/lesson.md","articles":[]},"previous":{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-19/lesson.md","ref":"react/week-19/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-20/lesson.md","mtime":"2019-04-07T09:31:51.851Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T09:33:02.709Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -935,7 +935,7 @@ three.</p>
 </li>
 </ul>
 <p>Now let&apos;s take a look at a bigger example of a badly written function</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span>salary<span class="token punctuation">,</span> taxCode<span class="token punctuation">,</span> incomeTax1<span class="token punctuation">,</span> incomeTax2<span class="token punctuation">,</span> ownsCar<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token parameter">salary<span class="token punctuation">,</span> taxCode<span class="token punctuation">,</span> incomeTax1<span class="token punctuation">,</span> incomeTax2<span class="token punctuation">,</span> ownsCar</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> totalIncomeTax <span class="token operator">=</span> incomeTax1 <span class="token operator">+</span> incomeTax2<span class="token punctuation">;</span>
   <span class="token keyword">var</span> studentLoan <span class="token operator">=</span> <span class="token punctuation">(</span>salary <span class="token operator">-</span> <span class="token number">17775</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.09</span><span class="token punctuation">;</span>
   <span class="token keyword">var</span> originalSalary <span class="token operator">=</span> salary<span class="token punctuation">;</span>
@@ -1025,7 +1025,7 @@ scope&quot;, whereas let and const have &quot;block scope&quot;.</p>
 <p>Exercise: This <strong>badly designed</strong> function will throw the error <code>message is
 not defined</code>. What is the problem, and how could we fix it?</p>
 </blockquote>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">compareNumbers</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">compareNumbers</span><span class="token punctuation">(</span><span class="token parameter">m<span class="token punctuation">,</span> n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>m <span class="token operator">&lt;</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> message <span class="token operator">=</span> m <span class="token operator">+</span> <span class="token string">&quot; is smaller than &quot;</span> <span class="token operator">+</span> n<span class="token punctuation">;</span>
   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
@@ -1043,14 +1043,14 @@ scope variable? In what situation might you want to use <code>const</code> inste
 variable that can be re-assigned?</p>
 <p>Exercise: Let&apos;s update this code to use <code>let</code> and <code>const</code> instead of <code>var</code></p>
 </blockquote>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">getCircleArea</span><span class="token punctuation">(</span>radius<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">getCircleArea</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> pi <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token punctuation">;</span>
   <span class="token keyword">var</span> rSquared <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>radius<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token keyword">return</span> pi <span class="token operator">*</span> rSquared<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">function</span> <span class="token function">getCircleAreas</span><span class="token punctuation">(</span>radiusArr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">function</span> <span class="token function">getCircleAreas</span><span class="token punctuation">(</span><span class="token parameter">radiusArr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> areasArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> radiusArr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1064,30 +1064,30 @@ variable that can be re-assigned?</p>
 <h2 id="template-literals">Template literals</h2>
 <p>We do a lot of string concatenation in JavaScript - ES6 introduces a more
 elegant way of accomplishing the same.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">greeting</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">greeting</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token string">&quot;Hello &quot;</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">&quot;, welcome to JS core 3!&quot;</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>Rewriting this function in ES6, we have</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">greeting</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">greeting</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`Hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, welcome to JS core 3!`</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <h2 id="arrow-functions">Arrow functions</h2>
 <p>ES6 also has a new way of declaring functions. Let&apos;s see how it works.</p>
 <pre class="language-"><code class="lang-js"><span class="token comment">// before </span>
-<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">// ES6</span>
-<span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>If the function only contains one expression, the curly braces and the <code>return</code> 
 are optional and we can write the whole function in one line. </p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
 </code></pre>
 <blockquote>
 <p>Exercise: Refactor the previous code to have a separate function that checks
@@ -1100,7 +1100,7 @@ used when the argument/parameter is either missing or <code>undefined</code>. </
 <p>This function returns the sum of three numbers. Let&apos;s assume we want to use the 
 same function with only two arguments: </p>
 <pre class="language-"><code class="lang-js"><span class="token comment">// without default parameter</span>
-<span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   c <span class="token operator">=</span> c <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -1109,7 +1109,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
 
 <span class="token comment">// with default parameter </span>
-<span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">0</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 7</span>
@@ -1201,7 +1201,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 8 - More TDD, ES6","level":"1.5.2","depth":2,"next":{"title":"Week 9 - Recap","level":"1.5.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]},"previous":{"title":"Week 7 - Unit Tests and TDD","level":"1.5.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-11/lesson.md","mtime":"2019-03-16T12:37:27.199Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-16T12:38:34.730Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 8 - More TDD, ES6","level":"1.5.2","depth":2,"next":{"title":"Week 9 - Recap","level":"1.5.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]},"previous":{"title":"Week 7 - Unit Tests and TDD","level":"1.5.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-11/lesson.md","mtime":"2019-04-07T09:31:51.747Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T09:33:02.709Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
