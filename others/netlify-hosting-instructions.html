@@ -1,0 +1,1013 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Hosting React apps with Netlify · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="node-version-manager.html" />
+    
+    
+    <link rel="prev" href="cors.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Course</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Before you start
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="lesson0.html">
+            
+                <a href="lesson0.html">
+            
+                    
+                    Week 0 - Introduction and basic setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../html-css/">
+            
+                <a href="../html-css/">
+            
+                    
+                    HTML/CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../html-css/week-1/lesson.html">
+            
+                <a href="../html-css/week-1/lesson.html">
+            
+                    
+                    Week 1 - Semantic HTML and CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../html-css/week-2/lesson.html">
+            
+                <a href="../html-css/week-2/lesson.html">
+            
+                    
+                    Week 2 - Responsive Web and layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../html-css/week-3/lesson.html">
+            
+                <a href="../html-css/week-3/lesson.html">
+            
+                    
+                    Week 3 - Design frameworks, Naming patterns and Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../js-core-1/">
+            
+                <a href="../js-core-1/">
+            
+                    
+                    JavaScript I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../js-core-1/week-1/lesson.html">
+            
+                <a href="../js-core-1/week-1/lesson.html">
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../js-core-1/week-2/lesson.html">
+            
+                <a href="../js-core-1/week-2/lesson.html">
+            
+                    
+                    Week 5 - Conditionals and Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../js-core-1/week-3/lesson.html">
+            
+                <a href="../js-core-1/week-3/lesson.html">
+            
+                    
+                    Week 6 - More Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../js-core-2/">
+            
+                <a href="../js-core-2/">
+            
+                    
+                    JavaScript II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../js-core-2/week-1/lesson.html">
+            
+                <a href="../js-core-2/week-1/lesson.html">
+            
+                    
+                    Week 7 - Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../js-core-2/week-2/lesson.html">
+            
+                <a href="../js-core-2/week-2/lesson.html">
+            
+                    
+                    Week 8 - JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../js-core-2/week-3/lesson.html">
+            
+                <a href="../js-core-2/week-3/lesson.html">
+            
+                    
+                    Week 9 - More JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../js-core-3/">
+            
+                <a href="../js-core-3/">
+            
+                    
+                    JavaScript III
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../js-core-3/week-1/lesson.html">
+            
+                <a href="../js-core-3/week-1/lesson.html">
+            
+                    
+                    Week 10 - Unit Tests and TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../js-core-3/week-2/lesson.html">
+            
+                <a href="../js-core-3/week-2/lesson.html">
+            
+                    
+                    Week 11 - More TDD, ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../js-core-3/week-3/lesson.html">
+            
+                <a href="../js-core-3/week-3/lesson.html">
+            
+                    
+                    Week 12 - Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../react/">
+            
+                <a href="../react/">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../react/week-1/lesson.html">
+            
+                <a href="../react/week-1/lesson.html">
+            
+                    
+                    Week 13 - React 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../react/week-2/lesson.html">
+            
+                <a href="../react/week-2/lesson.html">
+            
+                    
+                    Week 14 - Reacting to Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../react/week-3/lesson.html">
+            
+                <a href="../react/week-3/lesson.html">
+            
+                    
+                    Week 15 - Fetching Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../react/week-4/lesson.html">
+            
+                <a href="../react/week-4/lesson.html">
+            
+                    
+                    Routing (optional)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../node/">
+            
+                <a href="../node/">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../node/week-1/lesson.html">
+            
+                <a href="../node/week-1/lesson.html">
+            
+                    
+                    Week 16 - Node and Express 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../node/week-2/lesson.html">
+            
+                <a href="../node/week-2/lesson.html">
+            
+                    
+                    Week 17 - Middleware, Templating and APIs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../node/week-3/lesson.html">
+            
+                <a href="../node/week-3/lesson.html">
+            
+                    
+                    Week 18 - Advanced Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../db/">
+            
+                <a href="../db/">
+            
+                    
+                    Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../db/week-1/lesson.html">
+            
+                <a href="../db/week-1/lesson.html">
+            
+                    
+                    Week 19 - Introduction to SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../db/week-2/lesson.html">
+            
+                <a href="../db/week-2/lesson.html">
+            
+                    
+                    Week 20 - More SQL and integration with NodeJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../db/week-3/lesson.html">
+            
+                <a href="../db/week-3/lesson.html">
+            
+                    
+                    Week 21 - More integration with NodeJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Workshops and other tutorials</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="coding-101.html">
+            
+                <a href="coding-101.html">
+            
+                    
+                    Coding 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../html-css/compile-scss-instructions.html">
+            
+                <a href="../html-css/compile-scss-instructions.html">
+            
+                    
+                    Compiling SCSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../node/week-1/workshop.html">
+            
+                <a href="../node/week-1/workshop.html">
+            
+                    
+                    Express Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../node/week-3/workshop.html">
+            
+                <a href="../node/week-3/workshop.html">
+            
+                    
+                    Hotel Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="mongodb-101.html">
+            
+                <a href="mongodb-101.html">
+            
+                    
+                    MongoDB 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="aws-workshop-2.html">
+            
+                <a href="aws-workshop-2.html">
+            
+                    
+                    AWS - DynamoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="java.html">
+            
+                <a href="java.html">
+            
+                    
+                    Java module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">For Students</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="coding-standards.html">
+            
+                <a href="coding-standards.html">
+            
+                    
+                    Coding Standards and Best Practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="making-a-pull-request.html">
+            
+                <a href="making-a-pull-request.html">
+            
+                    
+                    Making a Pull Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="cors.html">
+            
+                <a href="cors.html">
+            
+                    
+                    CORS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.4" data-path="netlify-hosting-instructions.html">
+            
+                <a href="netlify-hosting-instructions.html">
+            
+                    
+                    Hosting React apps with Netlify
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="node-version-manager.html">
+            
+                <a href="node-version-manager.html">
+            
+                    
+                    Node Version Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="getting-a-job.html">
+            
+                <a href="getting-a-job.html">
+            
+                    
+                    Getting A Job
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="developer-links.html">
+            
+                <a href="developer-links.html">
+            
+                    
+                    Developer Links
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">General information</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="code-your-future.html">
+            
+                <a href="code-your-future.html">
+            
+                    
+                    CodeYourFuture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="house-rules.html">
+            
+                <a href="house-rules.html">
+            
+                    
+                    House Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../CODE_OF_CONDUCT.html">
+            
+                <a href="../CODE_OF_CONDUCT.html">
+            
+                    
+                    Code of Conduct
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../CONTRIBUTING.html">
+            
+                <a href="../CONTRIBUTING.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Hosting React apps with Netlify</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="hosting-your-react-app-on-the-web-using-netlify">Hosting your React app on the web, using Netlify</h1>
+<p>Note: these instructions are for React apps that have been created with the command <code>create-react-app</code>.</p>
+<h2 id="getting-set-up">Getting set up</h2>
+<h3 id="install-the-netlify-cli-software-once">Install the netlify-cli software, <em>once</em>:</h3>
+<p>In a terminal, from <em>any</em> directory, run the following to install <code>netlify-cli</code> globally.</p>
+<pre class="language-"><code>npm install netlify-cli -g
+</code></pre><p>If this fails with errors, run it again with superuser privileges, using <code>sudo</code>:</p>
+<pre class="language-"><code>sudo npm install netlify-cli -g
+</code></pre><h3 id="create-a-netlify-account">Create a netlify account</h3>
+<p>Visit <a href="https://netlify.com/" target="_blank">https://netlify.com/</a> and create a free account.</p>
+<h2 id="build-your-react-app">&quot;Build&quot; your React app</h2>
+<p>First navigate with <code>cd</code> to the directory for your React app that you want to host. (Let&apos;s assume it&apos;s called cyf-hotel)</p>
+<pre class="language-"><code>cd cyf-hotel
+</code></pre><p>Now, <code>build</code> the app:</p>
+<pre class="language-"><code>npm run build
+</code></pre><p>This will create (or update) a <code>build</code> directory within your current directory. This contains a <em>prepared</em> version of your app, ready to be hosted. (There are many ways to host it.)</p>
+<h3 id="host-the-app-for-the-first-time-on-netlify">Host the app for the first time on netlify</h3>
+<pre class="language-"><code>netlify deploy --prod
+</code></pre><p>It will ask some questions.</p>
+<p>NOTE: You can <em>only</em> use the <em>keyboard</em> (UP/DOWN arrows, and ENTER) to input the answers to these questions.</p>
+<p>First it will try to use your browser to authenticate you. Depending on your computer, it may launch a new browser tab or it may fail to do so.</p>
+<p>If told to do so:</p>
+<ul>
+<li>open the given URL in the browser to authenticate</li>
+</ul>
+<p>In all cases:</p>
+<ul>
+<li>Go to your browser, press &quot;Authenticate&quot; on the netlify tab that has just been opened.</li>
+<li><p>Go back to the terminal. It should display that auth was successful, and it should ask you more questions:</p>
+</li>
+<li><p>Choose: <code>Create &amp; Configure a new site</code></p>
+</li>
+<li>Choose a site name like: <code>cyf-ahmet-hotel</code></li>
+<li>When asked for <em>team</em>, <em>DON&apos;T</em> select <code>CYF</code> if it is an option. Choose <em>your own user name</em> as a team.</li>
+<li>When asked for deploy path, enter <code>build</code>.</li>
+</ul>
+<p><em>That&apos;s it, all done.</em></p>
+<ul>
+<li>Visit the live site URL that netlify reports at the end.</li>
+<li>Check your app is there and works!</li>
+<li>Test it on your phone!</li>
+<li>Share the url with someone in the class!</li>
+</ul>
+<h2 id="what-if-i-want-to-make-changes-to-my-app">What if I want to make changes to my app?</h2>
+<p>After you make changes, you will want to <em>build</em> and <em>deploy</em> again, in order to host your updated app. Here is how:</p>
+<ul>
+<li>Make changes to your app</li>
+<li><p>Test the changes</p>
+</li>
+<li><p>If you&apos;re ready to update the hosted version:</p>
+</li>
+</ul>
+<pre class="language-"><code>npm run build
+netlify deploy --prod
+</code></pre><h1 id="troubleshooting">Troubleshooting</h1>
+<h1 id="deleting-your-hosted-site">Deleting your hosted site</h1>
+<p>If you decide you don&apos;t want your site hosted:</p>
+<ul>
+<li>log in to <a href="https://netlify.com/" target="_blank">https://netlify.com/</a></li>
+<li>select your site from the list</li>
+<li>click on site settings</li>
+<li>scroll down and choose <em>delete this site</em></li>
+<li>follow the instructions to confirm</li>
+</ul>
+<h1 id="advanced-section-you-can-ignore-this">Advanced Section: You can ignore this!</h1>
+<p>To make updating your site easier, you can make some small adjustments (suggested by Jon R Sharpe):</p>
+<ul>
+<li>You can specify the deploy directory in the Netlify <code>deploy</code> command, by adding <code>--dir ./build</code>. This way, it won&apos;t ask you to type it in.
+Example:</li>
+</ul>
+<p><code>netlify deploy --prod --dir ./build</code></p>
+<ul>
+<li>You could make a custom command to do build and deploy together. Here&apos;s how:</li>
+</ul>
+<p>Edit <code>package.json</code> to add <code>&quot;deploy&quot;: &quot;npm run build &amp;&amp; netlify deploy --prod --dir ./build&quot;</code> to the <code>scripts</code> object.
+Then you can just run <code>npm run deploy</code> and the build and deploy step will both be done for you. Be careful when you edit that file, and copy and paste exactly from here!</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="cors.html" class="navigation navigation-prev " aria-label="Previous page: CORS">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="node-version-manager.html" class="navigation navigation-next " aria-label="Next page: Node Version Manager">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Hosting React apps with Netlify","level":"3.4","depth":1,"next":{"title":"Node Version Manager","level":"3.5","depth":1,"path":"others/node-version-manager.md","ref":"others/node-version-manager.md","articles":[]},"previous":{"title":"CORS","level":"3.3","depth":1,"path":"others/cors.md","ref":"others/cors.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/netlify-hosting-instructions.md","mtime":"2019-12-21T11:26:01.744Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-21T11:26:49.346Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
