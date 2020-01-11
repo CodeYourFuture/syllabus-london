@@ -104,26 +104,26 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" >
+        <li class="chapter " data-level="1.2" data-path="../../introduction/">
             
-                <span>
+                <a href="../../introduction/">
             
                     
-                    Before you start
+                    Introduction
             
-                </span>
+                </a>
             
 
             
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../../others/lesson0.html">
+        <li class="chapter " data-level="1.2.1" data-path="../../introduction/week-1/lesson.html">
             
-                <a href="../../others/lesson0.html">
+                <a href="../../introduction/week-1/lesson.html">
             
                     
-                    Week 0 - Introduction and basic setup
+                    Week 1
             
                 </a>
             
@@ -957,7 +957,7 @@ templating engine for this class.</p>
 <span class="token keyword">const</span> exphbs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;express-handlebars&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">// Then these two lines after you initialise your express app</span>
-app<span class="token punctuation">.</span><span class="token function">engine</span><span class="token punctuation">(</span><span class="token string">&quot;handlebars&quot;</span><span class="token punctuation">,</span> <span class="token function">exphbs</span><span class="token punctuation">(</span><span class="token punctuation">{</span> defaultLayout<span class="token punctuation">:</span> <span class="token string">&quot;main&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">engine</span><span class="token punctuation">(</span><span class="token string">&quot;handlebars&quot;</span><span class="token punctuation">,</span> <span class="token function">exphbs</span><span class="token punctuation">(</span><span class="token punctuation">{</span> defaultLayout<span class="token operator">:</span> <span class="token string">&quot;main&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 app<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">&quot;view engine&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;handlebars&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <blockquote>
@@ -995,7 +995,7 @@ static files? <strong>Express</strong> and <strong>Handlebars</strong> allow you
 <li><p>Let&apos;s modify the <code>/</code> route to pass the title of the page.</p>
 <pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   res<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">&quot;index&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-    title<span class="token punctuation">:</span> <span class="token string">&quot;Etzali Profile&quot;</span> <span class="token comment">// insert your name instead</span>
+    title<span class="token operator">:</span> <span class="token string">&quot;Etzali Profile&quot;</span> <span class="token comment">// insert your name instead</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
@@ -1061,8 +1061,8 @@ and <a href="handlebarsjs.com">handlebars documentation</a></p>
     <span class="token keyword">const</span> postsJson <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>fileData<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment">// send the json to the Template to render</span>
     res<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">&quot;index&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-      title<span class="token punctuation">:</span> <span class="token string">&quot;Etzali Profile&quot;</span><span class="token punctuation">,</span> <span class="token comment">// insert your name instead</span>
-      posts<span class="token punctuation">:</span> postsJson
+      title<span class="token operator">:</span> <span class="token string">&quot;Etzali Profile&quot;</span><span class="token punctuation">,</span> <span class="token comment">// insert your name instead</span>
+      posts<span class="token operator">:</span> postsJson
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
   fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>filePath<span class="token punctuation">,</span> callbackFunction<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1328,7 +1328,7 @@ and we will reply as soon as we can.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 17 - Middleware, Templating and APIs","level":"1.8.2","depth":2,"next":{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"path":"node/week-3/lesson.md","ref":"node/week-3/lesson.md","articles":[]},"previous":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-1/lesson.md","ref":"node/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-2/lesson.md","mtime":"2019-12-21T11:26:01.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-21T11:26:49.346Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 17 - Middleware, Templating and APIs","level":"1.8.2","depth":2,"next":{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"path":"node/week-3/lesson.md","ref":"node/week-3/lesson.md","articles":[]},"previous":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-1/lesson.md","ref":"node/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-2/lesson.md","mtime":"2020-01-11T13:34:32.781Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-11T13:35:19.643Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

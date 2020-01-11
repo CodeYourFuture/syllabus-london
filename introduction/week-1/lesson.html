@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Week 18 - Advanced Node · GitBook</title>
+        <title>Week 1 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../../db/" />
+    <link rel="next" href="../../html-css/" />
     
     
-    <link rel="prev" href="../week-2/lesson.html" />
+    <link rel="prev" href="../" />
     
 
     </head>
@@ -104,9 +104,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../../introduction/">
+        <li class="chapter " data-level="1.2" data-path="../">
             
-                <a href="../../introduction/">
+                <a href="../">
             
                     
                     Introduction
@@ -118,9 +118,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../../introduction/week-1/lesson.html">
+        <li class="chapter active" data-level="1.2.1" data-path="lesson.html">
             
-                <a href="../../introduction/week-1/lesson.html">
+                <a href="lesson.html">
             
                     
                     Week 1
@@ -439,9 +439,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../">
+        <li class="chapter " data-level="1.8" data-path="../../node/">
             
-                <a href="../">
+                <a href="../../node/">
             
                     
                     Node
@@ -453,9 +453,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../week-1/lesson.html">
+        <li class="chapter " data-level="1.8.1" data-path="../../node/week-1/lesson.html">
             
-                <a href="../week-1/lesson.html">
+                <a href="../../node/week-1/lesson.html">
             
                     
                     Week 16 - Node and Express 101
@@ -466,9 +466,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="../week-2/lesson.html">
+        <li class="chapter " data-level="1.8.2" data-path="../../node/week-2/lesson.html">
             
-                <a href="../week-2/lesson.html">
+                <a href="../../node/week-2/lesson.html">
             
                     
                     Week 17 - Middleware, Templating and APIs
@@ -479,9 +479,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8.3" data-path="lesson.html">
+        <li class="chapter " data-level="1.8.3" data-path="../../node/week-3/lesson.html">
             
-                <a href="lesson.html">
+                <a href="../../node/week-3/lesson.html">
             
                     
                     Week 18 - Advanced Node
@@ -588,9 +588,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="../week-1/workshop.html">
+        <li class="chapter " data-level="2.3" data-path="../../node/week-1/workshop.html">
             
-                <a href="../week-1/workshop.html">
+                <a href="../../node/week-1/workshop.html">
             
                     
                     Express Workshop
@@ -601,9 +601,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="workshop.html">
+        <li class="chapter " data-level="2.4" data-path="../../node/week-3/workshop.html">
             
-                <a href="workshop.html">
+                <a href="../../node/week-3/workshop.html">
             
                     
                     Hotel Workshop
@@ -840,7 +840,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Week 18 - Advanced Node</a>
+        <a href="../.." >Week 1</a>
     </h1>
 </div>
 
@@ -855,125 +855,82 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><img src="https://img.shields.io/badge/status-draft-darkred.svg" alt=""></p>
-<h1 id="node-3">Node 3</h1>
-<p><strong> What we will learn today?</strong></p>
-<ul>
-<li><a href="#node-recap">Node Recap</a></li>
-<li><a href="#best-practices">Best Practices</a></li>
-<li><a href="#node-process-managers">Node Process Managers</a></li>
-<li><a href="#rest">REST</a></li>
-<li><a href="#security">Security</a></li>
-<li><a href="#authentication">Authentication</a></li>
-<li><a href="#hotel-workshop">Hotel Workshop</a></li>
-</ul>
-<hr>
-<h2 id="node-recap">Node Recap</h2>
-<p>Javascript has evolved from the browser to be used in the backend. It does not need a framework as we saw in <a href="../week-13/lesson.md">week-13</a>, however a framework like Express allows us to develop faster.</p>
-<h3 id="documentation">Documentation</h3>
-<p>When you are working with frameworks it is always helpful to use their documentation.</p>
-<ul>
-<li><a href="https://expressjs.com" target="_blank">Express Documentation</a></li>
-<li><a href="https://nodejs.org/api/http.html" target="_blank">Node.js Documentation</a></li>
-</ul>
-<h3 id="middleware">Middleware</h3>
-<p>Middleware allow us to process requests to add functionalities that are not built in to Express, for example logging, authentication, etc.</p>
-<blockquote>
-<ul>
-<li>Express Documentation: <a href="https://expressjs.com/en/guide/using-middleware.html" target="_blank">Using Middleware</a></li>
-<li>Video: <a href="https://www.youtube.com/watch?v=vKlybue_yMQ" target="_blank">body-parser</a> which makes it easier to work with POST requests and forms.</li>
-</ul>
-</blockquote>
-<h3 id="routing">Routing</h3>
-<p>Routing refers to how an application&#x2019;s endpoints (URIs) respond to the client requests. These are configured differently for each framework, and can range from basic configuration to very extensive for more complex use cases.</p>
-<p>Simple example</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>More complicated example using <code>Passport.js</code> middleware for authentication</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">ensureAuthenticated</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span><span class="token function">isAuthenticated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">else</span> res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">&quot;/login&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/account&quot;</span><span class="token punctuation">,</span> ensureAuthenticated<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;welcome user!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<blockquote>
-<ul>
-<li>Express Documentation: <a href="https://expressjs.com/en/guide/routing.html" target="_blank">Routing</a></li>
-</ul>
-</blockquote>
-<h2 id="best-practices">Best Practices</h2>
-<p>Express have their own recommended <a href="https://expressjs.com/en/advanced/best-practice-performance.html" target="_blank">best practices page</a></p>
-<h2 id="node-process-managers">Node Process Managers</h2>
-<p>These process managers monitor for any changes in your node.js application and automatically restart the server, perfect for development and production.</p>
-<blockquote>
-<p>Popular PMs include:</p>
-<ul>
-<li><a href="http://nodemon.io/" target="_blank">nodemon</a></li>
-<li><a href="https://expressjs.com/en/advanced/pm.html#pm2" target="_blank">pm2</a></li>
-</ul>
-</blockquote>
-<h2 id="rest">REST</h2>
-<p>REST is a convention of how to design your API, whether it is for your own frontend, or other frontends and clients.</p>
-<blockquote>
-<ul>
-<li>Read: Resource naming in <a href="http://www.restapitutorial.com/lessons/restfulresourcenaming.html" target="_blank">REST</a> convention</li>
-</ul>
-</blockquote>
-<h2 id="security">Security</h2>
-<p>When you take your website to production there is a whole range of things to consider.</p>
-<p><img src="../assets/http-vs-https.png" alt="HTTP vs HTTPS"></p>
-<p>Node has built in support for HTTPS, and once you have your own certificates you can use this feature. However sometimes when you deploy to <code>cloud</code> Platform Platform as a Service (PaaS) providers such as Heroku, they provide SSL and configure it for you automatically.</p>
-<blockquote>
-<ul>
-<li>Read: <a href="https://nodejs.org/api/https.html" target="_blank">Node: HTTPS</a></li>
-<li>Read/Watch: <a href="https://www.globalsign.com/en/ssl-information-center/what-is-an-ssl-certificate/" target="_blank">What is an SSL Certificate?</a></li>
-<li>Read: <a href="https://devcenter.heroku.com/articles/ssl" target="_blank">Heroku SSL</a></li>
-</ul>
-</blockquote>
-<h2 id="authentication">Authentication</h2>
-<p>Sometimes you need to add user functionality for your website. To do this you can make use of external libraries like <a href="www.passportjs.org">passport</a> to add authentication to your website.</p>
-<blockquote>
-<p>For more information read:</p>
-<ul>
-<li><a href="https://tools.ietf.org/html/rfc6750" target="_blank">OAuth 2.0 Authorization Framework: Bearer Token Usage</a></li>
-<li><a href="https://github.com/jaredhanson/passport-http-bearer" target="_blank">Bearer Strategy</a></li>
-</ul>
-</blockquote>
-<h2 id="hotel-workshop">Hotel Workshop</h2>
-<p>Get in to groups of 3/4 and checkout the <a href="workshop.html">workshop brief</a>.</p>
-<blockquote>
-<p><strong>Exercise</strong>: Please fork and clone <a href="https://github.com/CodeYourFuture/cyf-hotel" target="_blank">CYF-Hotel</a> repository and follow the exercises in the <code>README.MD</code>.</p>
-</blockquote>
-<h1 id="homework">Homework</h1>
-<ol>
-<li>Finish the <a href="https://github.com/CodeYourFuture/cyf-hotel" target="_blank">hotel workshop</a> with your team, assigning trello tickets in your team trello page</li>
-</ol>
-<h2 id="prepare-for-the-next-class">Prepare for the next class</h2>
-<ol>
-<li>Read: <a href="https://en.wikipedia.org/wiki/Persistence_(computer_science)" target="_blank">Persistence (computer science)</a></li>
-<li>Watch: <a href="https://www.youtube.com/watch?v=FR4QIeZaPeM" target="_blank">What is Database &amp; SQL?</a></li>
-<li>Learn some basic SQL with <a href="https://www.khanacademy.org/computing/computer-programming/sql" target="_blank">khanacademy</a> or <a href="https://www.codecademy.com/learn/learn-sql" target="_blank">codecademy</a> and ask any questions in the channel</li>
-</ol>
-<h1 id="escalation-policy">Escalation policy</h1>
-<p>When you get stuck during the homework you should follow the following:</p>
-<ol>
-<li>First, search for answers on Google and Stack Overflow.
-If you have an error message, copy and paste it into Google.</li>
-<li>When you are stuck for longer than 20 minutes - no longer! -
-write a question to your fellow students in your class channel on slack.
-Take a while to think carefully about the question.
-This is an important skill.
-Here is a great <a href="https://stackoverflow.com/help/how-to-ask" target="_blank">guide to writing good questions</a></li>
-<li>If you cannot get an answer from your fellow students,
-post your question in your class public channel,
-<code>@</code> the mentor for the class that covered the topic
-and we will reply as soon as we can.</li>
-</ol>
+                                <h1 id="introduction-1">Introduction 1</h1>
+<p>TODO</p>
+<h2 id="effective-learning-strategies">Effective Learning Strategies</h2>
+<p>Here are some strategies for learning that scientists and psychologists have found to be effective.</p>
+<h3 id="active-learning-vs-passive-learning">Active Learning vs Passive Learning</h3>
+<p>Try to do more active learning than passive learning as it is more effective.</p>
+<table>
+<thead>
+<tr>
+<th>Passive</th>
+<th>Active</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reading about something</td>
+<td>Completing exercises</td>
+</tr>
+<tr>
+<td>Watching a video</td>
+<td>Code-along (typing code along with the video)</td>
+</tr>
+<tr>
+<td>Listening to a lecture</td>
+<td>Making notes during the lesson</td>
+</tr>
+</tbody>
+</table>
+<h3 id="space-out-your-studying">Space out your studying</h3>
+<p>If you can, don&apos;t cram all of your studying into 1 day, it&apos;s better to try to spread it out over multiple days.</p>
+<p>When you are studying, switch between different topics that you have learnt about. Try reviewing your notes from week&apos;s class then switch to go over last week&apos;s exercises and see if you can improve them with feedback from your teachers.</p>
+<p>Here&apos;s an example of a good schedule:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Monday</th>
+<th style="text-align:center">Tuesday</th>
+<th style="text-align:center">Wednesday</th>
+<th style="text-align:center">Thursday</th>
+<th style="text-align:center">Friday</th>
+<th style="text-align:center">Saturday</th>
+<th style="text-align:center">Sunday</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Review notes from the class</td>
+<td style="text-align:center">Do some homework exercises</td>
+<td style="text-align:center">Break</td>
+<td style="text-align:center">Review feedback on previous homework</td>
+<td style="text-align:center">Complete homework exercises</td>
+<td style="text-align:center">Break</td>
+<td style="text-align:center">Lesson</td>
+</tr>
+</tbody>
+</table>
+<h3 id="make-notes">Make notes</h3>
+<p>During the lessons, bring a notepad and write notes about what you are learning. When you are at home, you can review your notes if you get stuck.</p>
+<p>When reviewing your notes, try drawing diagrams that explain and summarise your notes. This helps make connections between concepts. Here are some examples of diagrams you could draw:</p>
+<p><strong>Mindmap</strong></p>
+<p><img src="../assets/mindmap.png" alt="Mindmap"></p>
+<p><strong>Flowchart</strong></p>
+<p><img src="../assets/flowchart.png" alt="Flowchart"></p>
+<p><strong>Cartoon Strip</strong></p>
+<p><img src="../assets/cartoon-strip.png" alt="Cartoon strip"></p>
+<p>You can also try making flash cards, which you can use to practice remembering things from your notes. Cut up some paper into small cards, then write a question or prompt one side and the answer on the other side.</p>
+<p>When you have some free time (for example, when on the bus to work!) bring your flash cards and try to answer the questions without looking at the answer. You could even swap your flash cards with a friend to see if there&apos;s something you missed from your questions/answers.</p>
+<h3 id="explain-to-others">Explain to others</h3>
+<p>Ask yourself questions while you are studying about how things work and why. Try to explain it to yourself or to a friend, which really helps your understanding. Many of the teachers at CYF volunteer because they get better by explaining programming to you.</p>
+<p>As you are asking yourself questions or explaining, try to think of real-life examples of where you might come across this problem. This helps you connect ideas together so that you can remember them more easily.</p>
+<h3 id="get-enough-sleep">Get enough sleep</h3>
+<p>Your ability to think drops by 25% for each 24 hours you&#x2019;re awake. Because of this, it is much less effective to stay up all night studying than to study when you have had enough sleep.</p>
+<p>Try making a diary or calendar of all the things you need to do, and include some time for studying. A todo list is also a good tool for prioritising what needs to be done first. You could use a paper notebook or there are lots of good online tools for helping you with this.</p>
+<h3 id="dont-try-to-multitask">Don&apos;t try to multitask</h3>
+<p>Don&apos;t try to multitask when studying, turn off distractions and focus on what you are doing. This helps you to be the more productive, so you can do more in less time. It can take up to 10 minutes to get back into your work after you are distracted.</p>
+<p>Many programmers like listening to music while they are coding. <a href="https://coderadio.freecodecamp.org/" target="_blank">freeCodeCamp Radio</a> plays free music all-day for you to listen while programming.</p>
 
                                 
                                 </section>
@@ -1001,12 +958,12 @@ and we will reply as soon as we can.</li>
 
             
                 
-                <a href="../week-2/lesson.html" class="navigation navigation-prev " aria-label="Previous page: Week 17 - Middleware, Templating and APIs">
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../../db/" class="navigation navigation-next " aria-label="Next page: Databases">
+                <a href="../../html-css/" class="navigation navigation-next " aria-label="Next page: HTML/CSS">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1017,7 +974,7 @@ and we will reply as soon as we can.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"next":{"title":"Databases","level":"1.9","depth":1,"path":"db/index.md","ref":"db/index.md","articles":[{"title":"Week 19 - Introduction to SQL","level":"1.9.1","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},{"title":"Week 20 - More SQL and integration with NodeJS","level":"1.9.2","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},{"title":"Week 21 - More integration with NodeJS","level":"1.9.3","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]}]},"previous":{"title":"Week 17 - Middleware, Templating and APIs","level":"1.8.2","depth":2,"path":"node/week-2/lesson.md","ref":"node/week-2/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-3/lesson.md","mtime":"2020-01-11T13:34:32.781Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-11T13:35:19.643Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 1","level":"1.2.1","depth":2,"next":{"title":"HTML/CSS","level":"1.3","depth":1,"path":"html-css/index.md","ref":"html-css/index.md","articles":[{"title":"Week 1 - Semantic HTML and CSS","level":"1.3.1","depth":2,"path":"html-css/week-1/lesson.md","ref":"html-css/week-1/lesson.md","articles":[]},{"title":"Week 2 - Responsive Web and layout","level":"1.3.2","depth":2,"path":"html-css/week-2/lesson.md","ref":"html-css/week-2/lesson.md","articles":[]},{"title":"Week 3 - Design frameworks, Naming patterns and Forms","level":"1.3.3","depth":2,"path":"html-css/week-3/lesson.md","ref":"html-css/week-3/lesson.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.2","depth":1,"path":"introduction/index.md","ref":"introduction/index.md","articles":[{"title":"Week 1","level":"1.2.1","depth":2,"path":"introduction/week-1/lesson.md","ref":"introduction/week-1/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"introduction/week-1/lesson.md","mtime":"2020-01-11T13:34:32.733Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-11T13:35:19.643Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
