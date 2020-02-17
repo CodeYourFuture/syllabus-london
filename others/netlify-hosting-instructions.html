@@ -588,7 +588,20 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="../node/week-1/workshop.html">
+        <li class="chapter " data-level="2.3" data-path="deployment/1-for-html-module/workshop-1-basic-automatic-deployment-with-netlify-mentor-notes.html">
+            
+                <a href="deployment/1-for-html-module/workshop-1-basic-automatic-deployment-with-netlify-mentor-notes.html">
+            
+                    
+                    Automatic deployment of sites with Netlify and GitHub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../node/week-1/workshop.html">
             
                 <a href="../node/week-1/workshop.html">
             
@@ -601,7 +614,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="../node/week-3/workshop.html">
+        <li class="chapter " data-level="2.5" data-path="../node/week-3/workshop.html">
             
                 <a href="../node/week-3/workshop.html">
             
@@ -614,7 +627,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="mongodb-101.html">
+        <li class="chapter " data-level="2.6" data-path="mongodb-101.html">
             
                 <a href="mongodb-101.html">
             
@@ -627,7 +640,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6" data-path="aws-workshop-2.html">
+        <li class="chapter " data-level="2.7" data-path="aws-workshop-2.html">
             
                 <a href="aws-workshop-2.html">
             
@@ -640,7 +653,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7" data-path="java.html">
+        <li class="chapter " data-level="2.8" data-path="java.html">
             
                 <a href="java.html">
             
@@ -653,7 +666,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.8" data-path="../git/week-1/lesson.html">
+        <li class="chapter " data-level="2.9" data-path="../git/week-1/lesson.html">
             
                 <a href="../git/week-1/lesson.html">
             
@@ -868,7 +881,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="hosting-your-react-app-on-the-web-using-netlify">Hosting your React app on the web, using Netlify</h1>
+                                <h1 id="hosting-your-react-app-on-the-web-using-netlify-via-cli">Hosting your React app on the web, using Netlify (via CLI)</h1>
 <p>Note: these instructions are for React apps that have been created with the command <code>create-react-app</code>.</p>
 <h2 id="getting-set-up">Getting set up</h2>
 <h3 id="install-the-netlify-cli-software-once">Install the netlify-cli software, <em>once</em>:</h3>
@@ -944,6 +957,10 @@ Example:</li>
 </ul>
 <p>Edit <code>package.json</code> to add <code>&quot;deploy&quot;: &quot;npm run build &amp;&amp; netlify deploy --prod --dir ./build&quot;</code> to the <code>scripts</code> object.
 Then you can just run <code>npm run deploy</code> and the build and deploy step will both be done for you. Be careful when you edit that file, and copy and paste exactly from here!</p>
+<h1 id="an-alternative-approach">An alternative approach</h1>
+<p>In this guide, we&apos;ve intentionally made you do the deployment manually by typing commands, so you learn to think about deployment as a separate step.  In practice, when you&apos;re working intensively and iteratively on a project, these extra steps are repetitive.</p>
+<p>You can instead configure Netlify to <em>automatically</em> deploy your site every time you push a change to github (e.g. to the master branch), without ever having to type anything on the command-line.  This setup is similar to what many professionals use.</p>
+<p>We are writing some notes and workshops on this process, <a href="deployment/index.md">here</a> - it&apos;s really easy to get started with.  If your teacher has told you to work from this document, make sure you practice with the manual approach first, so that you learn, before you experiment with the automation.</p>
 
                                 
                                 </section>
@@ -987,7 +1004,7 @@ Then you can just run <code>npm run deploy</code> and the build and deploy step 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hosting React apps with Netlify","level":"3.4","depth":1,"next":{"title":"Node Version Manager","level":"3.5","depth":1,"path":"others/node-version-manager.md","ref":"others/node-version-manager.md","articles":[]},"previous":{"title":"CORS","level":"3.3","depth":1,"path":"others/cors.md","ref":"others/cors.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/netlify-hosting-instructions.md","mtime":"2020-01-19T11:23:22.849Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-19T11:24:07.598Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hosting React apps with Netlify","level":"3.4","depth":1,"next":{"title":"Node Version Manager","level":"3.5","depth":1,"path":"others/node-version-manager.md","ref":"others/node-version-manager.md","articles":[]},"previous":{"title":"CORS","level":"3.3","depth":1,"path":"others/cors.md","ref":"others/cors.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/netlify-hosting-instructions.md","mtime":"2020-02-17T20:58:40.508Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-17T20:59:26.182Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
