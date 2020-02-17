@@ -886,7 +886,6 @@
 <p><a href="mentors.md">Mentor Notes</a></p>
 <p><strong>What we will learn today?</strong></p>
 <ul>
-<li><a href="#install-node">Install Node</a></li>
 <li><a href="#setup-ide">Setup IDE</a></li>
 <li><a href="#hello-world">Hello World</a></li>
 <li><a href="#variables">Variables</a></li>
@@ -902,22 +901,6 @@
 <blockquote>
 <p>Please make sure you&apos;ve forked <a href="https://github.com/CodeYourFuture/js-exercises" target="_blank">the js-exercises repo</a> at the start of the class. This is the repo we will use during the class, and for homework.</p>
 </blockquote>
-<h2 id="install-node">Install Node</h2>
-<h3 id="windows-and-mac-users">Windows and Mac users</h3>
-<p>Download the <em>installer</em> (.msi or .pkg) from <a href="https://nodejs.org/en/download" target="_blank">https://nodejs.org/en/download</a></p>
-<hr>
-<h3 id="linux-ubuntu-users">Linux (Ubuntu) users</h3>
-<p>Run the following commands in your terminal:</p>
-<pre class="language-"><code class="lang-sh">  <span class="token function">curl</span> -sL https://deb.nodesource.com/setup_8.x <span class="token operator">|</span> <span class="token function">sudo</span> -E <span class="token function">bash</span> -
-  <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y nodejs
-</code></pre>
-<p>Source: <a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions" target="_blank">https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions</a></p>
-<blockquote>
-<p>A note on security: This will require you to enter a password. Don&apos;t execute a script on your terminal if you don&apos;t trust its source, especially if they use the <code>sudo</code> command to get admin access to your machine.</p>
-</blockquote>
-<h3 id="2-test-installation">2. Test installation</h3>
-<p>Go to your terminal and run the command: <code>node -v</code>.</p>
-<p>You should get the node version printed on your terminal. For example, <code>v8.9.3</code>.</p>
 <h2 id="setup-ide">Setup IDE</h2>
 <p>There are some tools that will help you to write code. One of these, <a href="https://prettier.io/" target="_blank">Prettier</a>, formats your code, making it easier for you and others to read.</p>
 <h3 id="1-install-prettier">1. Install prettier</h3>
@@ -934,7 +917,8 @@
 </ul>
 <h2 id="hello-world">Hello World</h2>
 <p>It is programming tradition that the first thing you do in any language is make it output &apos;Hello world!&apos;.</p>
-<p>We&apos;ll do this in JavaScript, using a command called <code>console.log()</code>.</p>
+<p>We&apos;ll do this in JavaScript, using a command called <code>console.log()</code>, the <code>console.log()</code> method writes a message to the console.</p>
+<p>The Console is a tool which is mainly used to log information it&apos;s useful for testing purposes</p>
 <p>Inside of <code>exercise.js</code> there&apos;s a line of code that will print &quot;Hello world!&quot;.</p>
 <h3 id="1-run-the-program">1. Run the program</h3>
 <ul>
@@ -943,18 +927,22 @@
 <li>Run the program using node (<code>node exercise.js</code>)</li>
 </ul>
 <h3 id="2-experiment">2. Experiment</h3>
-<ul>
-<li>Try to <code>console.log()</code> something different. For example, &apos;Hello World. I just started learning JavaScript!&apos;.</li>
-<li>Try to console.log() several things at once.</li>
-<li>What happens when you get rid of the quote marks?</li>
-<li>What happens when you console.log() just a number without quotes?</li>
-</ul>
-<h2 id="variables">Variables</h2>
-<p>When you write code, you&apos;ll want to create shortcuts to data values so you can don&apos;t have to write out the same value every time.</p>
-<p>We can use <em>variable</em> to create a reference to a value.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Hello world&quot;</span><span class="token punctuation">;</span>
+<p>Write 10 statements like these, but in different languages.</p>
+<p>For example:</p>
+<pre class="language-"><code>Halo, dunia! // Indonesian
+Ciao, mondo! // Italian
+Hola, mundo! // Spanish
+</code></pre><h2 id="variables">Variables</h2>
+<p>When you write code, you&apos;ll want to create shortcuts to data values so you don&apos;t have to write out the same value every time.</p>
+<p>We can use <em>variable</em> to create a reference to a value. Variables can be thought of as named containers. You can place data into these containers and then refer to the data simply by naming the container.</p>
+<p>Before you use a variable in a JavaScript program, you must declare it. Variables are declared with <em>let</em> and <em>const</em> keywords as follows.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Hello world&quot;</span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">&quot;Irina&quot;</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>The program above will print &quot;Hello world&quot; to the console. Notice how it uses the value assigned to the variable <code>greeting</code>.</p>
 <h3 id="exercise">Exercise</h3>
@@ -963,7 +951,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>Print your <code>greeting</code> to the console 3 times</li>
 </ul>
 <blockquote>
-<p>Remember: to run this exercise you must change directory to the <code>D-variables</code>. If you already have a terminal window open for the previous exercise you can do this by running the command <code>cd ../D-variables</code>.</p>
+<p>Remember: to run this exercise you must change directory to the <code>C-variables</code>. If you already have a terminal window open for the previous exercise you can do this by running the command <code>cd ../C-variables</code>.</p>
 </blockquote>
 <h4 id="expected-result">Expected result</h4>
 <pre class="language-"><code class="lang-sh">Hello world
@@ -973,38 +961,49 @@ Hello world
 <h2 id="strings">Strings</h2>
 <p>In programming there are different <em>types of</em> data. You&apos;ve used one data type already: <strong>string</strong>.</p>
 <p>Computers recognise strings as a sequence of characters but to humans, strings are simply lines of text.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> message <span class="token operator">=</span> <span class="token string">&quot;This is a string&quot;</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token string">&quot;This is a string&quot;</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Notice that strings are always wrapped <strong>inside of quote marks</strong>. We do this so that the computer knows when the string starts and ends.</p>
 <p>You can check that the data is a string by using the <code>typeof</code> operator:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> message <span class="token operator">=</span> <span class="token string">&quot;This is a string&quot;</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> messageType <span class="token operator">=</span> <span class="token keyword">typeof</span> message<span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token string">&quot;This is a string&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> messageType <span class="token operator">=</span> <span class="token keyword">typeof</span> message<span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>messageType<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// logs &apos;string&apos;</span>
 </code></pre>
 <h3 id="exercise">Exercise</h3>
 <ul>
-<li>Write a program that logs a message and its type</li>
+<li>Write a program that logs a variable <code>colors</code> which contains the primary colors that make Orange color as a string separated by comma and also logs it&apos;s type using <code>typeof</code>.</li>
 </ul>
 <h4 id="expected-result">Expected result</h4>
-<pre class="language-"><code class="lang-sh">This is a string
+<pre class="language-"><code class="lang-sh">color1, color2
 string
 </code></pre>
 <h2 id="string-concatenation">String concatenation</h2>
-<p>You can add two strings together using the plus operator (<code>+</code>):</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> greetingStart <span class="token operator">=</span> <span class="token string">&quot;Hello, my name is &quot;</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">&quot;Daniel&quot;</span><span class="token punctuation">;</span>
+<p>You can add two strings together using the plus operator (<code>+</code>) or <code>String interpolation</code>, String interpolation is a useful javascript feature that allows you to inject variables directly into a string.:</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// Here is example using the plus operator to concat strings</span>
+<span class="token keyword">const</span> greetingStart <span class="token operator">=</span> <span class="token string">&quot;Hello, my name is &quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">&quot;Daniel&quot;</span><span class="token punctuation">;</span>
 
-<span class="token keyword">var</span> greeting <span class="token operator">=</span> greetingStart <span class="token operator">+</span> name<span class="token punctuation">;</span>
+<span class="token keyword">const</span> greeting <span class="token operator">=</span> greetingStart <span class="token operator">+</span> name<span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Logs &quot;Hello, my name is Daniel&quot;</span>
+</code></pre>
+<pre class="language-"><code class="lang-js"><span class="token comment">// Here is example using the String interpolation to concat strings</span>
+<span class="token keyword">const</span> greetingStart <span class="token operator">=</span> <span class="token string">&quot;Hello, my name is &quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">&quot;Daniel&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> greeting <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>greetingStart<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> + </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Logs &quot;Hello, my name is Daniel&quot;</span>
 </code></pre>
 <h3 id="exercise">Exercise</h3>
 <ul>
-<li>Write a program that logs a message with a greeting and your name</li>
+<li>Write a program that logs a message with a greeting and your name using the two concatenation methods we had.</li>
 </ul>
 <h4 id="expected-result">Expected result</h4>
 <pre class="language-"><code class="lang-sh">Hello, my name is Daniel
+
+Hello, my name is Daniel
 </code></pre>
 <h2 id="numbers">Numbers</h2>
 <p>The next data type we will learn is <strong>number</strong>.</p>
@@ -1217,7 +1216,7 @@ JavaScript!</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"next":{"title":"Week 5 - Conditionals and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript I","level":"1.4","depth":1,"path":"js-core-1/index.md","ref":"js-core-1/index.md","articles":[{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core-1/week-1/lesson.md","ref":"js-core-1/week-1/lesson.md","articles":[]},{"title":"Week 5 - Conditionals and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},{"title":"Week 6 - More Arrays","level":"1.4.3","depth":2,"path":"js-core-1/week-3/lesson.md","ref":"js-core-1/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-1/lesson.md","mtime":"2020-02-17T20:58:40.440Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-17T20:59:26.182Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"next":{"title":"Week 5 - Conditionals and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript I","level":"1.4","depth":1,"path":"js-core-1/index.md","ref":"js-core-1/index.md","articles":[{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core-1/week-1/lesson.md","ref":"js-core-1/week-1/lesson.md","articles":[]},{"title":"Week 5 - Conditionals and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},{"title":"Week 6 - More Arrays","level":"1.4.3","depth":2,"path":"js-core-1/week-3/lesson.md","ref":"js-core-1/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-1/lesson.md","mtime":"2020-02-17T22:27:49.363Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-17T22:28:37.014Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
