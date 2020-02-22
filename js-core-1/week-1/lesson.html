@@ -1082,11 +1082,75 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token keyword">return</span> message<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h2 id="exercise-20-mins">Exercise (20 mins)</h2>
+<h3 id="exercise-20-mins">Exercise (20 mins)</h3>
 <ol>
 <li>Write a function that returns the year someone is born given their age as input</li>
 <li>Using the answer from step 1, write a function that takes someone&apos;s name and age as input and returns a string that states the person&apos;s name and age in a sentence</li>
 </ol>
+<h2 id="extra-exercises">Extra exercises</h2>
+<h3 id="playing-computer-i">Playing computer I</h3>
+<ol>
+<li>Working in pairs or groups, you have to predict the output of this program without executing it.</li>
+<li>What is printed to the console?</li>
+<li>Have you learned anything new during this exercise?</li>
+</ol>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">multiplyNumbers</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">addNumbers</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> d <span class="token operator">=</span> <span class="token function">addNumbers</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> e <span class="token operator">=</span> <span class="token function">multiplyNumbers</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="playing-computer-ii">Playing computer II</h3>
+<ol>
+<li>Again, working in pairs or groups, you have to predict the output of this program without executing it.</li>
+<li>What is printed to the console?</li>
+<li>What was difficult about this exercise?</li>
+<li>Have you learned anything new?</li>
+</ol>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">f1</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">f2</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+x <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+y <span class="token operator">=</span> <span class="token function">f1</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> d <span class="token operator">=</span> <span class="token function">f2</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> y<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> e <span class="token operator">=</span> <span class="token function">f1</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <h1 id="homework">Homework</h1>
 <ol>
 <li><a href="https://github.com/CodeYourFuture/js-exercises" target="_blank">The repo</a> that you
@@ -1136,7 +1200,7 @@ JavaScript!</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"next":{"title":"Week 5 - Conditionals and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript I","level":"1.4","depth":1,"path":"js-core-1/index.md","ref":"js-core-1/index.md","articles":[{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core-1/week-1/lesson.md","ref":"js-core-1/week-1/lesson.md","articles":[]},{"title":"Week 5 - Conditionals and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},{"title":"Week 6 - More Arrays","level":"1.4.3","depth":2,"path":"js-core-1/week-3/lesson.md","ref":"js-core-1/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-1/lesson.md","mtime":"2020-02-22T17:15:00.844Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-22T17:15:48.681Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"next":{"title":"Week 5 - Conditionals and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript I","level":"1.4","depth":1,"path":"js-core-1/index.md","ref":"js-core-1/index.md","articles":[{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core-1/week-1/lesson.md","ref":"js-core-1/week-1/lesson.md","articles":[]},{"title":"Week 5 - Conditionals and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},{"title":"Week 6 - More Arrays","level":"1.4.3","depth":2,"path":"js-core-1/week-3/lesson.md","ref":"js-core-1/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-1/lesson.md","mtime":"2020-02-22T22:21:36.639Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-22T22:22:20.355Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
