@@ -884,7 +884,6 @@
                                 <p><img src="https://img.shields.io/badge/status-ready-green.svg" alt="Lesson Ready"></p>
 <h1 id="javascript-core-i---1">JavaScript Core I - 1</h1>
 <p><a href="mentors.md">Mentor Notes</a></p>
-<p><strong>What we will learn today?</strong></p>
 <ul>
 <li><a href="#hello-world">Hello World</a></li>
 <li><a href="#variables">Variables</a></li>
@@ -894,6 +893,21 @@
 <li><a href="#numbers-as-decimals">Numbers as decimals</a></li>
 <li><a href="#functions">Functions</a></li>
 <li><a href="#calling-functions-inside-functions">Calling functions inside functions</a></li>
+</ul>
+<p><strong>Learning Objectives</strong></p>
+<p>By the end of this class, you should be able to answer these questions:</p>
+<ul>
+<li>What is <code>console.log()</code>?</li>
+<li>What are the different primitive data types in JS?</li>
+<li>What is <code>typeof</code> and how do you use it?</li>
+<li>How do you assign data to variables using <code>let</code> and <code>const</code>?</li>
+<li>How do you define, call and evaluate functions?</li>
+<li>How do you manipulate strings with concatenation and interpolation techniques?</li>
+<li>How do you manipulate numbers with mathematical operators and the <code>Math</code> library?</li>
+<li>What is the difference between <code>console.log()</code> and <code>return</code>?</li>
+<li>How do you call functions from within functions?</li>
+<li>How do you search and read documentation if you&apos;re stuck?</li>
+<li>How can you debug and step through code?</li>
 </ul>
 <hr>
 <blockquote>
@@ -1148,7 +1162,7 @@ JavaScript!</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"next":{"title":"Week 5 - Conditionals, Loops and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript I","level":"1.4","depth":1,"path":"js-core-1/index.md","ref":"js-core-1/index.md","articles":[{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core-1/week-1/lesson.md","ref":"js-core-1/week-1/lesson.md","articles":[]},{"title":"Week 5 - Conditionals, Loops and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},{"title":"Week 6 - More Arrays","level":"1.4.3","depth":2,"path":"js-core-1/week-3/lesson.md","ref":"js-core-1/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-1/lesson.md","mtime":"2020-02-29T18:20:51.180Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-29T18:21:39.115Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"next":{"title":"Week 5 - Conditionals, Loops and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript I","level":"1.4","depth":1,"path":"js-core-1/index.md","ref":"js-core-1/index.md","articles":[{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core-1/week-1/lesson.md","ref":"js-core-1/week-1/lesson.md","articles":[]},{"title":"Week 5 - Conditionals, Loops and Arrays","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},{"title":"Week 6 - More Arrays","level":"1.4.3","depth":2,"path":"js-core-1/week-3/lesson.md","ref":"js-core-1/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-1/lesson.md","mtime":"2020-03-02T13:59:54.308Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-02T14:00:40.259Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
