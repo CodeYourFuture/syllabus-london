@@ -933,6 +933,13 @@ Water
 scores<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">29</span><span class="token punctuation">;</span> <span class="token comment">// Change the last score</span>
 scores<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">51</span><span class="token punctuation">;</span> <span class="token comment">// Add a new score</span>
 </code></pre>
+<h3 id="exercise-5-minutes">Exercise (5 minutes)</h3>
+<ul>
+<li>Create an array with the names of the people on your table</li>
+<li><code>console.log</code> out the names and how many people are at the table</li>
+<li>Put someone from another table at the beginning of the array</li>
+<li>Add someone else to the end of the list</li>
+</ul>
 <h2 id="array-methods">Array methods</h2>
 <p>Do you remember how strings have special functions called methods? Don&apos;t worry if not! Here&apos;s an example to jog your memory:</p>
 <pre class="language-"><code class="lang-sh">$ node
@@ -1007,6 +1014,18 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token string">&apos;H--e--l--l--o&apos;</span>
 </code></pre>
 <p>There is a string method <code>.split()</code>. In an interactive console try using the string <code>.split()</code> method and the array <code>.join()</code>. How could they work together?</p>
+<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
+<ul>
+<li>Use the array of the people from your table</li>
+<li>Combine it with another array filled with the names from another table</li>
+<li><code>console.log</code> the names in alphabetical order</li>
+<li>Create a new value with the 2nd, 3rd and 4th people in it</li>
+<li><p>Create a function that takes a <code>name</code> and an array of names and returns a string</p>
+<pre class="language-"><code class="lang-txt">name is / is not sitting at the table with Daniel, Irini, Ashleigh, Rob and Etzali`
+</code></pre>
+<p>The names above are just examples.</p>
+</li>
+</ul>
 <h2 id="array-map">Array map</h2>
 <p>Imagine you have an array of names...</p>
 <pre class="language-"><code class="lang-sh"><span class="token builtin class-name">let</span> mentors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Daniel &quot;</span>, <span class="token string">&quot;irina &quot;</span>, <span class="token string">&quot; Gordon&quot;</span>, <span class="token string">&quot;ashleigh &quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -1056,6 +1075,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">let</span> numbersDoubled <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">number</span> <span class="token operator">=&gt;</span> number <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>In the example above, the expression <code>number * 2</code> is automatically returned because it comes directly after the <code>=&gt;</code> arrow (instead of coming after curly braces). This is called an <code>implicit return</code>.</p>
+<h3 id="exercise-5-minutes">Exercise (5 minutes)</h3>
+<ul>
+<li>Create a function that takes an <code>birthYear</code>, and returns the age of someone</li>
+<li>With an array of ages, <code>[ 1964, 2008, 1999, 2005, 1978, 1985, 1919 ]</code> create another array filled with their birth years</li>
+<li><code>console.log</code> the birth years array</li>
+</ul>
 <h2 id="array-foreach">Array forEach</h2>
 <p>The <code>.forEach()</code> method is similar to <code>.map()</code> except it does not return a new array. Therefore <code>.forEach()</code> is only useful if you want to perform <em>side effects</em>.</p>
 <h3 id="side-effects">Side effects</h3>
@@ -1087,6 +1112,13 @@ names<span class="token punctuation">.</span><span class="token function">map</s
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
+<h3 id="exercise-5-minutes">Exercise (5 minutes)</h3>
+<p>You can drive in the UK at the age of 17.</p>
+<ul>
+<li>Write another function that takes a birth year and returns a string <code>Born in {year} can drive</code> or <code>Born in {year} can drive in {x} years</code></li>
+<li>Use the array of birth years, <code>[ 1964, 2008, 1999, 2005, 1978, 1985, 1919 ]</code>, to get an array of strings saying if these people can drive</li>
+<li><code>console.log</code> the answers</li>
+</ul>
 <h2 id="array-filter">Array filter</h2>
 <p>Imagine you have an array of students&apos; test scores:</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">let</span> testScores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">66</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">81</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -1211,7 +1243,7 @@ namesFormatted<span class="token punctuation">.</span><span class="token functio
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 6 - Arrays","level":"1.4.3","depth":2,"next":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-1/lesson.md","ref":"js-core-2/week-1/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-2/lesson.md","ref":"js-core-2/week-2/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-3/lesson.md","ref":"js-core-2/week-3/lesson.md","articles":[]}]},"previous":{"title":"Week 5 - Conditionals and Loops","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-3/lesson.md","mtime":"2020-03-05T19:31:28.239Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-05T19:32:16.858Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 6 - Arrays","level":"1.4.3","depth":2,"next":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-1/lesson.md","ref":"js-core-2/week-1/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-2/lesson.md","ref":"js-core-2/week-2/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-3/lesson.md","ref":"js-core-2/week-3/lesson.md","articles":[]}]},"previous":{"title":"Week 5 - Conditionals and Loops","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-3/lesson.md","mtime":"2020-03-08T08:19:12.397Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-08T08:19:59.602Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
