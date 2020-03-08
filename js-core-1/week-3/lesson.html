@@ -941,6 +941,22 @@ scores<span class="token punctuation">[</span><span class="token number">3</span
 <li>Put someone from another table at the beginning of the array</li>
 <li>Add someone else to the end of the list</li>
 </ul>
+<h2 id="working-with-arrays">Working with arrays</h2>
+<p>When working with lists it is often useful to manipulate, enhance, or search the information in that list.</p>
+<p>Some examples of things you might want to do with a list of data:</p>
+<ul>
+<li>Only use the first 10 items in a list</li>
+<li>Get people from a list whose name starts with a <code>M</code></li>
+<li>Find the first person in a list to be over 100 years old</li>
+<li>Arrange people in a list alphabetically</li>
+<li>Get the last 10 items in an array</li>
+<li>Add all the numbers up in a list</li>
+<li>Get all the cats in an array of animals</li>
+<li>From a list of numbers, add a <code>&#xA3;</code> sign prefix</li>
+<li>Combine a list of romance films and thrillers</li>
+</ul>
+<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
+<p>Working as a group - use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Instance_methods" target="_blank">MDN documentation on arrays</a> to see if you can find what methods might be useful to achieving the above examples.</p>
 <h2 id="array-methods">Array methods</h2>
 <p>Do you remember how strings have special functions called methods? Don&apos;t worry if not! Here&apos;s an example to jog your memory:</p>
 <pre class="language-"><code class="lang-sh">$ node
@@ -1288,7 +1304,7 @@ namesFormatted<span class="token punctuation">.</span><span class="token functio
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 6 - Arrays","level":"1.4.3","depth":2,"next":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-1/lesson.md","ref":"js-core-2/week-1/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-2/lesson.md","ref":"js-core-2/week-2/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-3/lesson.md","ref":"js-core-2/week-3/lesson.md","articles":[]}]},"previous":{"title":"Week 5 - Conditionals and Loops","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-3/lesson.md","mtime":"2020-03-08T09:12:48.685Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-08T09:13:33.286Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 6 - Arrays","level":"1.4.3","depth":2,"next":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-1/lesson.md","ref":"js-core-2/week-1/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-2/lesson.md","ref":"js-core-2/week-2/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-3/lesson.md","ref":"js-core-2/week-3/lesson.md","articles":[]}]},"previous":{"title":"Week 5 - Conditionals and Loops","level":"1.4.2","depth":2,"path":"js-core-1/week-2/lesson.md","ref":"js-core-1/week-2/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-3/lesson.md","mtime":"2020-03-08T11:12:59.739Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-08T11:13:49.281Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
