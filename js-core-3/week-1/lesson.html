@@ -769,9 +769,10 @@
 <h3 id="why-is-debugging-important">Why is Debugging Important?</h3>
 <p>When are projects are very small it&apos;s easy to see the problems and when something does break it&apos;s not to much of an issue. This isn&apos;t true when we start working on larger projects.</p>
 <p>The code that we write has real world uses and real world effects.</p>
-<h4 id="fly-by-wire-aviation">Fly-By-Wire Aviation</h4>
-<p>This was the first ever time that a fully automated flight had been flown and there was a bug in the way the maths was handled internally.</p>
-<p>You can see an example of what happens <a href="https://www.youtube.com/watch?v=BxlBhucGayA" target="_blank">here</a>. This flight was a test flight and was unmanned.</p>
+<h4 id="y2k-bug">Y2K Bug</h4>
+<p>In 1999 the world faced a possibly very serious bug in the way that computer stored time. When computers stored the year they would only store the last two digits (e.g. 1999 is stored as just 99). This means that when the year 2000 happened lots of people were afraid that computer would think the year was the year 1900 instead of the year 2000.</p>
+<p>Check out this very scary video <a href="https://www.youtube.com/watch?v=ddzbxJasID4" target="_blank">here</a></p>
+<p>Fortunately, a lot people put in a lot of work to stop the bug before it happened and averted catastrophe.</p>
 <h4 id="therac-25">Therac-25</h4>
 <p>Therac-25 was a machine used to administer radiation to cancer patients which malfunctioned because of a programmer error.</p>
 <p>You can watch a quick video about the bug <a href="https://www.youtube.com/watch?v=izGSOsAGIVQ" target="_blank">here</a> in a</p>
@@ -790,14 +791,6 @@ In teams, the students should have quick discussion about the bugs that have occ
 <pre class="language-"><code class="lang-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">&gt;</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;wait what?&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-<ul>
-<li><code>SyntaxError: missing ; before statement</code><ul>
-<li>Note: Ignore the // in this example</li>
-</ul>
-</li>
-</ul>
-<pre class="language-"><code class="lang-javascript"><span class="token comment">// var obj = {}</span>
 </code></pre>
 <ul>
 <li><code>SyntaxError: missing variable name</code></li>
@@ -821,25 +814,19 @@ In teams, the students should have quick discussion about the bugs that have occ
 <ul>
 <li><code>ReferenceError: &quot;word&quot; is not defined</code></li>
 </ul>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> ward <span class="token operator">=</span> <span class="token string">&quot;bar&quot;</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> ward <span class="token operator">=</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">;</span>
 word<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <ul>
-<li><code>ReferenceError: &quot;num1&quot; is not defined</code></li>
+<li><code>ReferenceError: &quot;a&quot; is not defined</code></li>
 </ul>
 <pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">numbers</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">var</span> num1 <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-  <span class="token keyword">var</span> num2 <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> num1 <span class="token operator">+</span> num2<span class="token punctuation">;</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li><code>ReferenceError: reference to undefined property &quot;bar&quot;</code></li>
-</ul>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-foo<span class="token punctuation">.</span>bar<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h4 id="type-errors">Type Errors</h4>
 <p>Type errors usually occur when you are trying to access a method or variable from an object that doesn&apos;t have that in it.</p>
@@ -847,7 +834,7 @@ foo<span class="token punctuation">.</span>bar<span class="token punctuation">;<
 <ul>
 <li><code>TypeError: document.getElByID is not a function</code></li>
 </ul>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElById</span><span class="token punctuation">(</span><span class="token string">&quot;foo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> submit <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElById</span><span class="token punctuation">(</span><span class="token string">&quot;button&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <ul>
 <li><code>TypeError: numbers.map is not a function</code><ul>
@@ -864,26 +851,26 @@ numbers<span class="token punctuation">.</span><span class="token function">map<
 <ul>
 <li><code>TypeError: Cannot read property &apos;substring&apos; of undefined</code></li>
 </ul>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> foo<span class="token punctuation">;</span>
-foo<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> string<span class="token punctuation">;</span>
+string<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 id="the-debugging-framework">The Debugging Framework</h3>
 <p>When debugging you should always ask yourself a few key questions</p>
-<ol>
+<ul>
 <li>What did I expect to happen?</li>
-</ol>
+</ul>
 <p>You should very clearly be able to say exact what you expected to happen when you run your code. If you cannot do this, then you do not understand the problem well enough.</p>
-<ol>
+<ul>
 <li>Is it actually broken?</li>
-</ol>
+</ul>
 <p>Sometime what you think is broken is actually working fine but not what you thought was going to happen. You should confirm with what the program is trying to do.</p>
-<ol>
+<ul>
 <li>What happened instead?</li>
-</ol>
+</ul>
 <p>You should be able to quickly state what you were expecting to happen. Just saying &quot;It Didn&apos;t Work&quot; isn&apos;t enough! The more carefully you dissect the problem the more easily you&apos;ll be able to fix it.</p>
-<ol>
+<ul>
 <li>What have I tried so far?</li>
-</ol>
+</ul>
 <p>Debugging is a process of loops and iteration. Think about what you&apos;ve done so far and work out other ways that the code could have broken.</p>
 <h4 id="tools">Tools</h4>
 <p><strong>Task (5 Minutes)</strong></p>
@@ -905,7 +892,7 @@ foo<span class="token punctuation">.</span><span class="token function">substrin
 <h5 id="using-the-chrome-debugger">Using the Chrome Debugger</h5>
 <!-- TO DO -->
 <h5 id="jshint-in-vscode">JSHint in VSCode</h5>
-<p>It&apos;s a great skill to get good at recognizing these errors when they happen to you but you can also use tools to help you find these errors before you run your code. You can use the JSHint extension for VSCode which you can <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint" target="_blank">download here</a>.</p>
+<p>It&apos;s a great skill to get good at recognizing these errors when they happen to you but you can also use tools to help you find these errors before you run your code. You can use the ESLint extension for VSCode which you can <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">download here</a>.</p>
 <h3 id="exercise-1">Exercise 1</h3>
 <p>As a class we should step through solving all of the issues in this small piece of code. You should copy it into a code editor (e.g. VS Code) in a <code>.js</code> file so you can debug and run it easily. <strong>Be sure to use The Debugging Framework that we discussed earlier</strong></p>
 <!--
@@ -1002,7 +989,7 @@ These are the errors:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"next":{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-1/lesson.md","ref":"js-core-3/week-1/lesson.md","articles":[]},{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"path":"js-core-3/week-3/lesson.md","ref":"js-core-3/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-1/lesson.md","mtime":"2020-04-18T15:50:09.208Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T15:50:57.133Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"next":{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-1/lesson.md","ref":"js-core-3/week-1/lesson.md","articles":[]},{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"path":"js-core-3/week-3/lesson.md","ref":"js-core-3/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-1/lesson.md","mtime":"2020-04-18T19:36:26.343Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T19:37:10.361Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
