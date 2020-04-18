@@ -868,31 +868,42 @@ numbers<span class="token punctuation">.</span><span class="token function">map<
 foo<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 id="the-debugging-framework">The Debugging Framework</h3>
-<ul>
+<p>When debugging you should always ask yourself a few key questions</p>
+<ol>
 <li>What did I expect to happen?</li>
 <li>What happened instead?</li>
-</ul>
+<li>What have I tried so far?</li>
+<li>Is it actually broken?</li>
+</ol>
 <h4 id="tools">Tools</h4>
 <p><strong>Task (5 Minutes)</strong></p>
 <p>In teams, the students should have quick discussion about the ways that they have solved bugs or errors they&apos;ve had in the past.</p>
 <p>When they finish the discussion we should regroup and gather together all the ways that they have solved bugs in the past</p>
 <h5 id="thinking-like-a-computer">Thinking like a computer</h5>
-<!-- TO DO -->
+<p>The most important skill you can develop is thinking analytically and logically - exactly the same as a computer. In the exercises soon we will be using our logical skills to slowly step through a program to see what is going wrong.</p>
 <h5 id="jshint-in-vscode">JSHint in VSCode</h5>
 <p>It&apos;s a great skill to get good at recognizing these errors when they happen to you but you can also use tools to help you find these errors before you run your code. You can use the JSHint extension for VSCode which you can <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint" target="_blank">download here</a>.</p>
 <h5 id="test-often">Test Often</h5>
-<!-- TO DO -->
+<p>It is important when working on your code to test each part of your code separately and carefully. Make sure everything is working before you move on to the next part otherwise problems become harder to debug.</p>
 <h5 id="using-consolelog-and-the-console">Using <code>console.log()</code> and the Console</h5>
-<!-- TO DO -->
+<p>By this point you will have seen <code>console.log()</code> quite a lot</p>
 <h5 id="using-the-chrome-debugger">Using the Chrome Debugger</h5>
 <!-- TO DO -->
-<h3 id="exercise">Exercise</h3>
-<p>In your groups we want you to go through this program and find all of the bugs that are happening in this code.</p>
+<h3 id="exercise-1">Exercise 1</h3>
+<p>As a class we should step through solving all of the issues in this small piece of code. You should copy it into a code editor (e.g. VS Code) in a <code>.js</code> file so you can debug and run it easily. <strong>Be sure to use The Debugging Framework that we discussed earlier</strong></p>
+<!--
+
+These are the errors:
+
+• homer string syntax: apostrophe not escaped (syntax)
+• for loop: off-by-one error on check (logical)
+• incorrect calling of the function (other)
+• typo (typerror on k) (other)
+
+-->
 <pre class="language-"><code class="lang-javascript">
 <span class="token keyword">let</span> <span class="token function-variable function">printValuesOf</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">jsObject<span class="token punctuation">,</span> keys</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> keys<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
     <span class="token keyword">let</span> key <span class="token operator">=</span> keys<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>jsObject<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
@@ -922,6 +933,9 @@ foo<span class="token punctuation">.</span><span class="token function">substrin
 <li>Syntactical</li>
 <li>Other (programmer/user error)</li>
 </ol>
+<h3 id="exercise-2">Exercise 2</h3>
+<p>In your groups we want you to go through this program and find all of the bugs that are happening in this code.</p>
+<p>You can find the project <a href="https://github.com/CodeYourFuture/syllabus/tree/london/js-core-3/week-1/debugging-code" target="_blank">here</a></p>
 <h2 id="2-project-work">2. Project Work</h2>
 <h3 id="explanation">Explanation</h3>
 <p>Over the next three weeks we&apos;re going to be building a website that will consolidate all of your knowledge so far in the course.</p>
@@ -971,7 +985,7 @@ foo<span class="token punctuation">.</span><span class="token function">substrin
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"next":{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-1/lesson.md","ref":"js-core-3/week-1/lesson.md","articles":[]},{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"path":"js-core-3/week-3/lesson.md","ref":"js-core-3/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-1/lesson.md","mtime":"2020-04-18T12:02:30.051Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T12:03:14.980Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"next":{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-1/lesson.md","ref":"js-core-3/week-1/lesson.md","articles":[]},{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"path":"js-core-3/week-3/lesson.md","ref":"js-core-3/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-1/lesson.md","mtime":"2020-04-18T13:35:57.696Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T13:36:43.288Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
