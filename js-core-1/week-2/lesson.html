@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Week 5 - Conditionals and Loops · GitBook</title>
+        <title>Week 5 - Conditionals and Arrays · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -226,7 +226,7 @@
                 <a href="lesson.html">
             
                     
-                    Week 5 - Conditionals and Loops
+                    Week 5 - Conditionals and Arrays
             
                 </a>
             
@@ -239,7 +239,7 @@
                 <a href="../week-3/lesson.html">
             
                     
-                    Week 6 - Arrays
+                    Week 6 - More Arrays
             
                 </a>
             
@@ -329,7 +329,7 @@
                 <a href="../../js-core-3/week-1/lesson.html">
             
                     
-                    Week 10 - Unit Tests and TDD
+                    Week 10 - Debugging
             
                 </a>
             
@@ -342,7 +342,7 @@
                 <a href="../../js-core-3/week-2/lesson.html">
             
                     
-                    Week 11 - More TDD, ES6
+                    Week 11 - Fetch and Asynchronous Programming
             
                 </a>
             
@@ -355,7 +355,7 @@
                 <a href="../../js-core-3/week-3/lesson.html">
             
                     
-                    Week 12 - Recap
+                    Week 12 - Scope and ES6
             
                 </a>
             
@@ -699,143 +699,6 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../../others/making-a-pull-request.html">
-            
-                <a href="../../others/making-a-pull-request.html">
-            
-                    
-                    Making a Pull Request
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3" data-path="../../others/cors.html">
-            
-                <a href="../../others/cors.html">
-            
-                    
-                    CORS
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.4" data-path="../../others/netlify-hosting-instructions.html">
-            
-                <a href="../../others/netlify-hosting-instructions.html">
-            
-                    
-                    Hosting React apps with Netlify
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5" data-path="../../others/node-version-manager.html">
-            
-                <a href="../../others/node-version-manager.html">
-            
-                    
-                    Node Version Manager
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.6" data-path="../../others/getting-a-job.html">
-            
-                <a href="../../others/getting-a-job.html">
-            
-                    
-                    Getting A Job
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.7" data-path="../../others/developer-links.html">
-            
-                <a href="../../others/developer-links.html">
-            
-                    
-                    Developer Links
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="header">General information</li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="../../others/code-your-future.html">
-            
-                <a href="../../others/code-your-future.html">
-            
-                    
-                    CodeYourFuture
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.2" data-path="../../others/house-rules.html">
-            
-                <a href="../../others/house-rules.html">
-            
-                    
-                    House Rules
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.3" data-path="../../CODE_OF_CONDUCT.html">
-            
-                <a href="../../CODE_OF_CONDUCT.html">
-            
-                    
-                    Code of Conduct
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.4" data-path="../../CONTRIBUTING.html">
-            
-                <a href="../../CONTRIBUTING.html">
-            
-                    
-                    Contributing
-            
-                </a>
-            
-
-            
-        </li>
-    
 
     
 
@@ -866,7 +729,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Week 5 - Conditionals and Loops</a>
+        <a href="../.." >Week 5 - Conditionals and Arrays</a>
     </h1>
 </div>
 
@@ -900,14 +763,14 @@
 <li>What are conditionals?</li>
 <li>What are <code>for</code> and <code>while</code> loops (and what&apos;s the difference)?</li>
 <li>How do you use expressions with conditionals?</li>
-<li>What are comparitor operators and how do you use them?</li>
+<li>What are comparator operators and how do you use them?</li>
 <li>What are logical operators and how do you use them?</li>
 <li>What functionality does the <code>assert</code> module provide?</li>
 <li>What are arrays and how can you interact with them?</li>
 </ul>
 <hr>
 <h2 id="expressions">Expressions</h2>
-<p>In JavaScript there are <strong>expressions</strong> and <strong>statements</strong>. We will use these words frequently to describe code.</p>
+<p>In JavaScript, there are <strong>expressions</strong> and <strong>statements</strong>. We will use these words frequently to describe code.</p>
 <h3 id="expression">Expression</h3>
 <p>An expression returns a value. Sometimes we will say that an expression <em>evaluates to</em> a value.</p>
 <p>The following are all examples of expressions:</p>
@@ -938,7 +801,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token function">sayGreeting</span><span class="token punctuation">(</span>greeting<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// action: calls the function `sayGreeting` with the parameter `greeting`</span>
 </code></pre>
 <p>There are some other different types of statements that we will learn in the coming weeks.</p>
-<p>You can run <code>node</code> by itself, which will open a <em>node console</em>, also called a <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop" target="_blank">Read&#x2013;Eval&#x2013;Print Loop (REPL)</a>.</p>
+<p>You can run <code>node</code> by itself, which will open a <em>node console</em>, also called a <a href="https://www.tutorialspoint.com/nodejs/nodejs_repl_terminal.htm" target="_blank">Read&#x2013;Eval&#x2013;Print Loop (REPL)</a>.</p>
 <p>This console allows you to run expressions in the console line by line and is a great way of testing bits of code before writing it in a script.</p>
 <h3 id="exercise-5-mins">Exercise (5 mins)</h3>
 <p>In your VS Code terminal, run the command <code>node</code> and run the following expressions. What are their outputs? Is there anything you didn&apos;t expect? (To exit the node REPL, you have to click <kbd>Ctrl+d</kbd> or <kbd>Cmd+D</kbd> on Mac)</p>
@@ -973,7 +836,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>As a class, can you step through the function and explain what each line does?</li>
 </ol>
 <h2 id="comparison-operators">Comparison Operators</h2>
-<p>In the previous exercise, you used an an <strong>expression</strong> that returns a <code>boolean</code> value. This was possible because of the <strong>comparison operator</strong> <code>===</code>. Using a comparison operator will always return a <code>boolean</code> value.</p>
+<p>In the previous exercise, you used an <strong>expression</strong> that returns a <code>boolean</code> value. This was possible because of the <strong>comparison operator</strong> <code>===</code>. Using a comparison operator will always return a <code>boolean</code> value.</p>
 <h3 id="assert">Assert</h3>
 <p>We will also be using a new keyword to make sure the comparisons we do below return <code>true</code>. This is the <code>assert</code>.</p>
 <p>When given <code>true</code>, it does nothing. Nice. When given <code>false</code>, it will error. It is very good for testing things you expect to be <code>true</code>.</p>
@@ -991,14 +854,19 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token operator">==</span><span class="token operator">=</span> same value and same <span class="token builtin class-name">type</span>
 <span class="token operator">!=</span><span class="token operator">=</span> not the same value and <span class="token builtin class-name">type</span>
 </code></pre>
-<p>You might see people use two other comparison operators. They are valid, but are the evil twins of <code>===</code> and <code>!==</code> and it is generally considered bad practise because of the bugs the can cause.</p>
-<pre class="language-"><code class="lang-sh"><span class="token operator">==</span> equal after <span class="token builtin class-name">type</span> converstion
-<span class="token operator">!=</span> unequal after <span class="token builtin class-name">type</span> converstion
+<p>You might see people use two other comparison operators. They are valid, but are the evil twins of <code>===</code> and <code>!==</code> and it is generally considered bad practice because of the bugs the can cause.</p>
+<p><strong>&#x2718; - Do not use == and !=</strong></p>
+<pre class="language-"><code class="lang-sh"><span class="token operator">==</span> equal compares only value
+<span class="token operator">!=</span> unequal compares only value
+</code></pre>
+<p><strong>&#x2714; - Do use === and !==</strong></p>
+<pre class="language-"><code class="lang-sh"><span class="token operator">==</span><span class="token operator">=</span> equal compares both value and <span class="token builtin class-name">type</span>
+<span class="token operator">!=</span><span class="token operator">=</span> unequal compares both value and <span class="token builtin class-name">type</span>
 </code></pre>
 <p>If you see these, suggest people change them in pull requests.</p>
 <h3 id="exercise-5-mins">Exercise (5 mins)</h3>
 <ol>
-<li>Modify the values below to to have the compare function return the desired value:</li>
+<li>Modify the values below to have the compare function return the desired value:</li>
 </ol>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;assert&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1027,17 +895,17 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token function">assert</span><span class="token punctuation">(</span>thisArray <span class="token operator">===</span> thatArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>The array comparison doesn&apos;t work because JavaScript comparison only works as expected on <code>number</code>s, <code>string</code>s, and <code>boolean</code>s.</p>
-<p>You need to be aware of this, and you can go deeper into outside of the lesson, but generally remember that only <code>number</code>s, <code>string</code>s, and <code>boolean</code>s work with equality.</p>
-<p>MDN have some in depth, if not too in depth documentation <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank">here</a>.</p>
+<p>You need to be aware of this, and its possible for you to go deeper into array comparisons outside of the lesson, though generally remember that only <code>number</code>s, <code>string</code>s, and <code>boolean</code>s work with equality.</p>
+<p>MDN has some slightly in-depth documentation <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank">here</a>.</p>
 <h2 id="conditionals">Conditionals</h2>
-<p>Like humans, computer programs make decisions based on information given to them. <strong>Conditionals</strong> are a way of representing these decisions in code (remember, you saw this in a previous exercise!)</p>
+<p>Like humans, computer programs make decisions based on the information given to them. <strong>Conditionals</strong> are a way of representing these decisions in code (remember, you saw this in a previous exercise!)</p>
 <p>For example:</p>
 <ul>
 <li>In a game, if the player has 0 lives, then the game is over</li>
 <li>In a weather app, if rain is forecast, a picture of rain clouds is shown</li>
 </ul>
 <p>The most common type of conditional is the <strong>if statement</strong>.</p>
-<p>An if statment runs some code if a condition is met. If the condition is not met, then the code will be skipped.</p>
+<p>An if statement runs some code if a condition is met. If the condition is not met, then the code will be skipped.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">let</span> isHappy <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">(</span>isHappy<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1097,7 +965,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span>
 </code></pre>
 <h3 id="exercise-10-mins">Exercise (10 mins)</h3>
-<p>Create a function that gives you message depending on your mood! It should:</p>
+<p>Create a function that gives you a message depending on your mood! It should:</p>
 <ul>
 <li>take one input</li>
 <li>return &quot;Good job, you&apos;re doing great!&quot; if you pass in &quot;happy&quot;</li>
@@ -1108,7 +976,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h2 id="logical-operators">Logical Operators</h2>
 <p>There are three logical operators in JavaScript: <code>||</code> (OR), <code>&amp;&amp;</code> (AND), <code>!</code> (NOT).</p>
 <p>They let you write expressions that evaluate to a boolean value.</p>
-<p>Suppose you want to test if a number is bigger than 3 and smaller than 10. We can write this using logical operators.</p>
+<p>Suppose you want to test if a number is bigger than 3 and smaller than 10. We can write this, using different logical operators.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 
 <span class="token keyword">function</span> <span class="token function">satisfiesRequirements</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1148,9 +1016,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
   i<span class="token operator">++</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>It&apos;s important that the condition inside the parenthesis becomes false at some point - otherwise we&apos;ll have what&apos;s known as an infinite loop!</p>
+<p>It&apos;s important that the condition inside the parenthesis becomes false at some point - otherwise, we&apos;ll have what&apos;s known as an infinite loop!</p>
 <p>The <code>for</code> loop is similar to a while loop, but with a more specialized syntax. Programmers invented the for loop when they realized they were always doing the same three things: creating loop counter variables (like <code>i</code> above), incrementing them by some amount, and checking that they&apos;re less than a value.</p>
 <p>The <code>for</code> loop syntax has special places for each of those three things. Here&apos;s the same loop as the first while loop above, as a for loop:</p>
+<p><img src="https://user-images.githubusercontent.com/31692/75388870-9213a880-58dd-11ea-90e6-4e67eabf390b.png" alt="For loop"></p>
 <p><img src="https://user-images.githubusercontent.com/31692/75388870-9213a880-58dd-11ea-90e6-4e67eabf390b.png" alt="For loop"></p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token function">someFunction</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1179,7 +1048,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">let</span> greetings <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Hello, how are you?&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Hi! Nice to meet you!&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 </code></pre>
 <p>You can access elements in an array using the <strong>index</strong> of an element with <strong>bracket notation</strong></p>
-<p><strong>&#x1F514; Remember:</strong> All arrays start at position 0! To access the first element in an array, you need to access index <code>0</code>, the second element at <code>1</code>, the fifth at <code>4</code> and so forth. This is called zero indexed arrays. There are some <a href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html" target="_blank">very intense reasons for this</a>, but most people just accept it and move on.</p>
+<p><strong>&#x1F514; Remember:</strong> All arrays start at position 0! To access the first element in an array, you need to access index <code>0</code>, the second element at <code>1</code>, the fifth at <code>4</code> and so forth. This is called zero-based indexed arrays. There are some <a href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html" target="_blank">very intense reasons for this</a>, but most people just accept it and move on.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">let</span> students <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Ahmed&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Maria&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Atanas&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Nahidul&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Jack&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
 students<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &quot;Ahmed&quot;</span>
@@ -1198,12 +1067,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </code></pre>
 <ol>
 <li><p>Which index do you need to return:</p>
-<ul>
-<li>strawberry</li>
+</li>
+<li><p>strawberry</p>
+</li>
 <li>kiwi</li>
 <li>orange</li>
-<li>banana</li>
-</ul>
+<li><p>banana</p>
 </li>
 <li><p>Replace &apos;apple&apos; with &apos;raspberry&apos; and &apos;fig&apos; with &apos;pineapple&apos;</p>
 </li>
@@ -1212,10 +1081,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ol>
 <li>Write a function to remove the duplicate elements of a given array and return the new length of the array.
 Sample array: [20, 20, 30, 40, 50, 50, 50]</li>
-<li>After removing the duplicate elements the function should return 4 as the new length of the array. </li>
+<li>After removing the duplicate elements the function should return 4 as the new length of the array.</li>
 </ol>
 <h3 id="exercise-5-mins">Exercise (5 mins)</h3>
-<p>Complete this function so that, if the second index in array contains the name &quot;Amy&quot;, it returns <code>&quot;Second index matched!&quot;</code></p>
+<p>Complete this function so that, if the second index in the array contains the name &quot;Amy&quot;, it returns <code>&quot;Second index matched!&quot;</code></p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">secondMatchesAmy</span><span class="token punctuation">(</span><span class="token parameter">array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token string">&quot;Second index matched!&quot;</span><span class="token punctuation">;</span>
@@ -1237,11 +1106,11 @@ Sample array: [20, 20, 30, 40, 50, 50, 50]</li>
 <pre class="language-"><code class="lang-js"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
 
-<span class="token keyword">const</span> <span class="token function-variable function">multiplyNumbers</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> <span class="token function-variable function">multiplyNumbers</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-<span class="token keyword">const</span> <span class="token function-variable function">addNumbers</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> <span class="token function-variable function">addNumbers</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
@@ -1267,11 +1136,11 @@ Sample array: [20, 20, 30, 40, 50, 50, 50]</li>
 <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
 
-<span class="token keyword">const</span> <span class="token function-variable function">f1</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> <span class="token function-variable function">f1</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-<span class="token keyword">const</span> <span class="token function-variable function">f2</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> <span class="token function-variable function">f2</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
@@ -1291,6 +1160,15 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<h2 id="glossary">Glossary</h2>
+<ul>
+<li>Assert: to determine whether something is <code>true</code> or not <code>true</code>, more precisely <code>false</code></li>
+<li>Duplicate: exact copies of something (e.g. two or more files, numbers, directory can be exactly the same)</li>
+<li>Index: numbers that let you know an item&apos;s position inside an array</li>
+<li>REPL: (Read-Eval-Print-Loop) an interactive way to execute code you write inside the console</li>
+<li>Zero-based Index: an <code>array</code> starting at <code>0</code> and not at <code>1</code></li>
+</ul>
+<p>For words like <strong>Terminal</strong>, <strong>Primitive Types</strong> please see <a href="../week-1/lesson.html#Glossary">Glossary: JavaScript Core I - 2</a></p>
 <h1 id="homework">Homework</h1>
 <ol>
 <li>Fork <a href="https://github.com/CodeYourFuture/js-exercises" target="_blank">the js-exercises repo</a> repo and solve all exercises in the <code>week-2/Homework/mandatory</code>. You can complete the optional exercises in <code>week-2/Homework/extra</code> for more of a challenge!</li>
@@ -1327,7 +1205,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 </a>
                 
                 
-                <a href="../week-3/lesson.html" class="navigation navigation-next " aria-label="Next page: Week 6 - Arrays">
+                <a href="../week-3/lesson.html" class="navigation navigation-next " aria-label="Next page: Week 6 - More Arrays">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1338,7 +1216,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 5 - Conditionals and Loops","level":"1.4.2","depth":2,"next":{"title":"Week 6 - Arrays","level":"1.4.3","depth":2,"path":"js-core-1/week-3/lesson.md","ref":"js-core-1/week-3/lesson.md","articles":[]},"previous":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core-1/week-1/lesson.md","ref":"js-core-1/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-2/lesson.md","mtime":"2020-03-21T20:19:07.056Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-21T20:19:57.050Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 5 - Conditionals and Arrays","level":"1.4.2","depth":2,"next":{"title":"Week 6 - More Arrays","level":"1.4.3","depth":2,"path":"js-core-1/week-3/lesson.md","ref":"js-core-1/week-3/lesson.md","articles":[]},"previous":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core-1/week-1/lesson.md","ref":"js-core-1/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-1/week-2/lesson.md","mtime":"2020-04-18T11:32:06.891Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T11:32:53.974Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
