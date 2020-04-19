@@ -890,9 +890,66 @@ string<span class="token punctuation">.</span><span class="token function">subst
 </ul>
 <p>Here you&apos;ll see all of the messages that have been printed by the website when it was loading and running.</p>
 <h5 id="using-the-chrome-debugger">Using the Chrome Debugger</h5>
-<!-- TO DO -->
-<h5 id="jshint-in-vscode">JSHint in VSCode</h5>
-<p>It&apos;s a great skill to get good at recognizing these errors when they happen to you but you can also use tools to help you find these errors before you run your code. You can use the ESLint extension for VSCode which you can <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">download here</a>.</p>
+<p>We know that JavaScript executes code line by line. How great would it be if we had a tool that allowed us to stop code execution on any line and inspect the values of our variables. Fortunately such a tool exists and it&apos;s called a debugger. Here we will use the Chrome debugger for JavaScript, however similar tools exist of all other popular browsers.</p>
+<p>To view the debugger go to the <code>Sources</code> tab of Chrome developer tools which we opened above.</p>
+<p>To tell the debugger to stop we need to create a something called a <code>breakpoint</code>, it&apos;s an instruction to the debugger to stop execution and await instruction from us.</p>
+<p>We can place a debugger in one of two ways. We can either insert a line into our called saying</p>
+<pre class="language-"><code>debugger;
+</code></pre><p>or we can click on the line number in the debugger tool itself.</p>
+<p>Let&apos;s say we have a simple piece of code below and we want to inspect the values of <code>x</code> and <code>y</code> before adding them.</p>
+<pre class="language-"><code>var x = 10;
+var y = 20;
+
+var z = x * y;
+</code></pre><p>To use debugger on above code we will save it in a file called <code>temp.js</code> and import it into an html file called <code>temp.html</code>.</p>
+<p>We can either use the <code>debugger</code> statement to pause the code</p>
+<pre class="language-"><code>var x = 10;
+var y = 20;
+debugger;
+var z = x * y;
+</code></pre><p>or by opening the file in the debugger using the file navigation on the right hand side and clicking on line 4. Note you can pause on line with code not empty lines.</p>
+<p><img src="breakpoint.png" alt=""></p>
+<p>Once we have paused code execution, we can mouse over the the variables to see their values.</p>
+<p><img src="debug-value.png" alt=""></p>
+<p>Once we have finished inspecting the values, we can use the controls in the top right corner to tell the debugger what to do.</p>
+<p><img src="controls.png" alt=""></p>
+<p>We can click the button with the blue triangle to tell the debugger to continue executing code until it hits the next breakpoint. Or if we want to execute code line by line ourselves, we can press the button with the curved arrow that will the debugger to execute the current line and stop on the next line.</p>
+<p>To remove a breakpoint you either remove the <code>debugger</code> statement or if you placed a breakpoint from the debugger itself, you can click that line number again to remove it.</p>
+<h5 id="comparing-consolelog-and-debugger">Comparing console.log and debugger</h5>
+<p>As a developer you will likely use both tools to understand what your code is doing and help you fin and fix bugs. <code>console.log</code> can be a quick and easy way to check a value, but it can also be a bit inflexible since you can only inspect the value you log out in that one place.</p>
+<p>Using the debug tool to inspect values can be a bit slower than console logging out values. However, it is also more flexible since you can inspect any value and move execution yourself line by line.</p>
+<p>Try using both methods in your exercises and homeworks to get more familiar with them.</p>
+<h5 id="eslint-in-vscode">ESLint in VSCode</h5>
+<p>Often you will have code that is perfectly valid JavaScript, but it may possibly not do what you want it to do. For example, you might have misspelled a variable name and as a result the variable you wanted to using is now unused and the variable you using does not exist.</p>
+<p>To catch such problems, we can use a static code analysis tool or commonly known as a linter. The most common one in use today is <code>ESLint</code> and it allows us to configure different rules to look out for and alert us when one of them is broken by our code.</p>
+<p>You can use the ESLint extension for VSCode which you can <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">download here</a>.</p>
+<p>We have created a sample ESLint configuration to help you get started. You can download it <a href=".eslintrc">here</a>.</p>
+<pre class="language-"><code>{
+  &quot;rules&quot;: {
+    &quot;semi&quot;: [&quot;warn&quot;, &quot;always&quot;],
+    &quot;quotes&quot;: [&quot;warn&quot;, &quot;double&quot;],
+    &quot;eqeqeq&quot;: [&quot;warn&quot;, &quot;always&quot;],
+    &quot;no-unused-vars&quot;: [&quot;warn&quot;, &quot;always&quot;],
+    &quot;no-redeclare&quot;: [&quot;warn&quot;, &quot;always&quot;],
+    &quot;no-undef&quot;: [&quot;warn&quot;, &quot;always&quot;]
+  }
+}
+</code></pre><p><code>semi</code> warns you if you did not use a semi colon at the end of the line
+<code>quotes</code> ensures consistency by warning you if you did not use double quote marks
+<code>eqeqeq</code> ensures you use <code>===</code> and <code>!==</code> rather than <code>==</code> and <code>!=</code> since the latter can lead to errors
+<code>no-unused-vars</code> will warn you if you have unused variables in your code
+<code>no-redeclare</code> will warn you if you redeclare an existing variable
+<code>no-undef</code> will warn you if you try to use an undeclared variable or function</p>
+<p>You can see all rules and their explanations at <a href="https://eslint.org/docs/rules/" target="_blank">https://eslint.org/docs/rules/</a>. Many of them not make sense to you (they don&apos;t to me), but it can be a handy reference and over time your use and understanding of them will improve and increase.</p>
+<h5 id="summary">Summary</h5>
+<ul>
+<li>Bugs are a fact of life. No one produces bug free code.</li>
+<li>Test regularly to find bugs early.</li>
+<li>Having multiple bugs in code can make them harder to deal with. See previous rule</li>
+<li>Use tools such a linters spot and prevent bugs early</li>
+<li>Error messages might look scary, but they are your friend</li>
+<li>Use tools such as console.log and debugger to find root of bugs</li>
+</ul>
 <h3 id="exercise-1">Exercise 1</h3>
 <p>As a class we should step through solving all of the issues in this small piece of code. You should copy it into a code editor (e.g. VS Code) in a <code>.js</code> file so you can debug and run it easily. <strong>Be sure to use The Debugging Framework that we discussed earlier</strong></p>
 <!--
@@ -989,7 +1046,7 @@ These are the errors:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"next":{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-1/lesson.md","ref":"js-core-3/week-1/lesson.md","articles":[]},{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"path":"js-core-3/week-3/lesson.md","ref":"js-core-3/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-1/lesson.md","mtime":"2020-04-19T09:01:52.211Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-19T09:02:37.144Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"next":{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-1/lesson.md","ref":"js-core-3/week-1/lesson.md","articles":[]},{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"path":"js-core-3/week-3/lesson.md","ref":"js-core-3/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-1/lesson.md","mtime":"2020-04-19T09:02:14.849Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-19T09:02:59.648Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
