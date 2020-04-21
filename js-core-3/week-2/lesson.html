@@ -784,32 +784,20 @@
 <li>Aggregated API: one API as a wrapper for multiple APIs.</li>
 <li>Web services API: punch of APIs working together to forma whole app.</li>
 </ul>
-<h5 id="check-in">Check-in</h5>
-<p><strong>Question (5 mins):</strong></p>
-<pre class="language-"><code>Which of the following statements below about APIs is false?
-
-A) Public APIs can be accessed by anyone on the Internet.
-B) You must use Javascript to access an API.
-C) APIs can control access to data or features of an application.
-D) You can change data via an API.
-</code></pre><p><strong>Question (5 mins):</strong></p>
-<pre class="language-"><code>Give an example of a company that uses an API to allow access to their data.
-</code></pre><h4 id="basic-structure-of-rest-api">Basic structure of REST API</h4>
+<h4 id="basic-structure-of-rest-api">Basic structure of REST API</h4>
+<p>Endpoint: <code>https://api.example.com</code></p>
+<p>Endpoint with version: <code>https://api.example.com/v1</code></p>
+<p>Resources:</p>
 <ul>
-<li>Endpoint: <a href="https://api.example.com" target="_blank">https://api.example.com</a></li>
-<li>Endpoint with version: <a href="https://api.example.com/v1" target="_blank">https://api.example.com/v1</a></li>
-<li><p>Resources:</p>
-</li>
-<li><p><a href="https://api.example.com/v1/users" target="_blank">https://api.example.com/v1/users</a></p>
-</li>
-<li><a href="https://api.example.com/v1/users/create" target="_blank">https://api.example.com/v1/users/create</a></li>
-<li><a href="https://api.example.com/v1/users/1" target="_blank">https://api.example.com/v1/users/1</a></li>
-<li><p><a href="https://api.example.com/v1/users/1/edit" target="_blank">https://api.example.com/v1/users/1/edit</a></p>
-</li>
-<li><p>Query params:</p>
-</li>
-<li><p><a href="https://api.example.com/v1/users?limit=10" target="_blank">https://api.example.com/v1/users?limit=10</a></p>
-</li>
+<li><code>https://api.example.com/v1/users</code></li>
+<li><code>https://api.example.com/v1/users/create</code></li>
+<li><code>https://api.example.com/v1/users/1</code></li>
+<li><code>https://api.example.com/v1/users/1/edit</code></li>
+</ul>
+<p>Query params:</p>
+<ul>
+<li><code>https://api.example.com/v1/users?limit=10</code></li>
+<li><code>https://api.example.com/v1/users?limit=10&amp;sort=top</code></li>
 </ul>
 <h3 id="example">Example</h3>
 <ul>
@@ -820,7 +808,7 @@ D) You can change data via an API.
 </li>
 </ul>
 <h3 id="exercise">Exercise</h3>
-<h4 id="check-in">Check-in</h4>
+<p><strong>Task (5 mins):</strong></p>
 <p>Here is an example of Spotify&apos;s REST endpoint to allow you to get the tracks from a playlist</p>
 <pre class="language-"><code>GET https://api.spotify.com/v1/playlists/{playlist_id}/tracks
 </code></pre><p><strong>Task (5 mins):</strong></p>
@@ -830,6 +818,16 @@ https://api.instagram.com/v1/media/{media-id}
 
 1. Write the URL of the endpoint to get the list of comments on a given instagram post?
 2. What HTTP verb will you use to make requests to this endpoint?
+</code></pre><h4 id="recap">Recap</h4>
+<p><strong>Question (5 mins):</strong></p>
+<pre class="language-"><code>Which of the following statements below about APIs is false?
+
+A) Public APIs can be accessed by anyone on the Internet.
+B) You must use Javascript to access an API.
+C) APIs can control access to data or features of an application.
+D) You can change data via an API.
+</code></pre><p><strong>Question (5 mins):</strong></p>
+<pre class="language-"><code>Give an example of a company that uses an API to allow access to their data.
 </code></pre><h2 id="2-how-to-use-the-fetch-api-to-do-ajax-calls">2. How to use the <code>fetch</code> API to do AJAX calls</h2>
 <h3 id="explanation">Explanation</h3>
 <ul>
@@ -975,26 +973,26 @@ promiseToDoHomeWork
 
   <span class="token comment">/** Remove this line when you have completed the task
 
-  getData(&quot;https://restcountries.eu/rest/v2/name/France?fullText=true&quot;);
+    getData(&quot;https://restcountries.eu/rest/v2/name/France?fullText=true&quot;);
 
-  getData(&quot;https://restcountries.eu/rest/v2/name/Germany?fullText=true&quot;);
+    getData(&quot;https://restcountries.eu/rest/v2/name/Germany?fullText=true&quot;);
 
-  getData(&quot;https://restcountries.eu/rest/v2/name/Spain?fullText=true&quot;);
+    getData(&quot;https://restcountries.eu/rest/v2/name/Spain?fullText=true&quot;);
 
-  getData(&quot;https://restcountries.eu/rest/v2/name/Portugal?fullText=true&quot;);
+    getData(&quot;https://restcountries.eu/rest/v2/name/Portugal?fullText=true&quot;);
 
-  getData(&quot;https://restcountries.eu/rest/v2/name/Hungary?fullText=true&quot;);
+    getData(&quot;https://restcountries.eu/rest/v2/name/Hungary?fullText=true&quot;);
 
-  getData(&quot;https://restcountries.eu/rest/v2/name/Russia?fullText=true&quot;);
+    getData(&quot;https://restcountries.eu/rest/v2/name/Russia?fullText=true&quot;);
 
-  */</span> <span class="token comment">// Remove this line when you have completed the task</span>
+    */</span> <span class="token comment">// Remove this line when you have completed the task</span>
 <span class="token punctuation">}</span>
 
 window<span class="token punctuation">.</span>onload <span class="token operator">=</span> onLoad<span class="token punctuation">;</span>
 </code></pre>
 <h5 id="finished-example">Finished Example</h5>
 <p>You can find the finished example of this website <a href="js-core-3/week-1/completed_country_website">here</a>.</p>
-<h5 id="check-in">Check-in</h5>
+<h5 id="recap">Recap</h5>
 <p><strong>Question (5 mins):</strong></p>
 <pre class="language-"><code>Which of the following statements about Promises is false?
 
@@ -1003,19 +1001,20 @@ B) You must always have a then method in a promise.
 C) A promise can return multiple values.
 D) Rejected is a valid promise state.
 </code></pre><p><strong>Question (5 mins):</strong></p>
-<p>Complete the following sentence:</p>
-<pre class="language-"><code>Fetch is a web API that allows you to _____ from _____.
-</code></pre><p><strong>Task (5 mins):</strong>
-Complete the rest of this code to connect to the following API: <code>https://dog.ceo/api/breeds/image/random</code></p>
-<pre class="language-"><code>fetch(_____)
-.then(_____)
-.then(body =&gt; console.log(body))
-.catch(error =&gt; console.log(error));
-</code></pre><ol>
-<li>Post your code on Slack</li>
-<li>Post the image you retrieved on Slack</li>
-</ol>
+<pre class="language-"><code>Complete the following sentence:
 
+Fetch is a web API that allows you to **\_** from **\_**.
+</code></pre><p><strong>Task (5 mins):</strong></p>
+<pre class="language-"><code>Complete the rest of this code to connect to the following API: `https://dog.ceo/api/breeds/image/random`
+
+    fetch(_____)
+    .then(_____)
+    .then(body =&gt; console.log(body))
+    .catch(error =&gt; console.log(error));
+
+1. Post your code on Slack
+2. Post the image you retrieved on Slack
+</code></pre>
                                 
                                 </section>
                             
@@ -1058,7 +1057,7 @@ Complete the rest of this code to connect to the following API: <code>https://do
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"next":{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"path":"js-core-3/week-3/lesson.md","ref":"js-core-3/week-3/lesson.md","articles":[]},"previous":{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-1/lesson.md","ref":"js-core-3/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-2/lesson.md","mtime":"2020-04-19T12:40:21.152Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-19T12:41:07.877Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"next":{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"path":"js-core-3/week-3/lesson.md","ref":"js-core-3/week-3/lesson.md","articles":[]},"previous":{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-1/lesson.md","ref":"js-core-3/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-2/lesson.md","mtime":"2020-04-21T10:57:23.943Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-21T10:58:07.350Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
