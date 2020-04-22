@@ -885,20 +885,23 @@ name<span class="token punctuation">.</span><span class="token function">substri
 <p>To view the debugger go to the <code>Sources</code> tab of Chrome developer tools which we opened above.</p>
 <p>To tell the debugger to stop we need to create a <code>breakpoint</code>, it&apos;s an instruction to the debugger to stop execution and await instruction from us.</p>
 <p>We can place a debugger in one of two ways. We can either insert a line into our called saying</p>
-<pre class="language-"><code>debugger;
-</code></pre><p>or we can click on the line number in the debugger tool itself.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">debugger</span><span class="token punctuation">;</span>
+</code></pre>
+<p>or we can click on the line number in the debugger tool itself.</p>
 <p>Let&apos;s say we have a simple piece of code below and we want to inspect the values of <code>x</code> and <code>y</code> before adding them.</p>
-<pre class="language-"><code>var x = 10;
-var y = 20;
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
 
-var z = x * y;
-</code></pre><p>To use debugger on above code we will save it in a file called <code>temp.js</code> and import it into an html file called <code>temp.html</code>.</p>
+<span class="token keyword">var</span> z <span class="token operator">=</span> x <span class="token operator">*</span> y<span class="token punctuation">;</span>
+</code></pre>
+<p>To use debugger on above code we will save it in a file called <code>temp.js</code> and import it into an html file called <code>temp.html</code>.</p>
 <p>We can either use the <code>debugger</code> statement to pause the code</p>
-<pre class="language-"><code>var x = 10;
-var y = 20;
-debugger;
-var z = x * y;
-</code></pre><p>or by opening the file in the debugger using the file navigation on the right hand side and clicking on line 4. Note you can pause on line with code not empty lines.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token keyword">debugger</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> z <span class="token operator">=</span> x <span class="token operator">*</span> y<span class="token punctuation">;</span>
+</code></pre>
+<p>or by opening the file in the debugger using the file navigation on the right hand side and clicking on line 4. Note you can pause on line with code not empty lines.</p>
 <p><img src="breakpoint.png" alt=""></p>
 <p>Once we have paused code execution, we can mouse over the the variables to see their values.</p>
 <p><img src="debug-value.png" alt=""></p>
@@ -915,17 +918,18 @@ var z = x * y;
 <p>To catch such problems, we can use a static code analysis tool or commonly known as a linter. The most common one in use today is <code>ESLint</code> and it allows us to configure different rules to look out for and alert us when one of them is broken by our code.</p>
 <p>You can use the ESLint extension for VSCode which you can <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">download here</a>.</p>
 <p>We have created a sample ESLint configuration to help you get started. You can download it <a href=".eslintrc">here</a>.</p>
-<pre class="language-"><code>{
-  &quot;rules&quot;: {
-    &quot;semi&quot;: [&quot;warn&quot;, &quot;always&quot;],
-    &quot;quotes&quot;: [&quot;warn&quot;, &quot;double&quot;],
-    &quot;eqeqeq&quot;: [&quot;warn&quot;, &quot;always&quot;],
-    &quot;no-unused-vars&quot;: [&quot;warn&quot;],
-    &quot;no-redeclare&quot;: [&quot;warn&quot;],
-    &quot;no-undef&quot;: [&quot;warn&quot;]
-  }
-}
-</code></pre><p><code>semi</code> warns you if you did not use a semi colon at the end of the line
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;rules&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;semi&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;warn&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;always&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;quotes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;warn&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;double&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;eqeqeq&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;warn&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;always&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;no-unused-vars&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;warn&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;no-redeclare&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;warn&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;no-undef&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;warn&quot;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><code>semi</code> warns you if you did not use a semi colon at the end of the line
 <code>quotes</code> ensures consistency by warning you if you did not use double quote marks
 <code>eqeqeq</code> ensures you use <code>===</code> and <code>!==</code> rather than <code>==</code> and <code>!=</code> since the latter can lead to errors
 <code>no-unused-vars</code> will warn you if you have unused variables in your code
@@ -1037,7 +1041,7 @@ These are the errors:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"next":{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-1/lesson.md","ref":"js-core-3/week-1/lesson.md","articles":[]},{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"path":"js-core-3/week-3/lesson.md","ref":"js-core-3/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-1/lesson.md","mtime":"2020-04-22T08:53:42.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-22T08:54:26.416Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"next":{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-1/lesson.md","ref":"js-core-3/week-1/lesson.md","articles":[]},{"title":"Week 11 - Fetch and Asynchronous Programming","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"path":"js-core-3/week-3/lesson.md","ref":"js-core-3/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-1/lesson.md","mtime":"2020-04-22T13:13:29.724Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-22T13:14:16.531Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
