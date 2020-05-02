@@ -765,119 +765,91 @@
 <li>Classes</li>
 <li>Project Work</li>
 </ol>
-<h2 id="1-variable-scoping">1. Variable Scoping</h2>
+<h1 id="1-variable-scope">1. Variable Scope</h1>
 <h2 id="the-problem">The Problem</h2>
-<p>After you declare or define a variable, you may refer to it later in your code using the variable name.</p>
-<p>This is fine when your code is small like this</p>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">let</span> myNumber <span class="token operator">=</span> <span class="token number">4282</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> yourNumber <span class="token operator">=</span> <span class="token number">2181</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> anotherNumber <span class="token operator">=</span> <span class="token number">2112</span><span class="token punctuation">;</span>
+<p>Variables are amazing! Variables let us store data and reuse it many times rather than writing the same data over and over again, also if the variables are well named then it makes it much easier to think about what our code is doing.</p>
+<p>As we know, after we declare or define a new variable we can refer to it later in our code using the variable name.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">&quot;mo&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> age <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> favouriteFoods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;pizza&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;apples&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;tofu&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// lots of code here</span>
+
+<span class="token comment">// later</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;my name is &quot;</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>But imagine if you code gets really long, you&apos;ll suddenly find it really hard to keep track of all of them or - worse yet - you&apos;ll get confused and start to re-declare variables that you&apos;ve already used somewhere else.</p>
-<p>Wouldn&apos;t it be good if certain variables could only be used in certain places? This is what we call <code>scope</code></p>
-<h3 id="a-scope-analogy">A Scope Analogy</h3>
-<p>When thinking about scope you can imagine it in the way that countries set laws for themselves. For example, a country has Global Laws, National Laws and Local Laws - like this</p>
+<p>Now, imagine what would happen when our code gets really long. Every time we want to define a new variable we have to check that it hasn&apos;t already been used for something else. If that variable is already being used and we redefine it, bad things can happen. We could overwrite something important.</p>
+<p>Imagine a banking app being built by two developers. Developer 1 uses the variable name <code>money</code> to store the total amount of cash a single customer has in the bank, Developer 2 uses the variable name <code>money</code> to store the total amount of cash that ALL customers have in the bank added together, the total money in the bank&apos;s vaults. This could be really good news for a customer who accidentally receives the entire bank&apos;s money in their account, but really BAD news for us as the owners of a bank.</p>
+<h2 id="the-solution">The Solution</h2>
+<p>One solution might be that every time we want to create a new variable, we call around all of the other developers on the project and ask them if it&apos;s safe to use the variable name <code>money</code>. We can quickly see a problem with this, some codebases are millions of lines long! No single person knows what is contained in every file. It would be impossible to know what variables are safe to use and which are not.</p>
+<p>Instead, we need to find a way to make variables <strong>safer</strong>. We need a way to use the best variable name to describe our data, without worrying that we will be causing problems in a different part of the codebase.</p>
+<p>We call this <code>scope</code>.</p>
+<h2 id="what-is-scope">What is Scope?</h2>
+<p>Think about the way that laws are set in different countries. Most laws are set by the government of that country and are <code>local</code> to that country. However, some laws are international, laws like &apos;no slavery&apos; apply across all countries, these are <code>global</code> laws.</p>
+<p>In some countries, different regions inside the country can set their own laws too. In America you must be 21 to drink (national law), but in the state of Massachusetts all bars must be closed by 2AM (state law). These are two levels of local laws.</p>
 <p><img src="https://i0.wp.com/blog.codeanalogies.com/wp-content/uploads/2017/11/474b7-1ywpubaj-_gmws4jedvbufa.png?w=730&amp;ssl=1" alt="Types of laws"></p>
-<p>In this analogy the Human Rights laws apply to all countries but the specific laws for a state do not apply to the world. This is useful as different laws apply in different places!</p>
-<p>This could be shown in some example code like this</p>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> unLawOne <span class="token operator">=</span> <span class="token string">&quot;Slavery is prohibited&quot;</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> unLawTwo <span class="token operator">=</span> <span class="token string">&quot;Chemical weapons are prohibited&quot;</span><span class="token punctuation">;</span>
+<p>In Massachusetts, a citizen must follow all 3: International Law, National Law and State Law.</p>
+<p>But a pirate &#x1F3F4;&#x200D;&#x2620;&#xFE0F; in the middle of the ocean only needs to follow International Law (and perhaps the law of the Ship).</p>
+<p>In the same way we think about which laws apply to which <strong>parts of a country</strong> we must also think about which variables apply to which <strong>parts of your code</strong>. Variables, like laws, only apply to a certain area.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> globalLaw <span class="token operator">=</span> <span class="token string">&quot;no slavery&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// only 1 law applies here</span>
 
-<span class="token keyword">function</span> <span class="token function">unitedStates</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> drinkingAge <span class="token operator">=</span> <span class="token number">21</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>drinkingAge<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 21</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>unLawOne<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Slavery is prohibited</span>
+<span class="token keyword">function</span> <span class="token constant">USA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> nationalLaw <span class="token operator">=</span> <span class="token string">&quot;drinking age is 21&quot;</span><span class="token punctuation">;</span>
+  <span class="token comment">// 2 laws apply here</span>
+
+  <span class="token keyword">function</span> <span class="token function">Massachusetts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> stateLaw <span class="token operator">=</span> <span class="token string">&quot;bars closed at 2am&quot;</span><span class="token punctuation">;</span>
+    <span class="token comment">// all 3 laws apply here</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>drinkingAge<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// error, drinkingAge not defined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stateLaw<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Error: &apos;stateLaw&apos; is not defined</span>
 </code></pre>
-<p>As you can see the Global Laws defined at the top of the code apply everywhere but the local laws only apply when you are inside the function.</p>
-<p>This is also true for laws inside countries - for example the times that bars close at. For example in this diagram</p>
-<p><img src="https://i1.wp.com/blog.codeanalogies.com/wp-content/uploads/2017/11/d7905-1cdqas_85deas-team241aq.png?w=730&amp;ssl=1" alt="Implementation of different laws in different countries"></p>
-<p>In this example the state of New York has a drinking age of 21 and all bars must close at 2am. In other states and countries they have different laws. This diagram could be shown by this example code</p>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">unitedStates</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> drinkingAge <span class="token operator">=</span> <span class="token number">21</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> state <span class="token operator">=</span> <span class="token string">&quot;massachusetts&quot;</span><span class="token punctuation">;</span>
-
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>state <span class="token operator">==</span> <span class="token string">&quot;massachusetts&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> closingTime <span class="token operator">=</span> <span class="token string">&quot;2AM&quot;</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>drinkingAge<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//21</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>closingTime<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2AM</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>state <span class="token operator">==</span> <span class="token string">&quot;newYork&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> closingTime <span class="token operator">=</span> <span class="token string">&quot;4AM&quot;</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>closingTime<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 4AM</span>
-  <span class="token punctuation">}</span>
-
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>closingTime<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//undefined</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p><em>You can read more about this analogy <a href="https://blog.codeanalogies.com/2017/11/22/how-javascript-variable-scoping-is-just-like-multiple-levels-of-government/" target="_blank">here</a></em></p>
+<p>In the example above, the State Law only applies to Massachusetts. When we try to <code>console.log</code> the <code>stateLaw</code> variable at the end, it is not defined. This part of your code does not even know this variable exists!</p>
 <h3 id="local-variables">Local Variables</h3>
-<p>These variables are declared using the <code>let</code> statement as you&apos;ve been familiar with:</p>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Hello, &quot;</span><span class="token punctuation">;</span>
+<p>Let&apos;s rewind and look at this in detail. We know that variables are declared using the <code>let</code> statement.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Hi &quot;</span><span class="token punctuation">;</span>
 </code></pre>
-<p>However, if these definitions are done within a function, they become <strong>local</strong> to it:</p>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">greetUser</span><span class="token punctuation">(</span><span class="token parameter">username</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Hello, &quot;</span><span class="token punctuation">;</span>
-
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting<span class="token punctuation">,</span> username<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>If we define a variable inside a function, it becomes <strong>local</strong> to that function. If we want to use a fancy word, we can also say it becomes <strong>scoped</strong> to that function.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">greetUser</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Hi &quot;</span><span class="token punctuation">;</span> <span class="token comment">// This variable only exists here</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token function">greetUser</span><span class="token punctuation">(</span><span class="token string">&quot;Jenny&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// Prints &quot;Hello, Jenny&quot;</span>
-
-<span class="token comment">// However, the greeting variable cannot be referenced here, since it&apos;s been declared within the greetUser function and we are currently trying to reference it outside the function:</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// Uncaught ReferenceError: greeting is not defined</span>
+<span class="token function">greetUser</span><span class="token punctuation">(</span><span class="token string">&quot;Naima&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// It doesn&apos;t exist here</span>
 </code></pre>
-<p>You cannot define another variable with the same name inside the function:</p>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">let</span> <span class="token function-variable function">greetUser</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">username</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Hello&quot;</span><span class="token punctuation">;</span>
-
-  <span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Howdy&quot;</span><span class="token punctuation">;</span>
-  <span class="token comment">// SyntaxError: Identifier &apos;greeting&apos; has already been declared</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-<p>Any time you use <code>{}</code>s (e.g. when you make an <code>if</code> statement, a <code>function</code>, or a loop), you&apos;re creating a new &quot;block&quot;. You can even just add <code>{}</code>s in just to make a block. Variables declared using <code>let</code> are also block scoped, meaning that you are free to reuse a variable name within a block and it won&apos;t affect the outer variable.</p>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
-<span class="token keyword">function</span> <span class="token function">numberSetting</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// different x variable</span>
-  x <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">// assigning to inner x variable</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span>
-<span class="token punctuation">}</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
-</code></pre>
-<p>This block scoping behaviour will apply in contexts such as <code>for</code> loops, <code>while</code> and <code>if</code> statements (i.e. anything within curly brackets).</p>
-<p>Every time you nest a</p>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">grandfather</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">&quot;Hammad&quot;</span><span class="token punctuation">;</span>
-  <span class="token comment">// likes is not accessible here</span>
-  <span class="token keyword">function</span> <span class="token function">parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// name is accessible here</span>
-    <span class="token comment">// likes is not accessible here</span>
-    <span class="token keyword">function</span> <span class="token function">child</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token comment">// Innermost level of the scope chain</span>
-      <span class="token comment">// name is also accessible here</span>
-      <span class="token keyword">var</span> likes <span class="token operator">=</span> <span class="token string">&quot;Coding&quot;</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+<p>The <code>console.log(greeting)</code> on the last line throws an error, it tells us that &quot;greeting is not not defined&quot;. Why is this? Because the variable <code>greeting</code> was defined in the <code>greetUser</code> function, it <strong>does not exist</strong> outside the function.</p>
+<p>This lets us do new things with variables. You cannot usually create two variables with the same name. For example:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">greetUser</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Hi&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Shalom&quot;</span><span class="token punctuation">;</span>
+  <span class="token comment">// Error: &apos;greeting&apos; has already been declared</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="global-variables">Global Variables</h3>
-<p>A variable that needs to be accessed everywhere (e.g. by many functions) can be defined as a global variable. You can do this by omitting the <code>let</code> (or <code>const</code>) keyword:</p>
-<pre class="language-"><code class="lang-javascript"><span class="token comment">// The variable VERSION can be subsequently be referenced anywhere in your code.</span>
-<span class="token constant">VERSION</span> <span class="token operator">=</span> <span class="token string">&quot;1.0.4&quot;</span><span class="token punctuation">;</span>
+<p>But in the same way countries have different laws, functions have different <code>scopes</code>! And so it becomes possible to use the same variable name for different situations.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">greetOnce</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Hi &quot;</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">greetAgain</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Shalom &quot;</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>Alternatively in the browser, you can also assign it only the <code>window</code> object, e.g.:</p>
-<pre class="language-"><code class="lang-javascript">window<span class="token punctuation">.</span><span class="token constant">VERSION</span> <span class="token operator">=</span> <span class="token string">&quot;1.0.4&quot;</span><span class="token punctuation">;</span>
-</code></pre>
-<p>Global variables are handy but can hurt code readability, especially if your code is in a big file or spread across multiple files.</p>
+<p>We have used the variable name <code>greeting</code> twice but it&apos;s very important to remember that <strong>these are not the same variable</strong>! The two variables called &apos;greeting&apos; do not even know each other exist.</p>
+<h2 id="scope-to-the-rescue">Scope to the rescue!</h2>
+<p>When do we get a new scope?</p>
+<p>Basically any time we use curly brackets (<code>{}</code>). Not just functions but also <code>if</code> statements, <code>for</code> or <code>while</code> loops.</p>
+<p>Together we call these things <code>blocks</code>. A block is anything inside curly brackets. An if statement is a block, a function is a block, a loop is a block.</p>
+<p><strong>Any time you define a variable inside a block, that variable cannot escape that block.</strong> We say the variable is <code>scoped</code> to that block.</p>
+<h4 id="check-in">Check-in</h4>
+<p>Complete this <a href="https://codepen.io/DomVinyard/pen/YzyxrjR?editors=0012" target="_blank">scope task</a> to understand how different scope applies to different variables.</p>
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjE2Mzk4NTUxLDEzNTkxNjcwNjNdfQ==
+-->
 <h4 id="check-in">Check-in</h4>
 <p><strong>Questions</strong></p>
 <p>What would be printed to the console in this code?</p>
@@ -1009,7 +981,6 @@ counterFromTen<span class="token punctuation">.</span><span class="token functio
 <h4 id="exercise-1">Exercise 1</h4>
 <p>Implement the <code>add</code> and <code>getTotal</code> methods of the <code>RunningTotal</code> class below.</p>
 <pre class="language-"><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">RunningTotal</span> <span class="token punctuation">{</span>
-
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>currentTotal <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
@@ -1022,7 +993,7 @@ counterFromTen<span class="token punctuation">.</span><span class="token functio
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">const</span> runningTotal  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RunningTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> runningTotal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RunningTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 runningTotal<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 runningTotal<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1033,7 +1004,6 @@ runningTotal<span class="token punctuation">.</span><span class="token function"
 <h4 id="exercise-2">Exercise 2</h4>
 <p>Implement the <code>constructor</code> method of the <code>StopWatch</code> class below.</p>
 <pre class="language-"><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">StopWatch</span> <span class="token punctuation">{</span>
-
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>secondsElapsed <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
@@ -1045,16 +1015,16 @@ runningTotal<span class="token punctuation">.</span><span class="token function"
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">const</span> stopWatch  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StopWatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> stopWatch <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StopWatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">// Wait a few seconds...</span>
 
-stopWatch<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+stopWatch<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// &apos;Seconds elapsed: 3&apos;</span>
 
 <span class="token comment">// Wait a few more seconds...</span>
 
-stopWatch<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+stopWatch<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// &apos;Seconds elapsed: 7&apos;</span>
 </code></pre>
 <h4 id="exercise-3">Exercise 3</h4>
@@ -1067,13 +1037,13 @@ stopWatch<span class="token punctuation">.</span><span class="token function">ge
 
 <span class="token keyword">const</span> myAddresBook <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AddressBook</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-myAddressBook<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span><span class="token string">&apos;bart&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;bart@simpsons.com&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-myAddressBook<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span><span class="token string">&apos;maggie&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;maggie@simpsons.com&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myAddressBook<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span><span class="token string">&quot;bart&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;bart@simpsons.com&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myAddressBook<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span><span class="token string">&quot;maggie&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;maggie@simpsons.com&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-myAddresBook<span class="token punctuation">.</span><span class="token function">lookup</span><span class="token punctuation">(</span><span class="token string">&apos;bart&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myAddresBook<span class="token punctuation">.</span><span class="token function">lookup</span><span class="token punctuation">(</span><span class="token string">&quot;bart&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// &apos;bart@simpsons.com&apos;</span>
 
-myAddresBook<span class="token punctuation">.</span><span class="token function">lookup</span><span class="token punctuation">(</span><span class="token string">&apos;homer&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myAddresBook<span class="token punctuation">.</span><span class="token function">lookup</span><span class="token punctuation">(</span><span class="token string">&quot;homer&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// &apos;address not found&apos;</span>
 </code></pre>
 <p>Notice that when you come to using a class instance, you are only interacting with it through its methods, e.g. <code>store</code> and <code>lookup</code> for <code>AddressBook</code>. Similar to functions, classes provide a way of creating abstractions over lower-level implementations, which can help us better organise and maintain our code.</p>
@@ -1129,7 +1099,7 @@ myAddresBook<span class="token punctuation">.</span><span class="token function"
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"next":{"title":"React","level":"1.7","depth":1,"path":"react/index.md","ref":"react/index.md","articles":[{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-1/lesson.md","ref":"react/week-1/lesson.md","articles":[]},{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-2/lesson.md","ref":"react/week-2/lesson.md","articles":[]},{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-3/lesson.md","ref":"react/week-3/lesson.md","articles":[]},{"title":"Routing (optional)","level":"1.7.4","depth":2,"path":"react/week-4/lesson.md","ref":"react/week-4/lesson.md","articles":[]}]},"previous":{"title":"Week 11 - APIs and Fetch","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-3/lesson.md","mtime":"2020-05-02T16:21:17.680Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-02T16:22:06.133Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"next":{"title":"React","level":"1.7","depth":1,"path":"react/index.md","ref":"react/index.md","articles":[{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-1/lesson.md","ref":"react/week-1/lesson.md","articles":[]},{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-2/lesson.md","ref":"react/week-2/lesson.md","articles":[]},{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-3/lesson.md","ref":"react/week-3/lesson.md","articles":[]},{"title":"Routing (optional)","level":"1.7.4","depth":2,"path":"react/week-4/lesson.md","ref":"react/week-4/lesson.md","articles":[]}]},"previous":{"title":"Week 11 - APIs and Fetch","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-3/lesson.md","mtime":"2020-05-02T16:48:13.847Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-02T16:48:58.582Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
