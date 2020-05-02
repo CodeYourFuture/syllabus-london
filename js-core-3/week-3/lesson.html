@@ -1003,11 +1003,81 @@ counterFromTen<span class="token punctuation">.</span><span class="token functio
 <span class="token comment">// Button has been clicked 11 times</span>
 </code></pre>
 <p>Variables specific to a particular instance of a class are defined and referenced using the <code>this</code> keyword (e.g. <code>this.timesClicked</code>) within that instance.</p>
-<h3 id="check-in">Check-in</h3>
-<p><strong>Question (5 mins):</strong>
-Create you own analogy:</p>
-<pre class="language-"><code>    A class is like _____ because _____.
-</code></pre><h2 id="3-project-work">3. Project Work</h2>
+<p>Functions defined within class are also be known as <strong>methods</strong>.</p>
+<h3 id="exercises">Exercises</h3>
+<p>Try these exercises in your breakout groups.</p>
+<h4 id="exercise-1">Exercise 1</h4>
+<p>Implement the <code>add</code> and <code>getTotal</code> methods of the <code>RunningTotal</code> class below.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">RunningTotal</span> <span class="token punctuation">{</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>currentTotal <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Implement this method</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Implement this method</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> runningTotal  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RunningTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+runningTotal<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+runningTotal<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+runningTotal<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+runningTotal<span class="token punctuation">.</span><span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 17</span>
+</code></pre>
+<h4 id="exercise-2">Exercise 2</h4>
+<p>Implement the <code>constructor</code> method of the <code>StopWatch</code> class below.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">StopWatch</span> <span class="token punctuation">{</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>secondsElapsed <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//Finish implementing the rest of the constructor so that secondsElapsed is updated</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Seconds elapsed: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>secondsElapsed<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> stopWatch  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StopWatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Wait a few seconds...</span>
+
+stopWatch<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// &apos;Seconds elapsed: 3&apos;</span>
+
+<span class="token comment">// Wait a few more seconds...</span>
+
+stopWatch<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// &apos;Seconds elapsed: 7&apos;</span>
+</code></pre>
+<h4 id="exercise-3">Exercise 3</h4>
+<p>Implement the <code>constructor</code>, <code>store</code> and the <code>lookup</code> methods of the <code>AddressBook</code> class below.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">AddressBook</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Implement the constructor method</span>
+  <span class="token comment">// Implement the store method</span>
+  <span class="token comment">// Implement the store lookup</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> myAddresBook <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AddressBook</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+myAddressBook<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span><span class="token string">&apos;bart&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;bart@simpsons.com&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myAddressBook<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span><span class="token string">&apos;maggie&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;maggie@simpsons.com&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+myAddresBook<span class="token punctuation">.</span><span class="token function">lookup</span><span class="token punctuation">(</span><span class="token string">&apos;bart&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &apos;bart@simpsons.com&apos;</span>
+
+myAddresBook<span class="token punctuation">.</span><span class="token function">lookup</span><span class="token punctuation">(</span><span class="token string">&apos;homer&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &apos;address not found&apos;</span>
+</code></pre>
+<p>Notice that when you come to using a class instance, you are only interacting with it through its methods, e.g. <code>store</code> and <code>lookup</code> for <code>AddressBook</code>. Similar to functions, classes provide a way of creating abstractions over lower-level implementations, which can help us better organise and maintain our code.</p>
+<h2 id="3-project-work">3. Project Work</h2>
 <h3 id="explanation">Explanation</h3>
 <p>For the test of the days we&apos;ll be working together on our group project</p>
 <p>You can find the project <a href="https://github.com/CodeYourFuture/syllabus/tree/london/js-core-3/tv-show-dom-project" target="_blank">here</a></p>
@@ -1059,7 +1129,7 @@ Create you own analogy:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"next":{"title":"React","level":"1.7","depth":1,"path":"react/index.md","ref":"react/index.md","articles":[{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-1/lesson.md","ref":"react/week-1/lesson.md","articles":[]},{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-2/lesson.md","ref":"react/week-2/lesson.md","articles":[]},{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-3/lesson.md","ref":"react/week-3/lesson.md","articles":[]},{"title":"Routing (optional)","level":"1.7.4","depth":2,"path":"react/week-4/lesson.md","ref":"react/week-4/lesson.md","articles":[]}]},"previous":{"title":"Week 11 - APIs and Fetch","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-3/lesson.md","mtime":"2020-04-28T16:36:21.791Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-28T16:37:07.098Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 12 - Scope and ES6","level":"1.6.3","depth":2,"next":{"title":"React","level":"1.7","depth":1,"path":"react/index.md","ref":"react/index.md","articles":[{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-1/lesson.md","ref":"react/week-1/lesson.md","articles":[]},{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"path":"react/week-2/lesson.md","ref":"react/week-2/lesson.md","articles":[]},{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-3/lesson.md","ref":"react/week-3/lesson.md","articles":[]},{"title":"Routing (optional)","level":"1.7.4","depth":2,"path":"react/week-4/lesson.md","ref":"react/week-4/lesson.md","articles":[]}]},"previous":{"title":"Week 11 - APIs and Fetch","level":"1.6.2","depth":2,"path":"js-core-3/week-2/lesson.md","ref":"js-core-3/week-2/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-3/lesson.md","mtime":"2020-05-02T16:21:17.680Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-02T16:22:06.133Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
