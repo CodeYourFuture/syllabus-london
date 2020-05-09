@@ -748,11 +748,30 @@
 <p><img src="https://img.shields.io/badge/status-ready-green.svg" alt="Lesson Ready"></p>
 <p><strong>What will we learn today?</strong></p>
 <ul>
+<li><a href="#react-2">React 2</a><ul>
 <li><a href="#recap">Recap</a></li>
-<li><a href="#class-components">Class Components</a></li>
+<li><a href="#class-components">Class Components</a><ul>
+<li><a href="#class-methods">Class Methods</a></li>
+</ul>
+</li>
 <li><a href="#passing-functions-as-props">Passing Functions as Props</a></li>
 <li><a href="#reacting-to-changes">Reacting to Changes</a></li>
-<li><a href="#state">State</a></li>
+<li><a href="#state">State</a><ul>
+<li><a href="#when-do-you-use-props-or-state">When do you use Props or State?</a></li>
+<li><a href="#container-components">Container components</a></li>
+</ul>
+</li>
+<li><a href="#react-hooks">React Hooks</a><ul>
+<li><a href="#what-are-hooks">What are hooks?</a></li>
+<li><a href="#why-react-hooks-over-class-component-state-and-methods">Why React hooks, over Class component state and methods?</a></li>
+<li><a href="#counter-example---with-hooks">Counter Example - with hooks</a></li>
+<li><a href="#setting-multiple-states">Setting multiple states</a></li>
+</ul>
+</li>
+<li><a href="#further-reading">Further Reading</a></li>
+</ul>
+</li>
+<li><a href="#homework">Homework</a></li>
 </ul>
 <h2 id="recap">Recap</h2>
 <p>Last week we looked at how to write a <code>HelloMentor</code> React component (<a href="https://codesandbox.io/s/7zvk9n1950" target="_blank">interactive example</a>):</p>
@@ -1103,6 +1122,52 @@ Open the <code>pokedex</code> React application and open the <code>CaughtPokemon
 <p>In real world applications, the things we want to remember in state follow the <em>business logic</em> required by our users. So for example the number of caught Pokemon in the exercise  increases when you click on the button <em>Catch Pokemon</em>. Most of the time, business logic is about figuring out when and how to change state.</p>
 <p>To help us cleanly split up code that performs business logic from code that shows the user interface we split components into <em>presentational</em> and <em>container</em> components. Often we have components that don&apos;t do anything except manage state according to the business rules and render the right presentational components. On the other hand, we often have components that don&apos;t change any state, and just render using the provided props.</p>
 <p>Container components usually have some state and handler methods. Because of this they must use the <code>class</code> syntax. Presentational components on the other hand don&apos;t require the more verbose syntax. Instead they usually use the functional syntax.</p>
+<h2 id="react-hooks">React Hooks</h2>
+<p>React is continously updated with features all the time, one that stands out the most are <strong>React Hooks</strong>, released in React v16.8.</p>
+<h3 id="what-are-hooks">What are hooks?</h3>
+<p><strong>Hooks</strong> are functions that enable you manipulate the React state (and other lifecycle features, which you will be learning next week).</p>
+<h3 id="why-react-hooks-over-class-component-state-and-methods">Why React hooks, over Class component state and methods?</h3>
+<ul>
+<li>Code is less complex - being able to make your code more readable in the long term, make it more maintainable</li>
+<li>Hooks are reusable - unlike methods that scoped within in a class components, you are able to create your own and reuse them elsewhere you in the code. Keeping your code DRY (Don&apos;t Repeat Yourself)</li>
+</ul>
+<h3 id="counter-example---with-hooks">Counter Example - with hooks</h3>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">Counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Declare a new state variable, which we&apos;ll call &quot;count&quot;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> setCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>You clicked <span class="token punctuation">{</span>count<span class="token punctuation">}</span> times<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">setCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        Click me
+      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Here, <code>useState</code> is a Hook. We call it inside a function component to add some local state to it. React will preserve this state between re-renders. <code>useState</code> returns a pair: the current state i.e. <code>count</code> and a function that lets you update it i.e. <code>setCount</code>.</p>
+<p>Note that variable <code>count</code> and function <code>setCount</code> come from destructured arrays (a JavaScript feature). The initial value of count is <code>0</code> and whenever we press on the button, it will fire the setCount function to increment by 1.</p>
+<h3 id="setting-multiple-states">Setting multiple states</h3>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">ExampleWithManyStates</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Declare multiple state variables!</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>age<span class="token punctuation">,</span> setAge<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>fruit<span class="token punctuation">,</span> setFruit<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">&apos;Oranges&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span> Hi<span class="token operator">!</span> <span class="token constant">I</span> am Alex <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span> <span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">I am </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> years old</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span> <span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">I prefer to eat </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fruit<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>      
+      <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">setAge</span><span class="token punctuation">(</span>age <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>Add <span class="token number">1</span> year<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">setFruit</span><span class="token punctuation">(</span><span class="token string">&apos;Apples&apos;</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>Change to Apples<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Notice that as before the initial state to a value inside <code>useState</code> in this case we have <code>0</code> and <code>Oranges</code>, with value <code>0</code> has the same behaviour as the counter example before. With value <code>Oranges</code>, it can turned into the value <code>Apple</code>. Stick to using the same data type, as it is best practice.</p>
 <h2 id="further-reading">Further Reading</h2>
 <p>What happens if you forget to pass a prop to a component? Or if you pass the wrong type of data to a component? Sometimes React will just render an empty element but sometimes it could throw an error! This is why <code>propTypes</code> are useful. <a href="https://reactjs.org/docs/typechecking-with-proptypes.html" target="_blank">This page on the React documentation</a> describes how to use <code>propTypes</code> in more detail.</p>
 <blockquote>
@@ -1167,7 +1232,7 @@ Complete the FreeCodeCamp <a href="https://learn.freecodecamp.org/front-end-libr
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"next":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-3/lesson.md","ref":"react/week-3/lesson.md","articles":[]},"previous":{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-1/lesson.md","ref":"react/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-2/lesson.md","mtime":"2020-05-07T19:30:10.999Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-07T19:30:59.763Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"next":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-3/lesson.md","ref":"react/week-3/lesson.md","articles":[]},"previous":{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-1/lesson.md","ref":"react/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-2/lesson.md","mtime":"2020-05-09T12:05:21.952Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-09T12:06:06.625Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
