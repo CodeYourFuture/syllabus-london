@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Week 17 - Middleware, Templating and APIs · GitBook</title>
+        <title>Week 17 - CRUD with Express · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -471,7 +471,7 @@
                 <a href="lesson.html">
             
                     
-                    Week 17 - Middleware, Templating and APIs
+                    Week 17 - CRUD with Express
             
                 </a>
             
@@ -729,7 +729,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Week 17 - Middleware, Templating and APIs</a>
+        <a href="../.." >Week 17 - CRUD with Express</a>
     </h1>
 </div>
 
@@ -760,7 +760,47 @@
 <li>Install a third party library using <code>npm</code></li>
 </ul>
 <hr>
-<h1 id="lets-build-an-api">Let&apos;s build an API</h1>
+<h2 id="crud">CRUD</h2>
+<p>So what will we build? we will build a <strong>CRUD</strong> API. CRUD stands for Create, Retrieve, Update, Delete. If you think about it, this is what most applications do:</p>
+<ul>
+<li>Create some &quot;resources&quot;</li>
+<li>Retrieve them (GET them)</li>
+<li>Update them</li>
+<li>Delete them</li>
+</ul>
+<p>Below are three in-class exercises which can be used to demonstrate parts of the API workshop below.</p>
+<h2 id="1-get-exercise">(1) Get Exercise</h2>
+<p>This is an in-class exercise which can be used to show how we might retrieve an element by ID using a GET request.</p>
+<h3 id="objective">Objective</h3>
+<p>Change a quote API server to allow GETting a quote according to the given ID.</p>
+<p>The id should be given in the URL structure like this:</p>
+<blockquote>
+<p>/quotes/2</p>
+</blockquote>
+<p>You should use the starting project: <a href="https://glitch.com/~cyf-quotes-id-start" target="_blank">cyf-quotes-id-start</a>. This is because this project has quotes with IDs.</p>
+<p>When you remix the starting project, immediately rename it as your own.</p>
+<h2 id="2-post-exercise">(2) Post Exercise</h2>
+<h2 id="objective">Objective</h2>
+<p>Change a quote API server to allow POSTs of new quotes.</p>
+<p>The new quotes should be added to your quotes list, which is just an array in memory.</p>
+<p>You can assume the POSTed quotes are all in the correct JSON format.</p>
+<p>The route should use the HTTP method POST and should use the URL:</p>
+<blockquote>
+<p>/quotes</p>
+</blockquote>
+<p>You should use the starting project: <a href="https://glitch.com/~cyf-quotes-post-start" target="_blank">cyf-quotes-post-start</a>, NOT your own existing quote server. This is because our project has an HTML form for creating new quotes.</p>
+<p>When you remix our starting project, immediately rename it.</p>
+<p>Then you can visit / and submit the form there, when you are ready to try to submit new quotes!</p>
+<h2 id="3-delete-exercise">(3) Delete Exercise</h2>
+<h2 id="objective">Objective</h2>
+<p>Change a quote API server to allow updating a quote according to the given ID.</p>
+<p>The id should be given in the URL structure like this:</p>
+<p>/quotes/2</p>
+<p>You should use the <code>delete</code> HTTP method</p>
+<p>You should use this starting project: <a href="https://glitch.com/~cyf-quotes-id-start" target="_blank">cyf-quotes-id-start</a>, NOT your own existing quote server. This is because this project has quotes with IDs.</p>
+<p>When you remix the starting project, immediately rename it as your own.</p>
+<h1 id="workshop---lets-build-an-api">Workshop - Let&apos;s build an API</h1>
+<p>You can use this <a href="https://github.com/nbogie/express-notes/blob/master/express-cheatsheet.md" target="_blank">Express Cheatsheet</a> to help you.</p>
 <p><strong>API</strong> stands for Application Programming Interface.</p>
 <p>Read this description of what an API from <a href="https://www.howtogeek.com/343877/what-is-an-api/" target="_blank">How To Geek</a>.</p>
 <blockquote>
@@ -771,17 +811,15 @@ Similarly, an API lists a bunch of operations that developers can use, along wit
 <blockquote>
 <p><strong>Checkpoint:</strong> Let us recap what we know about HTTP before continuing.</p>
 </blockquote>
-<h2 id="crud">CRUD</h2>
-<p>So what will we build? we will build a <strong>CRUD</strong> API. CRUD stands for Create, Retrieve, Update, Delete. If you think about it, this is what most applications do:</p>
+<h2 id="objective">Objective</h2>
+<p>Our <strong>API</strong> will manage Beyonc&#xE9; albums:</p>
 <ul>
-<li>Create some &quot;resources&quot;</li>
-<li>Retrieve them (GET them)</li>
-<li>Update them</li>
-<li>Delete them</li>
+<li>Create a new album,</li>
+<li>Retrieve a list of albums or a single album,</li>
+<li>Update an existing album&apos;s information</li>
+<li>Delete an album</li>
 </ul>
-<p>Our <strong>API</strong> will manage Beyonce albums: Create a new album, retrieve a list of albums or a single album, update an existing album&apos;s information, or delete one.</p>
-<h2 id="endpoints-for-beyonce-songs">Endpoints for Beyonce Songs</h2>
-<p>We will build an API to manage Beyonce albums. We will build these endpoints:</p>
+<p>We will build these endpoints:</p>
 <p><code>GET /albums</code> should return all the albums
 <code>GET /albums/:albumId</code> should return a single album (that matches the passed albumId)
 <code>POST /albums</code> should save a new album
@@ -827,6 +865,7 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
 </li>
 </ol>
 <h1 id="step-7-get-albumsalbumid">Step 7: GET /albums/:albumId</h1>
+<p><strong>Complete in-class (1) GET Exercise at this point</strong></p>
 <p>Sometimes, we do not want to <em>list</em> all the information in one request, maybe we only want to get the information related to a single album. Imagine if we have a page to display the details of one album, we could call the server and get all albums then filter the one we need <em>client-side</em>, but would it not be more effective to tell the server to just return the one album we are interested in?</p>
 <p>Let us add a new endpoint to return only a single album <code>GET /albums/:albumId</code>. In this case, <em>albumId</em> will tell us what album we can return so the call will be something like <code>GET /albums/10</code> and that will return the album with that has <em>albumId</em> 10 ()</p>
 <p>This endpoint has something different. The endpoint <code>/albums/:albumId</code> has a <em>dynamic</em> part, the <em>albumId</em> will vary depending on what the client send. If we call <code>/albums/12</code> then albumId is 12, if we call <code>/albums/10</code> then we will return the album with albumId 10 and so on.</p>
@@ -851,6 +890,7 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
 </code></pre>
 <p>now from your terminal, use the command <code>npm run dev</code> and that will run the <em>server</em> with <code>nodemon</code> which is a package that makes the server listen to code changes and automatically restart.</p>
 <h1 id="step-8-add-a-new-album">Step 8: Add a new album</h1>
+<p><strong>Complete in-class (2) Post Exercise at this point</strong></p>
 <blockquote>
 <p>Our analogy with the Restaurant menu is somewhat incomplete. In a restaurant, we only GET items from the menu. In the world of APIs, we also have the possibility to create items, we can provide <em>ingredients</em> to create a new dish. In this case, we provide some data (a payload) and we use a different verb <strong>POST</strong> (Create) as opposed to GET.</p>
 </blockquote>
@@ -898,6 +938,20 @@ app<span class="token punctuation">.</span><span class="token function">use</spa
 <blockquote>
 <p>Finish the code for the route <code>POST /albums</code> to add the album data to the albums list (how to amend to an array?)</p>
 </blockquote>
+<h2 id="step-9-delete-an-album">Step 9: Delete an album</h2>
+<p><strong>Complete in-class (3) DELETE Exercise at this point</strong></p>
+<p>Lets look back at our original objectives.</p>
+<blockquote>
+<p><code>DELETE /albums/:albumId</code> should delete the album (that matches the passed albumId)</p>
+</blockquote>
+<p>This means that <code>DELETE /albums/2</code> should delete an album with the id <code>2</code> and return <code>200</code> with JSON <code>{ success: true }</code> to the user.</p>
+<p>The code will look like this</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// notice .delete</span>
+app<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">&quot;/albums/:albumID&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;DELETE /albums route&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Can you work out how to remove an album using this code?</p>
 <h1 id="homework">Homework</h1>
 <p>All of the homework for this week can be found in the Node Homework repository <a href="https://github.com/CodeYourFuture/NodeJS-Homework" target="_blank">here</a> under the Week 2 folder</p>
 <h2 id="submission">Submission</h2>
@@ -961,7 +1015,7 @@ and we will reply as soon as we can.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 17 - Middleware, Templating and APIs","level":"1.8.2","depth":2,"next":{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"path":"node/week-3/lesson.md","ref":"node/week-3/lesson.md","articles":[]},"previous":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-1/lesson.md","ref":"node/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-2/lesson.md","mtime":"2020-06-11T22:11:49.419Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-11T22:12:34.804Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 17 - CRUD with Express","level":"1.8.2","depth":2,"next":{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"path":"node/week-3/lesson.md","ref":"node/week-3/lesson.md","articles":[]},"previous":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-1/lesson.md","ref":"node/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-2/lesson.md","mtime":"2020-06-12T14:53:55.106Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T14:54:45.595Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
