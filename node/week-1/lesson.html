@@ -956,6 +956,11 @@ app<span class="token punctuation">.</span><span class="token function">listen</
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Server is listening on port 3000. Ready to accept requests!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
+<blockquote>
+<p>Exercise: Try to <code>console.log</code> the <code>request</code> object inside the handler
+function. Restart your server, send the request again with Postman, then go to your terminal
+to see what it looks like. You should see a lot of data come through.</p>
+</blockquote>
 <h2 id="2-check-it-out-in-postman">2. Check it out in Postman</h2>
 <p>Quit your server in the terminal with <code>ctrl + c</code>. Then restart it to run your
 new changes.</p>
@@ -965,7 +970,7 @@ new changes.</p>
 <code>http://localhost:3000</code>. If you see your message in Postman,
 congratulations! You just sent your first response from the server.</p>
 <blockquote>
-<p>Checkpoint: Do you understand all these terms?</p>
+<p>Checkpoint: Do you understand all these terms? You should be able to see examples of them in Postman</p>
 </blockquote>
 <ul>
 <li>[ ] Client</li>
@@ -979,11 +984,6 @@ congratulations! You just sent your first response from the server.</p>
 <li>[ ] HTTP Response Codes</li>
 <li>[ ] HTTP Request Methods (or Verbs)</li>
 </ul>
-<blockquote>
-<p>Exercise: Try to <code>console.log</code> the <code>request</code> object inside the handler
-function. Restart your server, send the request again with Postman, then go to your terminal
-to see what it looks like. You should see a lot of data come through.</p>
-</blockquote>
 <h1 id="step-4---routing">Step 4 - Routing</h1>
 <p>At the moment our server only does one thing. When it receives a request from
 the <code>/</code> endpoint, it sends back the same response: &quot;Yay Node!&quot;.</p>
@@ -1101,7 +1101,7 @@ and we will reply as soon as we can.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"next":{"title":"Week 17 - CRUD with Express","level":"1.8.2","depth":2,"path":"node/week-2/lesson.md","ref":"node/week-2/lesson.md","articles":[]},"previous":{"title":"Node","level":"1.8","depth":1,"path":"node/index.md","ref":"node/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-1/lesson.md","ref":"node/week-1/lesson.md","articles":[]},{"title":"Week 17 - CRUD with Express","level":"1.8.2","depth":2,"path":"node/week-2/lesson.md","ref":"node/week-2/lesson.md","articles":[]},{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"path":"node/week-3/lesson.md","ref":"node/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-1/lesson.md","mtime":"2020-06-12T14:53:55.106Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T14:54:45.595Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"next":{"title":"Week 17 - CRUD with Express","level":"1.8.2","depth":2,"path":"node/week-2/lesson.md","ref":"node/week-2/lesson.md","articles":[]},"previous":{"title":"Node","level":"1.8","depth":1,"path":"node/index.md","ref":"node/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-1/lesson.md","ref":"node/week-1/lesson.md","articles":[]},{"title":"Week 17 - CRUD with Express","level":"1.8.2","depth":2,"path":"node/week-2/lesson.md","ref":"node/week-2/lesson.md","articles":[]},{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"path":"node/week-3/lesson.md","ref":"node/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-1/lesson.md","mtime":"2020-06-12T18:02:01.616Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T18:02:54.956Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -750,6 +750,49 @@
 <p><strong>Teaching this lesson?</strong></p>
 <p>Read the Mentors Notes <a href="mentors.md">here</a></p>
 <hr>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this lesson students should be able to:</p>
+<ul>
+<li>Process an UPDATE request using Express and Node to update data in memory</li>
+<li>Upload your Node APP</li>
+</ul>
+<hr>
+<h2 id="crud-review">CRUD Review</h2>
+<h2 id="exercises">Exercises</h2>
+<p>So what will we build? we will build a <strong>CRUD</strong> API. CRUD stands for Create, Retrieve, Update, Delete. If you think about it, this is what most applications do:</p>
+<ul>
+<li>Create some &quot;resources&quot;</li>
+<li>Retrieve them (GET them)</li>
+<li>Update them</li>
+<li>Delete them</li>
+</ul>
+<blockquote>
+<p>Which of these have we learnt so far?</p>
+</blockquote>
+<h2 id="1-using-update-exercise">(1) Using Update exercise</h2>
+<p>This is an Teacher led exercise which can be used to show how we might retrieve an element by ID using a GET request.</p>
+<h3 id="objective">Objective</h3>
+<p>Change a quote API server to allow updating a quote according to the given ID.</p>
+<p>The route should use the HTTP method PUT and should use the URL:</p>
+<blockquote>
+<p>/quotes</p>
+</blockquote>
+<p>You should use the starting project: <a href="https://glitch.com/~cyf-quotes-id-start" target="_blank">cyf-quotes-id-start</a>. This is because this project has quotes with IDs.</p>
+<p>When you remix the starting project, immediately rename it as your own.</p>
+<h2 id="updating-data">Updating Data</h2>
+<p><strong>Complete in-class (1) Using Update exercise at this point</strong></p>
+<p>Lets look back at our original objectives.</p>
+<blockquote>
+<p><code>PUT /albums/:albumId</code> should update the album (that matches the passed albumId)</p>
+</blockquote>
+<p>This means that <code>PUT /albums/2</code> should update an album with the id <code>2</code> and return <code>200</code> with JSON <code>{ success: true }</code> to the user.</p>
+<p>The code will look like this</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// notice .put</span>
+app<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;/albums/:albumID&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;PUT /albums route&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Remember, you have got to <strong>update</strong> the album, not add it to the list</p>
 <h1 id="homework">Homework</h1>
 <p>All of the homework for this week can be found in the Node Homework repository <a href="https://github.com/CodeYourFuture/NodeJS-Homework" target="_blank">here</a> under the Week 3 folder</p>
 <h2 id="submission">Submission</h2>
@@ -813,7 +856,7 @@ and we will reply as soon as we can.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"next":{"title":"Databases","level":"1.9","depth":1,"path":"db/index.md","ref":"db/index.md","articles":[{"title":"Week 19 - Introduction to SQL","level":"1.9.1","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},{"title":"Week 20 - More SQL and integration with NodeJS","level":"1.9.2","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},{"title":"Week 21 - More integration with NodeJS","level":"1.9.3","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]}]},"previous":{"title":"Week 17 - CRUD with Express","level":"1.8.2","depth":2,"path":"node/week-2/lesson.md","ref":"node/week-2/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-3/lesson.md","mtime":"2020-06-12T14:53:55.106Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T14:54:45.595Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"next":{"title":"Databases","level":"1.9","depth":1,"path":"db/index.md","ref":"db/index.md","articles":[{"title":"Week 19 - Introduction to SQL","level":"1.9.1","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},{"title":"Week 20 - More SQL and integration with NodeJS","level":"1.9.2","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},{"title":"Week 21 - More integration with NodeJS","level":"1.9.3","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]}]},"previous":{"title":"Week 17 - CRUD with Express","level":"1.8.2","depth":2,"path":"node/week-2/lesson.md","ref":"node/week-2/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-3/lesson.md","mtime":"2020-06-12T18:02:01.616Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T18:02:54.956Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
